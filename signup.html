@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Arrow Pipes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#F2F2F2] text-gray-800 min-h-screen flex items-center justify-center p-4">
+    
+    <div class="bg-white rounded-[20px] shadow-sm border border-gray-200 w-full max-w-md p-8 fade-in-up visible">
+      <!-- Logo -->
+      <div class="flex justify-center mb-8">
+        <img src="assets/images/logo.svg" alt="Arrow Pipes" class="h-12 w-auto" />
+      </div>
+
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">Create Account</h1>
+        <p class="text-gray-500 text-sm">Join Arrow Pipes to get started</p>
+      </div>
+
+      <!-- Form -->
+      <form action="login.html" class="space-y-5">
+        <!-- Full Name -->
+        <div class="space-y-1.5">
+          <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <div class="relative">
+            <i class="ph ph-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              placeholder="Enter your full name" 
+              class="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-[#E60002] focus:border-[#E60002] placeholder-gray-400 transition-all"
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="space-y-1.5">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+          <div class="relative">
+            <i class="ph ph-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              placeholder="Enter your email" 
+              class="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-[#E60002] focus:border-[#E60002] placeholder-gray-400 transition-all"
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="space-y-1.5">
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <div class="relative">
+            <i class="ph ph-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+            <input 
+              type="password" 
+              id="password" 
+              name="password"
+              placeholder="Create a password" 
+              class="w-full pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-[#E60002] focus:border-[#E60002] placeholder-gray-400 transition-all"
+              required
+            >
+            <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none">
+              <i class="ph ph-eye text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="space-y-1.5">
+          <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+          <div class="relative">
+            <i class="ph ph-lock-key absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+            <input 
+              type="password" 
+              id="confirm-password" 
+              name="confirm-password"
+              placeholder="Confirm your password" 
+              class="w-full pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-[#E60002] focus:border-[#E60002] placeholder-gray-400 transition-all"
+              required
+            >
+            <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none">
+              <i class="ph ph-eye text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="flex items-start gap-2">
+          <div class="flex items-center h-5">
+            <input 
+              type="checkbox" 
+              id="terms" 
+              class="rounded border-gray-300 text-[#E60002] focus:ring-[#E60002] w-4 h-4"
+              required
+            >
+          </div>
+          <label for="terms" class="text-sm text-gray-600">
+            I agree to the <a href="#" class="text-[#E60002] font-medium hover:text-[#cc0002]">Terms of Service</a> and <a href="#" class="text-[#E60002] font-medium hover:text-[#cc0002]">Privacy Policy</a>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          type="submit" 
+          class="w-full py-2.5 px-4 bg-[#E60002] hover:bg-[#cc0002] text-white font-medium rounded-lg shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E60002]"
+        >
+          Create Account
+        </button>
+      </form>
+
+      <!-- Footer -->
+      <div class="mt-8 text-center text-sm text-gray-500">
+        Already have an account? 
+        <a href="login.html" class="text-[#E60002] font-medium hover:text-[#cc0002] transition-colors">
+          Sign in
+        </a>
+      </div>
+    </div>
+
+  </body>
+</html>

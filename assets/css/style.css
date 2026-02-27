@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo-VariableFont_wdth,wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Archivo', 'Inter', sans-serif;
+}
+
+/* Custom scrollbar for sidebar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Glass effect for overlay */
+.glass {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* Animation Styles */
+
+/* Progress Bars (Horizontal) */
+.progress-bar-fill {
+    width: 0;
+    will-change: width;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Vertical Bars */
+.vertical-bar-fill {
+    height: 0;
+    will-change: height;
+    transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gauge Chart Path */
+.gauge-path {
+    stroke-dasharray: 1000; /* Large enough value */
+    stroke-dashoffset: 1000; /* Start hidden */
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Conic Chart Animation */
+@keyframes rotate-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.conic-chart-animate {
+    opacity: 0; 
+}
+
+.conic-chart-animate.visible {
+    animation: rotate-in 1s ease-out forwards;
+}
+
+/* Map Dots Animation */
+.map-dot {
+    transform: scale(0);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.map-dot.visible {
+    transform: scale(1);
+}
+
+/* General Fade In Up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Arrow Pipes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <!-- Header -->
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-3 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          
+          <!-- Company Information -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-info text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Company Information
+            </a>
+          </div>
+
+          <!-- Profile -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-user-circle text-7xl"></i>
+            </div>
+            <a href="profile.html" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Profile
+            </a>
+          </div>
+
+          <!-- Import Data Templates -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-address-book text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Import Data Templates
+            </a>
+          </div>
+
+          <!-- Change Password -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-lock-open text-7xl"></i>
+            </div>
+            <a href="change-password.html" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Change Password
+            </a>
+          </div>
+
+          <!-- User Management -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-users-three text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              User Management
+            </a>
+          </div>
+
+          <!-- Email Configurations -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-envelope-simple text-7xl"></i>
+            </div>
+            <a href="email-list.html" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Email Configurations
+            </a>
+          </div>
+
+          <!-- Roles-Privileges -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-stack text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Roles-Privileges
+            </a>
+          </div>
+
+          <!-- Template Module -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-table text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Template Module
+            </a>
+          </div>
+
+          <!-- Lead Configuration -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-list-bullets text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Lead Configuration
+            </a>
+          </div>
+
+          <!-- Deal Configuration -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-list-bullets text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Deal Configuration
+            </a>
+          </div>
+
+          <!-- Client Configuration -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-list-bullets text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Client Configuration
+            </a>
+          </div>
+
+          <!-- Client POC Configuration -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-list-bullets text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Client POC Configuration
+            </a>
+          </div>
+
+          <!-- Drop Down Master -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-caret-circle-down text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Drop Down Master
+            </a>
+          </div>
+
+          <!-- Partner Configuration -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-list-bullets text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Partner Configuration
+            </a>
+          </div>
+
+          <!-- Mail Workflow -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-envelope-open text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Mail Workflow
+            </a>
+          </div>
+
+          <!-- Token Initialization -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-list-bullets text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Token Initialization
+            </a>
+          </div>
+
+          <!-- Targets and Incentives -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col items-center justify-between h-64 hover:shadow-md transition-shadow">
+            <div class="text-gray-500 flex-1 flex items-center justify-center">
+              <i class="ph ph-detective text-7xl"></i>
+            </div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg w-full text-center transition-colors">
+              Targets and Incentives
+            </a>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

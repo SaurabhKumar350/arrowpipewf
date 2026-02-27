@@ -1,0 +1,2242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Pipes - Enquiry Details</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <!-- Header -->
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300 flex flex-col gap-4 overflow-x-hidden"
+      >
+        <!-- Timeline Section -->
+        <div class="bg-white shadow-sm p-6">
+          <h2 class="text-base font-bold text-gray-900 mb-6">Timeline</h2>
+          <div
+            class="flex items-start w-full bg-[#F9FAFB] border border-[#E5E7EB] rounded-lg p-4"
+          >
+            <!-- Step 1: Enquiry Received -->
+            <div class="flex-1 flex gap-3">
+              <!-- Icon -->
+              <div
+                class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center border-2 border-black shadow-sm shrink-0 z-10"
+              >
+                <i class="ph ph-check text-xs font-bold"></i>
+              </div>
+              <!-- Content -->
+              <div class="flex flex-col w-full pt-0.5">
+                <span class="text-sm font-bold text-gray-900 leading-none mb-2"
+                  >Enquiry Received</span
+                >
+                <div class="h-1 w-full bg-black rounded-full mb-1"></div>
+                <p class="text-xs text-gray-500">11:20 am Today</p>
+              </div>
+            </div>
+
+            <!-- Step 2: In Review -->
+            <div class="flex-1 flex gap-3 pl-4">
+              <!-- Icon -->
+              <div
+                class="w-6 h-6 rounded-full bg-[#FFC107] text-white flex items-center justify-center border-2 border-[#FFC107] shadow-sm shrink-0 z-10"
+              >
+                <span class="text-xs font-bold">!</span>
+              </div>
+              <!-- Content -->
+              <div class="flex flex-col w-full pt-0.5">
+                <span class="text-sm font-bold text-gray-900 leading-none mb-2"
+                  >In Review</span
+                >
+                <div class="h-1 w-full bg-gray-100 rounded-full mb-1 relative">
+                  <div
+                    class="absolute left-0 top-0 h-full bg-[#FFC107] w-2/3 rounded-full"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">(Assigned to mike)</p>
+              </div>
+            </div>
+
+            <!-- Step 3: Allocated -->
+            <div class="flex-1 flex gap-3 pl-4">
+              <!-- Icon -->
+              <div
+                class="w-6 h-6 rounded-full bg-white border-2 border-gray-200 text-gray-300 flex items-center justify-center shrink-0 z-10"
+              >
+                <div class="w-2 h-2 rounded-full bg-gray-200"></div>
+              </div>
+              <!-- Content -->
+              <div class="flex flex-col w-full pt-0.5">
+                <span class="text-sm font-bold text-gray-300 leading-none mb-2"
+                  >Allocated</span
+                >
+                <div class="h-1 w-full bg-gray-100 rounded-full mb-1"></div>
+                <p class="text-xs text-gray-300">( Unassigned )</p>
+              </div>
+            </div>
+
+            <!-- Step 4: WIP -->
+            <div class="flex-1 flex gap-3 pl-4">
+              <!-- Icon -->
+              <div
+                class="w-6 h-6 rounded-full bg-white border-2 border-gray-200 text-gray-300 flex items-center justify-center shrink-0 z-10"
+              >
+                <div class="w-2 h-2 rounded-full bg-gray-200"></div>
+              </div>
+              <!-- Content -->
+              <div class="flex flex-col w-full pt-0.5">
+                <span class="text-sm font-bold text-gray-300 leading-none mb-2"
+                  >WIP</span
+                >
+                <div class="h-1 w-full bg-gray-100 rounded-full mb-1"></div>
+                <p class="text-xs text-gray-300">Pending ...</p>
+              </div>
+            </div>
+
+            <!-- Step 5: Share to Customer -->
+            <div class="flex-1 flex gap-3 pl-4">
+              <!-- Icon -->
+              <div
+                class="w-6 h-6 rounded-full bg-white border-2 border-gray-200 text-gray-300 flex items-center justify-center shrink-0 z-10"
+              >
+                <div class="w-2 h-2 rounded-full bg-gray-200"></div>
+              </div>
+              <!-- Content -->
+              <div class="flex flex-col w-full pt-0.5">
+                <span class="text-sm font-bold text-gray-300 leading-none mb-2"
+                  >Share to Coutomer</span
+                >
+                <div class="h-1 w-full bg-gray-100 rounded-full mb-1"></div>
+                <p class="text-xs text-gray-300">Pending ...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Top Tabs & Actions -->
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-200 pb-0 px-4 md:px-4"
+        >
+          <!-- Tabs -->
+          <div class="flex items-center gap-6 overflow-x-auto">
+            <button
+              id="tab-enquiry-info"
+              onclick="switchTab('enquiry-info')"
+              class="pb-3 text-sm font-bold text-[#EF3826] border-b-2 border-[#EF3826] whitespace-nowrap"
+            >
+              Enquiry Information
+            </button>
+            <button
+              id="tab-ai-suit"
+              onclick="switchTab('ai-suit')"
+              class="pb-3 text-sm font-bold text-gray-500 hover:text-gray-700 whitespace-nowrap"
+            >
+              AI Generated Suit
+            </button>
+            <button
+              id="tab-activity-log"
+              onclick="switchTab('activity-log')"
+              class="pb-3 text-sm font-bold text-gray-500 hover:text-gray-700 whitespace-nowrap"
+            >
+              Activity Log
+            </button>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-3 pb-2 self-end md:self-auto">
+            <!-- Edit -->
+            <!-- <button
+              class="flex items-center gap-1 p-2 text-gray-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <i class="ph ph-pencil-simple text-lg"></i>
+              <i class="ph ph-caret-down text-xs"></i>
+            </button> -->
+            <!-- Download -->
+            <div class="relative">
+              <button
+                data-dropdown-toggle="download-dropdown"
+                class="flex items-center justify-center gap-2 px-3 h-10 text-gray-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <i class="ph ph-download-simple text-lg"></i>
+                <i class="ph ph-caret-down text-xs"></i>
+              </button>
+              <!-- Dropdown Menu -->
+              <div
+                id="download-dropdown"
+                class="dropdown-menu absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-1 hidden z-30"
+              >
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  <i class="ph ph-file-pdf text-lg text-red-500"></i>
+                  PDF Format
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  <i class="ph ph-file-xls text-lg text-green-600"></i>
+                  Excel Format
+                </a>
+              </div>
+            </div>
+            <!-- Assigned To -->
+            <div class="relative">
+              <button
+                data-dropdown-toggle="assign-dropdown"
+                class="flex items-center justify-center gap-2 px-3 h-10 text-[#EF3826] bg-white border border-[#EF3826] rounded-lg hover:bg-red-50 transition-colors"
+              >
+                <span class="text-sm font-medium">Assigned to</span>
+                <i class="ph ph-caret-down text-xs"></i>
+              </button>
+              <!-- Dropdown Menu -->
+              <div
+                id="assign-dropdown"
+                class="dropdown-menu absolute right-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-100 py-2 hidden z-30"
+              >
+                <div class="px-3 pb-2 border-b border-gray-100">
+                  <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input
+                      type="text"
+                      placeholder="Search team member..."
+                      class="w-full pl-9 pr-3 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
+                    />
+                  </div>
+                </div>
+                <div class="max-h-60 overflow-y-auto py-1">
+                  <button class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left transition-colors">
+                    <img
+                      src="https://ui-avatars.com/api/?name=Rahul+Dubey&background=random"
+                      alt="Rahul"
+                      class="w-8 h-8 rounded-full"
+                    />
+                    <div>
+                      <p class="text-sm font-medium text-gray-900">Rahul Dubey</p>
+                      <p class="text-xs text-gray-500">Sales Manager</p>
+                    </div>
+                    <i class="ph ph-check text-red-500 ml-auto text-sm"></i>
+                  </button>
+                  <button class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left transition-colors">
+                    <img
+                      src="https://ui-avatars.com/api/?name=Sarah+Smith&background=random"
+                      alt="Sarah"
+                      class="w-8 h-8 rounded-full"
+                    />
+                    <div>
+                      <p class="text-sm font-medium text-gray-900">Sarah Smith</p>
+                      <p class="text-xs text-gray-500">Sales Executive</p>
+                    </div>
+                  </button>
+                  <button class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-left transition-colors">
+                    <img
+                      src="https://ui-avatars.com/api/?name=John+Doe&background=random"
+                      alt="John"
+                      class="w-8 h-8 rounded-full"
+                    />
+                    <div>
+                      <p class="text-sm font-medium text-gray-900">John Doe</p>
+                      <p class="text-xs text-gray-500">Technical Lead</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Save -->
+            <button
+              class="px-6 h-10 flex items-center justify-center bg-[#EF3826] text-white rounded-lg text-sm font-medium hover:bg-[#D92D20] transition-colors shadow-sm"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab Content: Enquiry Information -->
+        <div
+          id="tab-content-enquiry-info"
+          class="flex flex-col gap-4 p-4 md:p-4"
+        >
+          <!-- Customer Details Section -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <h2 class="text-base font-bold text-gray-900 mb-6">
+              Customer Details
+            </h2>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4"
+            >
+              <!-- Row 1 -->
+              <div>
+                <p class="text-xs text-gray-500 mb-1">Company Name</p>
+                <p class="text-sm font-bold text-gray-900">SLB</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 mb-1">RFQ Reference</p>
+                <p class="text-sm font-bold text-gray-900">
+                  Piping Material & E&I Cables
+                </p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 mb-1">Project Name</p>
+                <p class="text-sm font-bold text-gray-900">Meleiha Phase II</p>
+              </div>
+              <div class="hidden lg:block"></div>
+              <!-- Empty column -->
+
+              <!-- Row 2 -->
+              <div>
+                <p class="text-xs text-gray-500 mb-1">End Client</p>
+                <p class="text-sm font-bold text-gray-900">
+                  SLB / Cameron Middle East
+                </p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 mb-1">Email ID</p>
+                <p class="text-sm font-bold text-gray-900">HKhadra@slb.com</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 mb-1">Submission Deadline</p>
+                <p class="text-sm font-bold text-[#E60004]">13 Feb 2026</p>
+              </div>
+              <div class="hidden lg:block"></div>
+
+              <!-- Row 3 -->
+              <div>
+                <p class="text-xs text-gray-500 mb-1">Payment Terms</p>
+                <p class="text-sm font-bold text-gray-900">Net 90</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 mb-1">Incoterms</p>
+                <p class="text-sm font-bold text-gray-900">FCA Vendor Works</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 mb-1">Material Restriction</p>
+                <p class="text-sm font-bold text-[#E60004]">
+                  China / India / Russia
+                </p>
+              </div>
+              <div class="hidden lg:block"></div>
+            </div>
+          </div>
+
+          <!-- Email Received Section -->
+          <div
+            class="bg-white rounded-xl shadow-sm border border-gray-200 block w-full"
+          >
+            <div
+              class="p-6 border-b border-gray-100 flex items-center justify-between"
+            >
+              <div>
+                <h2 class="text-base font-bold text-gray-900">
+                  Email Received
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">
+                  RFQ: Piping Material & E&I Cables - Meleiha Phase II Project
+                </p>
+              </div>
+              <i class="ph ph-caret-down text-gray-400 text-lg"></i>
+            </div>
+
+            <div class="p-6 bg-[#F9FAFB] block w-full rounded-lg">
+              <div
+                class="bg-white border border-gray-200 rounded-lg p-6 text-xs text-gray-700 leading-relaxed block w-full"
+              >
+                <p class="mb-4">
+                  <span class="font-bold">Subject:</span> Request for Quotation-
+                  Meleiha phase II: Piping material & E&I cables - Arrow Pipes
+                </p>
+
+                <p class="mb-4">Hi Sameer,</p>
+
+                <p class="mb-4">
+                  We have started our sourcing activities for the E&I cables and
+                  piping material for the Meleiha Project. Please could you
+                  submit a competitive and
+                  <span class="font-bold underline">FIRM</span> offer based on
+                  the attached documents. In your bid, please ensure you take
+                  into consideration the following points:
+                </p>
+
+                <ol class="list-decimal pl-5 mb-4 space-y-1">
+                  <li>
+                    Please could you review all technical documents and submit
+                    your BEST QUOTATION by
+                    <span class="font-bold underline"
+                      >COB 13 February 2026</span
+                    >
+                    as we need to proceed with the technical and commercial
+                    reviews as soon as possible.
+                  </li>
+                  <li>
+                    Your quotation must be submitted fully in accordance with
+                    the requirements of the attached RFQ.
+                  </li>
+                  <li>
+                    Lead time must be quoted from PO receipt to the completion
+                    of the goods (not from GA Approval – this should already be
+                    included in your lead time).
+                  </li>
+                  <li>
+                    Any technical deviations/clarifications/exceptions made
+                    against specifications must be clearly mentioned.
+                  </li>
+                  <li>
+                    SLB terms and conditions and project specific flowdowns from
+                    the client will be applicable (see attached). These special
+                    conditions need to be agreed to in full (signed & stamped).
+                    For business-critical deviations to the Terms & Conditions
+                    please update the T/C's clarification sheet also provided.
+                  </li>
+                  <li>FCA Vendor works must be quoted as a minimum.</li>
+                  <li>Payment terms will be net 90 days (non-negotiable).</li>
+                  <li>
+                    Any orders awarded will be issued through our Cameron
+                    entity: "Cameron Middle East, Dubai" – this is the Cameron
+                    entity that would be stated on a purchase order. Please
+                    advise if this causes any problems on your side.
+                  </li>
+                </ol>
+
+                <p class="mb-4">
+                  <span class="font-bold underline"
+                    >Please confirm your receipt of this e-mail by COB 11
+                    February 2026, and your intention to quote</span
+                  >. If you require any further information to help with your
+                  quote, please let us know.
+                </p>
+
+                <p class="mb-4 bg-yellow-100 inline-block px-1">
+                  <span class="font-bold"
+                    >NOTE: No China/India/Russia materials are acceptable.</span
+                  >
+                </p>
+
+                <p>Best Regards,</p>
+                <p class="text-[#2F4EFF] font-bold">Haifae Ben Khadra</p>
+                <p class="text-gray-500">Project Sourcing Specialist</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Documents Section -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <h2 class="text-base font-bold text-gray-900 mb-6">
+              Client Documents
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <!-- Doc 1 -->
+              <div
+                class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:border-red-500 hover:shadow-sm transition-all cursor-pointer group bg-[#F9FAFB]"
+              >
+                <div
+                  class="w-10 h-10 rounded bg-red-50 flex items-center justify-center text-red-500"
+                >
+                  <i class="ph ph-file-pdf text-xl"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p
+                    class="text-xs font-bold text-gray-900 truncate group-hover:text-red-600"
+                  >
+                    Technical Specifications
+                  </p>
+                  <p class="text-[10px] text-gray-500">2.4 MB • PDF</p>
+                </div>
+                <i class="ph ph-dots-three-vertical text-gray-400"></i>
+              </div>
+
+              <!-- Doc 2 -->
+              <div
+                class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:border-green-500 hover:shadow-sm transition-all cursor-pointer group bg-[#F9FAFB]"
+              >
+                <div
+                  class="w-10 h-10 rounded bg-green-50 flex items-center justify-center text-green-500"
+                >
+                  <i class="ph ph-file-xls text-xl"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p
+                    class="text-xs font-bold text-gray-900 truncate group-hover:text-green-600"
+                  >
+                    Material List
+                  </p>
+                  <p class="text-[10px] text-gray-500">856 KB • XLSX</p>
+                </div>
+                <i class="ph ph-dots-three-vertical text-gray-400"></i>
+              </div>
+
+              <!-- Doc 3 -->
+              <div
+                class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-sm transition-all cursor-pointer group bg-[#F9FAFB]"
+              >
+                <div
+                  class="w-10 h-10 rounded bg-blue-50 flex items-center justify-center text-blue-500"
+                >
+                  <i class="ph ph-file-doc text-xl"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p
+                    class="text-xs font-bold text-gray-900 truncate group-hover:text-blue-600"
+                  >
+                    Terms & Conditions
+                  </p>
+                  <p class="text-[10px] text-gray-500">1.2 MB • DOCX</p>
+                </div>
+                <i class="ph ph-dots-three-vertical text-gray-400"></i>
+              </div>
+
+              <!-- Doc 4 -->
+              <div
+                class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-sm transition-all cursor-pointer group bg-[#F9FAFB]"
+              >
+                <div
+                  class="w-10 h-10 rounded bg-purple-50 flex items-center justify-center text-purple-500"
+                >
+                  <i class="ph ph-file-zip text-xl"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p
+                    class="text-xs font-bold text-gray-900 truncate group-hover:text-purple-600"
+                  >
+                    Project Drawings
+                  </p>
+                  <p class="text-[10px] text-gray-500">5.7 MB • ZIP</p>
+                </div>
+                <i class="ph ph-dots-three-vertical text-gray-400"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Content: AI Generated Suit -->
+        <div
+          id="tab-content-ai-suit"
+          class="hidden flex flex-col gap-4 p-4 md:p-4"
+        >
+          <!-- Requirement vs Inventory Matching Section -->
+          <!-- Header -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between w-full">
+              <div class="flex items-center gap-1 bg-gray-100 border border-gray-200 rounded-xl" role="tablist" aria-label="AI Suit sub-tabs">
+                <button id="ai-sub-tab-inventory" onclick="switchAiSubTab('inventory')" class="px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-[#EF3826] to-[#EF3826] rounded-md shadow-sm" role="tab" aria-selected="true">
+                  Inventory Match
+                </button>
+                <button id="ai-sub-tab-offers" onclick="switchAiSubTab('offers')" class="px-6 py-2.5 text-sm font-semibold text-gray-600 rounded-md hover:text-gray-800" role="tab" aria-selected="false">
+                  Generated offers
+                </button>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <i class="ph ph-clock-clockwise text-gray-400"></i>
+                <span>Updated on Feb 18, 04:40 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="ai-sub-content-inventory" role="tabpanel" aria-labelledby="ai-sub-tab-inventory" class="flex-1 flex flex-col">
+            <div
+              class="bg-white rounded-xl shadow-sm border border-gray-200 flex-1 flex flex-col overflow-hidden"
+            >
+              <div class="flex-1 overflow-x-auto">
+              <table class="w-full text-left border-collapse min-w-[1280px]">
+                <thead class="bg-[#CBCBCB] sticky top-0 z-20">
+                  <tr class="border-b border-gray-200">
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      <div
+                        class="flex items-center gap-1 cursor-pointer hover:text-gray-900"
+                      >
+                        SR.
+                        <i class="ph ph-caret-up-down text-gray-500"></i>
+                      </div>
+                    </th>
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      Product Type
+                    </th>
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      Description
+                    </th>
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      Grade/Spec
+                    </th>
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      Size
+                    </th>
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      Quantity
+                    </th>
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      Available Stock
+                    </th>
+                    <th
+                      class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"
+                    >
+                      Generated Document
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 text-sm">
+                  <!-- Row 1: Full Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      1
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#6FBF73] bg-[#F6FFED] px-3 py-1 text-[10px] font-bold uppercase text-[#2F7D32]">
+                          Full Match
+                        </span>
+                        <span class="text-[10px] font-medium text-[#2F7D32]">
+                          Requested Brand: 520 MTR Available
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-1" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-1" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2: Shortage -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      2
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      4" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      800 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#F04438] bg-[#FFF5F5] px-3 py-1 text-[10px] font-bold uppercase text-[#D92D20]">
+                          Shortage
+                        </span>
+                        <span class="text-[10px] font-medium text-[#D92D20]">
+                          Available: 0 MTR | Shortfall: 800 MTR
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-500">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-500">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-500">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-500">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-500">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-500">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-2" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-2" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3: Partial Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      3
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      570 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#F79009] bg-[#FFFAEB] px-3 py-1 text-[10px] font-bold uppercase text-[#B54708]">
+                          Partial Match
+                        </span>
+                        <div class="text-[10px] font-medium text-[#B54708] leading-4">
+                          Requested Brand: 520 MTR Only Available<br />
+                          Alt Brand (Brand A): 2000 MTR<br />
+                          Alt Brand (Brand B): 2000 MTR<br />
+                          Alt Brand (Brand C): 2000 MTR
+                        </div>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-3" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-3" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4: Full Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      4
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      8" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#6FBF73] bg-[#F6FFED] px-3 py-1 text-[10px] font-bold uppercase text-[#2F7D32]">
+                          Full Match
+                        </span>
+                        <span class="text-[10px] font-medium text-[#2F7D32]">
+                          Requested Brand: 520 MTR Available
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-4" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-4" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5: Full Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      5
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#6FBF73] bg-[#F6FFED] px-3 py-1 text-[10px] font-bold uppercase text-[#2F7D32]">
+                          Full Match
+                        </span>
+                        <span class="text-[10px] font-medium text-[#2F7D32]">
+                          Requested Brand: 520 MTR Available
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-5" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-5" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6: Partial Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      6
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#F79009] bg-[#FFFAEB] px-3 py-1 text-[10px] font-bold uppercase text-[#B54708]">
+                          Partial Match
+                        </span>
+                        <div class="text-[10px] font-medium text-[#B54708] leading-4">
+                          Requested Brand: 520 MTR Only Available<br />
+                          Alt Brand (Brand A): 2000 MTR<br />
+                          Alt Brand (Brand B): 2000 MTR<br />
+                          Alt Brand (Brand C): 2000 MTR
+                        </div>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-6" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-6" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7: Partial Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      7
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#F79009] bg-[#FFFAEB] px-3 py-1 text-[10px] font-bold uppercase text-[#B54708]">
+                          Partial Match
+                        </span>
+                        <div class="text-[10px] font-medium text-[#B54708] leading-4">
+                          Requested Brand: 520 MTR Only Available<br />
+                          Alt Brand (Brand A): 2000 MTR<br />
+                          Alt Brand (Brand B): 2000 MTR<br />
+                          Alt Brand (Brand C): 2000 MTR
+                        </div>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-7" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-7" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 8: Partial Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      8
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#F79009] bg-[#FFFAEB] px-3 py-1 text-[10px] font-bold uppercase text-[#B54708]">
+                          Partial Match
+                        </span>
+                        <div class="text-[10px] font-medium text-[#B54708] leading-4">
+                          Requested Brand: 520 MTR Only Available<br />
+                          Alt Brand (Brand A): 2000 MTR<br />
+                          Alt Brand (Brand B): 2000 MTR<br />
+                          Alt Brand (Brand C): 2000 MTR
+                        </div>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-8" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-8" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 9: Full Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      9
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      8" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#6FBF73] bg-[#F6FFED] px-3 py-1 text-[10px] font-bold uppercase text-[#2F7D32]">
+                          Full Match
+                        </span>
+                        <span class="text-[10px] font-medium text-[#2F7D32]">
+                          Requested Brand: 520 MTR Available
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-9" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-9" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 10: Full Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      10
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#6FBF73] bg-[#F6FFED] px-3 py-1 text-[10px] font-bold uppercase text-[#2F7D32]">
+                          Full Match
+                        </span>
+                        <span class="text-[10px] font-medium text-[#2F7D32]">
+                          Requested Brand: 520 MTR Available
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-10" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-10" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 11: Full Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      11
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      6" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#6FBF73] bg-[#F6FFED] px-3 py-1 text-[10px] font-bold uppercase text-[#2F7D32]">
+                          Full Match
+                        </span>
+                        <span class="text-[10px] font-medium text-[#2F7D32]">
+                          Requested Brand: 520 MTR Available
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-11" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-11" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 12: Full Match -->
+                  <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                    <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">
+                      12
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      Carbon Steel Pipe
+                    </td>
+                    <td
+                      class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600 truncate max-w-xs"
+                      title='PIPE, EFW, BE, PE, ASME B36.10M, 30", STD'
+                    >
+                      PIPE, EFW, BE, PE, ASME B36.10M, 30", STD
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      ASTM A106 Gr.B
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      8" x SCH40
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                      500 MTR
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex flex-col gap-1">
+                        <span class="inline-flex w-fit items-center justify-center rounded-full border border-[#6FBF73] bg-[#F6FFED] px-3 py-1 text-[10px] font-bold uppercase text-[#2F7D32]">
+                          Full Match
+                        </span>
+                        <span class="text-[10px] font-medium text-[#2F7D32]">
+                          Requested Brand: 520 MTR Available
+                        </span>
+                      </div>
+                    </td>
+                    <td class="border border-[#EAECF0] px-3 py-4 align-center">
+                      <div class="flex items-start justify-between gap-3">
+                        <div class="grid grid-cols-2 gap-2">
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-red-50 text-red-600">
+                              <i class="ph ph-file-pdf text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Material Test Certificate</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+                              <i class="ph ph-check-circle text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">AML / AVL Check</div>
+                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Deviation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-emerald-600">
+                              <i class="ph ph-file-text text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Spec Validation Sheet</div>
+                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Terms &amp; Conditions</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5">
+                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-50 text-blue-600">
+                              <i class="ph ph-file-doc text-[12px]"></i>
+                            </span>
+                            <div class="min-w-0">
+                              <div class="truncate text-[10px] font-semibold text-gray-700">Origin / CoO</div>
+                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <button data-dropdown-toggle="doc-menu-12" type="button" class="mt-1 flex h-7 w-7 items-center justify-center rounded-md border border-gray-200 text-gray-400 hover:text-gray-600">
+                            <i class="ph ph-dots-three-vertical text-sm"></i>
+                          </button>
+                          <div id="doc-menu-12" class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden">
+                            <ul class="py-1 text-xs text-gray-700">
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                  <i class="ph ph-pencil-simple text-sm"></i>
+                                  <span>Edit</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700">
+                                  <i class="ph ph-trash text-sm"></i>
+                                  <span>Delete</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+
+            <!-- Pagination Footer -->
+            <div
+              class="px-6 py-4 bg-white border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4"
+            >
+              <div
+                class="flex items-center gap-6 text-[13px] text-gray-500 font-medium"
+              >
+                <div class="flex items-center gap-2">
+                  <span>Rows per page:</span>
+                  <div class="relative">
+                    <select
+                      class="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 pr-8 focus:outline-none focus:ring-1 focus:ring-red-500 cursor-pointer text-gray-900 font-bold text-xs"
+                    >
+                      <option>10</option>
+                      <option>20</option>
+                      <option>50</option>
+                    </select>
+                    <i
+                      class="ph ph-caret-down absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[10px]"
+                    ></i>
+                  </div>
+                </div>
+                <span>1-10 of 276</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200"
+                >
+                  1
+                </button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors"
+                >
+                  2
+                </button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors"
+                >
+                  3
+                </button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors"
+                >
+                  4
+                </button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors"
+                >
+                  <i class="ph ph-caret-right font-bold"></i>
+                </button>
+                <button
+                  class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors"
+                >
+                  <i class="ph ph-caret-double-right font-bold"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div id="ai-sub-content-offers" role="tabpanel" aria-labelledby="ai-sub-tab-offers" class="hidden flex-1 flex flex-col">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+              <div class="p-6 border-b border-gray-200 flex items-center justify-between">
+                <h3 class="text-base font-bold text-gray-900">Generated Offers</h3>
+                <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                  <i class="ph ph-clock-clockwise text-gray-400"></i>
+                  <span>Updated just now</span>
+                </div>
+              </div>
+              <div class="p-6 text-sm text-gray-600">
+                <p>No offers generated yet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Configure Tailwind to use Inter font
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#FF0000",
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      function switchTab(tabName) {
+        // Hide all tab contents
+        const contents = [
+          "enquiry-info",
+          "ai-suit",
+          "doc-repo",
+          "activity-log",
+        ];
+        contents.forEach((c) => {
+          const el = document.getElementById(`tab-content-${c}`);
+          if (el) el.classList.add("hidden");
+        });
+
+        // Reset all tab buttons
+        const tabs = ["enquiry-info", "ai-suit", "doc-repo", "activity-log"];
+        tabs.forEach((t) => {
+          const btn = document.getElementById(`tab-${t}`);
+          if (btn) {
+            btn.classList.remove(
+              "font-bold",
+              "text-[#EF3826]",
+              "border-b-2",
+              "border-[#EF3826]",
+            );
+            btn.classList.add(
+              "font-bold",
+              "text-gray-500",
+              "hover:text-gray-700",
+            );
+          }
+        });
+
+        // Activate selected tab
+        const activeBtn = document.getElementById(`tab-${tabName}`);
+        const activeContent = document.getElementById(`tab-content-${tabName}`);
+
+        if (activeBtn) {
+          activeBtn.classList.remove(
+            "font-bold",
+            "text-gray-500",
+            "hover:text-gray-700",
+          );
+          activeBtn.classList.add(
+            "font-bold",
+            "text-[#EF3826]",
+            "border-b-2",
+            "border-[#EF3826]",
+          );
+        }
+        if (activeContent) {
+          activeContent.classList.remove("hidden");
+        }
+      }
+    </script>
+    <script>
+      function switchAiSubTab(subName) {
+        const panels = ["inventory", "offers"];
+        panels.forEach((p) => {
+          const el = document.getElementById(`ai-sub-content-${p}`);
+          if (el) el.classList.add("hidden");
+        });
+        const invBtn = document.getElementById("ai-sub-tab-inventory");
+        const offBtn = document.getElementById("ai-sub-tab-offers");
+        if (invBtn && offBtn) {
+          invBtn.classList.remove("text-white", "bg-gradient-to-r", "from-[#EF3826]", "to-[#EF3826]");
+          invBtn.classList.add("text-gray-600", "hover:text-gray-800");
+          offBtn.classList.remove("text-white", "bg-gradient-to-r", "from-[#EF3826]", "to-[#EF3826]");
+          offBtn.classList.add("text-gray-600", "hover:text-gray-800");
+          const activeBtn = subName === "inventory" ? invBtn : offBtn;
+          const inactiveBtn = subName === "inventory" ? offBtn : invBtn;
+          activeBtn.classList.remove("text-gray-600", "hover:text-gray-800");
+          activeBtn.classList.add("text-white", "bg-gradient-to-r", "from-[#EF3826]", "to-[#EF3826]");
+          inactiveBtn.classList.remove("text-white", "bg-gradient-to-r", "from-[#EF3826]", "to-[#EF3826]");
+          inactiveBtn.classList.add("text-gray-600", "hover:text-gray-800");
+          invBtn.setAttribute("aria-selected", subName === "inventory" ? "true" : "false");
+          offBtn.setAttribute("aria-selected", subName === "offers" ? "true" : "false");
+        }
+        const activePanel = document.getElementById(`ai-sub-content-${subName}`);
+        if (activePanel) activePanel.classList.remove("hidden");
+      }
+    </script>
+    <script>
+      document.addEventListener('click', function(event) {
+        const toggle = event.target.closest('[data-dropdown-toggle]');
+        const dropdown = event.target.closest('.dropdown-menu');
+
+        // If clicked on a toggle
+        if (toggle) {
+          const targetId = toggle.getAttribute('data-dropdown-toggle');
+          const targetDropdown = document.getElementById(targetId);
+
+          // Close all other dropdowns
+          document.querySelectorAll('[data-dropdown-toggle]').forEach(t => {
+            const id = t.getAttribute('data-dropdown-toggle');
+            if (id !== targetId) {
+              const d = document.getElementById(id);
+              if (d) d.classList.add('hidden');
+            }
+          });
+
+          // Toggle the clicked one
+          if (targetDropdown) {
+            targetDropdown.classList.toggle('hidden');
+          }
+          
+          return;
+        }
+
+        // If clicked inside a dropdown, do nothing
+        if (dropdown) {
+            return;
+        }
+
+        // Click outside - close all
+        document.querySelectorAll('[data-dropdown-toggle]').forEach(t => {
+            const id = t.getAttribute('data-dropdown-toggle');
+            const d = document.getElementById(id);
+            if (d) d.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>

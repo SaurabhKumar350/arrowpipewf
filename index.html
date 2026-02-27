@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Pipes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <!-- Header -->
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-3 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <!-- Top Stats Widgets -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 mb-3"
+        >
+          <!-- Total Inquiries -->
+          <div class="bg-white p-4 rounded-[20px] shadow-sm border border-gray-300">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-sm font-semibold text-gray-900">
+                Total Inquiries
+              </h3>
+              <span
+                class="text-xs font-medium text-[#377E36] flex items-center gap-1"
+              >
+                <i class="ph-bold ph-trend-up"></i> +6%
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <span class="text-2xl font-bold text-gray-900">302</span>
+              <span class="text-xs text-gray-400">+17 vs last week</span>
+            </div>
+          </div>
+
+          <!-- Quotes Sent -->
+          <div class="bg-white p-4 rounded-[20px] shadow-sm border border-gray-300">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-sm font-semibold text-gray-900">Quotes Sent</h3>
+              <span
+                class="text-xs font-medium text-[#E60002] flex items-center gap-1"
+              >
+                <i class="ph-bold ph-trend-down"></i> -10%
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <span class="text-2xl font-bold text-gray-900">142</span>
+              <span class="text-xs text-gray-400">-8 vs last week</span>
+            </div>
+          </div>
+
+          <!-- Deals Won -->
+          <div class="bg-white p-4 rounded-[20px] shadow-sm border border-gray-300">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-sm font-semibold text-gray-900">Deals Won</h3>
+              <span
+                class="text-xs font-medium text-[#377E36] flex items-center gap-1"
+              >
+                <i class="ph-bold ph-trend-up"></i> +8%
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <span class="text-2xl font-bold text-gray-900">84</span>
+              <span class="text-xs text-gray-400">+6 vs last week</span>
+            </div>
+          </div>
+
+          <!-- Conversion Rate -->
+          <div class="bg-white p-4 rounded-[20px] shadow-sm border border-gray-300">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-sm font-semibold text-gray-900">
+                Conversion Rate
+              </h3>
+              <span
+                class="text-xs font-medium text-[#377E36] flex items-center gap-1"
+              >
+                <i class="ph-bold ph-trend-up"></i> +0.4%
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <span class="text-2xl font-bold text-gray-900">27.8%</span>
+              <span class="text-xs text-gray-400">+4% vs last week</span>
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          <div class="bg-white p-4 rounded-[20px] shadow-sm border border-gray-300">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-sm font-semibold text-gray-900">Response Time</h3>
+              <span
+                class="text-xs font-medium text-[#E60002] flex items-center gap-1"
+              >
+                <i class="ph-bold ph-trend-down"></i> -7%
+              </span>
+            </div>
+            <div class="flex items-baseline justify-between">
+              <span class="text-2xl font-bold text-gray-900">5.1 h</span>
+              <span class="text-xs text-gray-400">-40 min vs last week</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Section Placeholder (Rest of content) -->
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 mb-3">
+          <!-- Product Inquiry Performance -->
+          <div
+            class="lg:col-span-4 bg-white p-6 rounded-[20px] shadow-sm border border-gray-300"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <h3 class="text-base font-bold text-gray-900">
+                  Product Inquiry Performance
+                </h3>
+                <p class="text-xs text-gray-500 mt-1">
+                  Inquiry volume index by product
+                </p>
+              </div>
+              <div class="relative inline-block">
+                <select
+                  class="appearance-none bg-white border border-[#E60002] text-[#E60002] rounded-lg text-sm font-medium py-1 pl-3 pr-8 hover:bg-red-50 focus:outline-none focus:ring-1 focus:ring-[#E60002] cursor-pointer"
+                >
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                  <option>Yearly</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#E60002]"
+                >
+                  <i class="ph-bold ph-caret-down"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead>
+                  <tr class="text-left text-gray-400 border-b border-gray-300">
+                    <th class=" text-base font-normal opacity-60">
+                      Product
+                    </th>
+                    <th class=" text-base font-normal opacity-60 pl-4">
+                      Performance
+                    </th>
+                    <th
+                      class=" text-base font-normal text-right opacity-60"
+                    >
+                      Inquiries
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="text-sm">
+                  <!-- PVC Pipes -->
+                  <tr class="border-b border-gray-200 last:border-0 group">
+                    <td class="py-5 font-bold text-medium text-gray-900">
+                      PVC Pipes
+                    </td>
+                    <td class="py-5 px-4 w-[55%]">
+                      <div class="flex flex-col gap-2">
+                        <span
+                          class="text-xs text-[#377E36] font-medium flex items-center gap-1 opacity-80"
+                        >
+                          <i class="ph-bold ph-trend-up"></i> +7% vs last week
+                        </span>
+                        <div
+                          class="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-[#377E36] rounded-full progress-bar-fill"
+                            style="width: 0"
+                            data-width="70%"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-5 text-right">
+                      <span class="text-2xl font-normal text-gray-900">96</span>
+                    </td>
+                  </tr>
+                  <!-- CPVC Pipes -->
+                  <tr class="border-b border-gray-200 last:border-0 group">
+                    <td class="py-5 font-bold text-medium text-gray-900">
+                      CPVC Pipes
+                    </td>
+                    <td class="py-5 px-4 w-[55%]">
+                      <div class="flex flex-col gap-2">
+                        <span
+                          class="text-xs text-[#377E36] font-medium flex items-center gap-1 opacity-80"
+                        >
+                          <i class="ph-bold ph-trend-up"></i> +3% vs last week
+                        </span>
+                        <div
+                          class="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-[#377E36] rounded-full progress-bar-fill"
+                            style="width: 0"
+                            data-width="60%"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-5 text-right">
+                      <span class="text-2xl font-normal text-gray-900">72</span>
+                    </td>
+                  </tr>
+                  <!-- Industrial Pressure Pipes -->
+                  <tr class="border-b border-gray-200 last:border-0 group">
+                    <td class="py-5 font-bold text-medium text-gray-900">
+                      Industrial Pressure Pipes
+                    </td>
+                    <td class="py-5 px-4 w-[55%]">
+                      <div class="flex flex-col gap-2">
+                        <span
+                          class="text-xs text-[#E60002] font-medium flex items-center gap-1 opacity-80"
+                        >
+                          <i class="ph-bold ph-trend-down"></i> -4% vs last week
+                        </span>
+                        <div
+                          class="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-[#E60002] rounded-full progress-bar-fill"
+                            style="width: 0"
+                            data-width="40%"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-5 text-right">
+                      <span class="text-2xl font-normal text-gray-900">48</span>
+                    </td>
+                  </tr>
+                  <!-- HDPE Pipes -->
+                  <tr class="border-b border-gray-200 last:border-0 group">
+                    <td class="py-5 font-bold text-medium text-gray-900">
+                      HDPE Pipes
+                    </td>
+                    <td class="py-5 px-4 w-[55%]">
+                      <div class="flex flex-col gap-2">
+                        <span
+                          class="text-xs text-[#377E36] font-medium flex items-center gap-1 opacity-80"
+                        >
+                          <i class="ph-bold ph-trend-up"></i> +2% vs last week
+                        </span>
+                        <div
+                          class="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-[#377E36] rounded-full progress-bar-fill"
+                            style="width: 0"
+                            data-width="50%"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-5 text-right">
+                      <span class="text-2xl font-normal text-gray-900">40</span>
+                    </td>
+                  </tr>
+                  <!-- Borewell Pipes -->
+                  <tr class="border-b border-gray-200 last:border-0 group">
+                    <td class="py-5 font-bold text-medium text-gray-900">
+                      Borewell Pipes
+                    </td>
+                    <td class="py-5 px-4 w-[55%]">
+                      <div class="flex flex-col gap-2">
+                        <span
+                          class="text-xs text-[#E60002] font-medium flex items-center gap-1 opacity-80"
+                        >
+                          <i class="ph-bold ph-trend-down"></i> -6% vs last week
+                        </span>
+                        <div
+                          class="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-[#E60002] rounded-full progress-bar-fill"
+                            style="width: 0"
+                            data-width="35%"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-5 text-right">
+                      <span class="text-2xl font-normal text-gray-900">38</span>
+                    </td>
+                  </tr>
+                  <!-- Plumbing Pipes -->
+                  <tr class="border-b border-gray-200 last:border-0 group">
+                    <td class="py-5 font-bold text-medium text-gray-900">
+                      Plumbing Pipes
+                    </td>
+                    <td class="py-5 px-4 w-[55%]">
+                      <div class="flex flex-col gap-2">
+                        <span
+                          class="text-xs text-[#E60002] font-medium flex items-center gap-1 opacity-80"
+                        >
+                          <i class="ph-bold ph-trend-down"></i> -8% vs last week
+                        </span>
+                        <div
+                          class="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-[#E60002] rounded-full progress-bar-fill"
+                            style="width: 0"
+                            data-width="30%"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-5 text-right">
+                      <span class="text-2xl font-normal text-gray-900">28</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Middle Column Stack -->
+          <div class="lg:col-span-4 flex flex-col gap-3">
+            <!-- Sales Activity -->
+            <div
+              class="bg-white p-6 rounded-[20px] shadow-sm border border-gray-300"
+            >
+              <div class="mb-6">
+                <h3 class="text-base font-bold text-gray-900">
+                  Sales Activity
+                </h3>
+              </div>
+              <div class="grid grid-cols-2 gap-x-4 gap-y-6">
+                <!-- Packed -->
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-red-50 text-[#E60002] flex items-center justify-center shrink-0"
+                  >
+                    <i class="ph-bold ph-clock text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium">Packed</p>
+                    <p class="text-lg font-bold text-gray-900">203</p>
+                  </div>
+                </div>
+                <!-- Delivered -->
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-red-50 text-[#E60002] flex items-center justify-center shrink-0"
+                  >
+                    <i class="ph-bold ph-clock text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium">Delivered</p>
+                    <p class="text-lg font-bold text-gray-900">180</p>
+                  </div>
+                </div>
+                <!-- Shipped -->
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-red-50 text-[#E60002] flex items-center justify-center shrink-0"
+                  >
+                    <i class="ph-bold ph-clock text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium">Shipped</p>
+                    <p class="text-lg font-bold text-gray-900">160</p>
+                  </div>
+                </div>
+                <!-- Invoiced -->
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-red-50 text-[#E60002] flex items-center justify-center shrink-0"
+                  >
+                    <i class="ph-bold ph-clock text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 font-medium">Invoiced</p>
+                    <p class="text-lg font-bold text-gray-900">150</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inquiry Trend -->
+            <div
+              class="bg-white p-6 rounded-[20px] shadow-sm border border-gray-300 flex-1 flex flex-col justify-between"
+            >
+              <!-- Header -->
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-base font-bold text-gray-900">Inquiry Trend</h3>
+                <div class="relative inline-block">
+                  <select
+                    class="appearance-none bg-white border border-[#E60002] text-[#E60002] rounded-lg text-sm font-medium py-1 pl-3 pr-8 hover:bg-red-50 focus:outline-none focus:ring-1 focus:ring-[#E60002] cursor-pointer"
+                  >
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>Yearly</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#E60002]"
+                  >
+                    <i class="ph-bold ph-caret-down"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gauge Chart -->
+              <div class="relative flex items-center justify-center mb-2">
+                <svg viewBox="0 0 200 110" class="w-full h-40">
+                  <!-- Background Arc -->
+                  <path
+                    d="M 20 100 A 80 80 0 0 1 180 100"
+                    fill="none"
+                    stroke="#F3F4F6"
+                    stroke-width="24"
+                    stroke-linecap="butt"
+                  />
+                  <!-- Progress Arc (Red) -->
+                  <path
+                    class="gauge-path"
+                    d="M 20 100 A 80 80 0 0 1 43.4 43.4"
+                    fill="none"
+                    stroke="#E60002"
+                    stroke-width="24"
+                    stroke-linecap="butt"
+                  />
+                  <!-- Tick Mark -->
+                  <line
+                    x1="53"
+                    y1="53"
+                    x2="33"
+                    y2="33"
+                    stroke="#E60002"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                </svg>
+
+                <!-- Center Text -->
+                <div
+                  class="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center mt-4"
+                >
+                  <span class="text-4xl font-bold text-gray-900">+6%</span>
+                </div>
+              </div>
+
+              <!-- Footer Stats -->
+              <div class="flex items-end justify-between">
+                <div class="flex items-center gap-2">
+                  <i class="ph-fill ph-users-three text-gray-800 text-2xl"></i>
+                  <span class="text-2xl font-bold text-gray-900">12,350</span>
+                  <span class="text-xs text-[#377E36] font-medium"
+                    >(+1250)</span
+                  >
+                </div>
+                <div class="text-right">
+                  <div
+                    class="flex items-center justify-end gap-1 text-[#377E36] font-medium text-sm"
+                  >
+                    <i class="ph-bold ph-trend-up"></i> +0.4%
+                  </div>
+                  <span class="text-xs text-gray-400"
+                    >vs last week 27.4%</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Channel-wise Inquiry Snapshot -->
+          <div
+            class="lg:col-span-4 bg-white p-6 rounded-[20px] shadow-sm border border-gray-300"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <h3 class="text-base font-bold text-gray-900">
+                  Channel-wise Inquiry Snapshot
+                </h3>
+                <p class="text-xs text-gray-500 mt-1">Lead inflow by channel</p>
+              </div>
+              <div class="relative inline-block">
+                <select
+                  class="appearance-none bg-white border border-[#E60002] text-[#E60002] rounded-lg text-sm font-medium py-1 pl-3 pr-8 hover:bg-red-50 focus:outline-none focus:ring-1 focus:ring-[#E60002] cursor-pointer"
+                >
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                  <option>Yearly</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#E60002]"
+                >
+                  <i class="ph-bold ph-caret-down"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Semi-Circle Chart -->
+            <div class="relative w-full flex flex-col items-center mb-8">
+              <div class="relative w-64 h-32 overflow-hidden">
+                <div
+                  class="absolute top-0 left-0 w-64 h-64 rounded-full conic-chart-animate"
+                  style="
+                    background: conic-gradient(
+                      from 270deg,
+                      #e60002 0deg 60deg,
+                      transparent 60deg 62deg,
+                      #ff4d4d 62deg 100deg,
+                      transparent 100deg 102deg,
+                      #ff8080 102deg 136deg,
+                      transparent 136deg 138deg,
+                      #ffb3b3 138deg 166deg,
+                      transparent 166deg 168deg,
+                      #ffe5e5 168deg 180deg,
+                      transparent 180deg 360deg
+                    );
+                  "
+                ></div>
+                <!-- Inner Mask -->
+                <div
+                  class="absolute top-4 left-4 w-56 h-56 bg-white rounded-full flex flex-col items-center pt-8"
+                >
+                  <span class="text-sm font-semibold text-gray-900"
+                    >Total Inquiries</span
+                  >
+                  <span class="text-4xl font-bold text-gray-900 leading-tight"
+                    >320</span
+                  >
+                  <span class="text-xs text-gray-400 font-medium"
+                    >+6% vs last 7 days</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Legend List -->
+            <div class="space-y-4">
+              <!-- Websites Inquiry -->
+              <div
+                class="flex items-center justify-between pb-3 border-b border-gray-200 last:border-0 last:pb-0"
+              >
+                <div class="flex items-start gap-3">
+                  <span
+                    class="w-2.5 h-2.5 rounded-full bg-[#E60002] mt-1.5 shrink-0"
+                  ></span>
+                  <div>
+                    <p class="text-sm text-gray-900 font-medium">
+                      Websites Inquiry
+                    </p>
+                    <p class="text-xs text-[#377E36] font-semibold mt-0.5">
+                      +12%
+                    </p>
+                  </div>
+                </div>
+                <span class="text-2xl font-normal text-gray-900">110</span>
+              </div>
+
+              <!-- Referral / Direct -->
+              <div
+                class="flex items-center justify-between pb-3 border-b border-gray-200 last:border-0 last:pb-0"
+              >
+                <div class="flex items-start gap-3">
+                  <span
+                    class="w-2.5 h-2.5 rounded-full bg-[#FF4D4D] mt-1.5 shrink-0"
+                  ></span>
+                  <div>
+                    <p class="text-sm text-gray-900 font-medium">
+                      Referral / Direct
+                    </p>
+                    <p class="text-xs text-[#377E36] font-semibold mt-0.5">
+                      +2%
+                    </p>
+                  </div>
+                </div>
+                <span class="text-2xl font-normal text-gray-900">70</span>
+              </div>
+
+              <!-- Social Media Inquiry -->
+              <div
+                class="flex items-center justify-between pb-3 border-b border-gray-200 last:border-0 last:pb-0"
+              >
+                <div class="flex items-start gap-3">
+                  <span
+                    class="w-2.5 h-2.5 rounded-full bg-[#FF8080] mt-1.5 shrink-0"
+                  ></span>
+                  <div>
+                    <p class="text-sm text-gray-900 font-medium">
+                      Social Media Inquiry
+                    </p>
+                    <p class="text-xs text-[#377E36] font-semibold mt-0.5">
+                      +6%
+                    </p>
+                  </div>
+                </div>
+                <span class="text-2xl font-normal text-gray-900">60</span>
+              </div>
+
+              <!-- Email Inquiry -->
+              <div
+                class="flex items-center justify-between pb-3 border-b border-gray-200 last:border-0 last:pb-0"
+              >
+                <div class="flex items-start gap-3">
+                  <span
+                    class="w-2.5 h-2.5 rounded-full bg-[#FFB3B3] mt-1.5 shrink-0"
+                  ></span>
+                  <div>
+                    <p class="text-sm text-gray-900 font-medium">
+                      Email Inquiry
+                    </p>
+                    <p class="text-xs text-[#E60002] font-semibold mt-0.5">
+                      +3%
+                    </p>
+                  </div>
+                </div>
+                <span class="text-2xl font-normal text-gray-900">50</span>
+              </div>
+
+              <!-- Call Inquiry -->
+              <div
+                class="flex items-center justify-between pb-3 border-b border-gray-200 last:border-0 last:pb-0"
+              >
+                <div class="flex items-start gap-3">
+                  <span
+                    class="w-2.5 h-2.5 rounded-full bg-[#FFE5E5] mt-1.5 shrink-0"
+                  ></span>
+                  <div>
+                    <p class="text-sm text-gray-900 font-medium">Call Inquiry</p>
+                    <p class="text-xs text-[#E60002] font-semibold mt-0.5">
+                      -6%
+                    </p>
+                  </div>
+                </div>
+                <span class="text-2xl font-normal text-gray-900">30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 mb-6">
+          <!-- Lost Inquiry Breakdown -->
+          <div
+            class="lg:col-span-5 bg-white p-6 rounded-[20px] shadow-sm border border-gray-300"
+          >
+            <div class="flex justify-between items-start mb-8">
+              <div>
+                <h3 class="text-base font-bold text-gray-900">
+                  Lost Inquiry Breakdown
+                </h3>
+                <p class="text-xs text-gray-500 mt-1">
+                  Primary factors contributing to deal loss
+                </p>
+              </div>
+              <div class="relative inline-block">
+                <select
+                  class="appearance-none bg-white border border-[#E60002] text-[#E60002] rounded-lg text-sm font-medium py-1 pl-3 pr-8 hover:bg-red-50 focus:outline-none focus:ring-1 focus:ring-[#E60002] cursor-pointer"
+                >
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                  <option>Yearly</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#E60002]"
+                >
+                  <i class="ph-bold ph-caret-down"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart Container -->
+            <div class="relative h-64 ml-10 mb-10 mr-4">
+              <!-- Grid Lines & Y-Axis Labels -->
+              <div class="absolute inset-0 flex flex-col justify-between">
+                <!-- 200 -->
+                <div class="flex items-center w-full">
+                  <span class="absolute -left-8 text-sm font-bold text-gray-900"
+                    >200</span
+                  >
+                  <div
+                    class="w-full border-t border-dashed border-red-50"
+                  ></div>
+                </div>
+                <!-- 150 -->
+                <div class="flex items-center w-full">
+                  <span class="absolute -left-8 text-sm font-bold text-gray-900"
+                    >150</span
+                  >
+                  <div
+                    class="w-full border-t border-dashed border-red-50"
+                  ></div>
+                </div>
+                <!-- 100 -->
+                <div class="flex items-center w-full">
+                  <span class="absolute -left-8 text-sm font-bold text-gray-900"
+                    >100</span
+                  >
+                  <div
+                    class="w-full border-t border-dashed border-red-50"
+                  ></div>
+                </div>
+                <!-- 50 -->
+                <div class="flex items-center w-full">
+                  <span class="absolute -left-8 text-sm font-bold text-gray-900"
+                    >50</span
+                  >
+                  <div
+                    class="w-full border-t border-dashed border-red-50"
+                  ></div>
+                </div>
+                <!-- 0 -->
+                <div class="flex items-center w-full">
+                  <span class="absolute -left-8 text-sm font-bold text-gray-900"
+                    >0</span
+                  >
+                  <div class="w-full border-t border-red-100"></div>
+                </div>
+              </div>
+
+              <!-- Bars -->
+              <div
+                class="absolute inset-0 flex items-end justify-between px-2 pb-[1px]"
+              >
+                <!-- Competitor -->
+                <div class="flex flex-col items-center gap-3 w-[18%] h-full justify-end">
+                  <div
+                    class="w-full bg-[#F4F7FA] rounded-lg relative flex items-end overflow-hidden"
+                    style="height: 90%"
+                  >
+                    <div
+                      class="w-full bg-[#E60002] rounded-lg vertical-bar-fill"
+                      style="height: 0"
+                      data-height="22%"
+                    ></div>
+                  </div>
+                  <span class="text-sm text-gray-800 -mb-8 text-center w-full truncate">Competitor</span>
+                </div>
+
+                <!-- Budget -->
+                <div class="flex flex-col items-center gap-3 w-[18%] h-full justify-end">
+                  <div
+                    class="w-full bg-[#F4F7FA] rounded-lg relative flex items-end overflow-hidden"
+                    style="height: 90%"
+                  >
+                    <div
+                      class="w-full bg-[#E60002] rounded-lg vertical-bar-fill"
+                      style="height: 0"
+                      data-height="16%"
+                    ></div>
+                  </div>
+                  <span class="text-sm text-gray-800 -mb-8 text-center w-full truncate">Budget</span>
+                </div>
+
+                <!-- Unresponsive -->
+                <div class="flex flex-col items-center gap-3 w-[18%] h-full justify-end">
+                  <div
+                    class="w-full bg-[#F4F7FA] rounded-lg relative flex items-end overflow-hidden"
+                    style="height: 90%"
+                  >
+                    <div
+                      class="w-full bg-[#E60002] rounded-lg vertical-bar-fill"
+                      style="height: 0"
+                      data-height="11%"
+                    ></div>
+                  </div>
+                  <span class="text-sm text-gray-800 -mb-8 text-center w-full truncate">Unresponsive</span>
+                </div>
+
+                <!-- Timing -->
+                <div class="flex flex-col items-center gap-3 w-[18%] h-full justify-end">
+                  <div
+                    class="w-full bg-[#F4F7FA] rounded-lg relative flex items-end overflow-hidden"
+                    style="height: 90%"
+                  >
+                    <div
+                      class="w-full bg-[#E60002] rounded-lg vertical-bar-fill"
+                      style="height: 0"
+                      data-height="7%"
+                    ></div>
+                  </div>
+                  <span class="text-sm text-gray-800 -mb-8 text-center w-full truncate">Timing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Country-wise Inquiry Performance -->
+          <div
+            class="lg:col-span-7 bg-white p-6 rounded-[20px] shadow-sm border border-gray-300"
+          >
+            <!-- Header -->
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h3 class="text-base font-bold text-gray-900">
+                  Country-wise Inquiry Performance
+                </h3>
+                <p class="text-xs text-gray-500 mt-1">
+                  Share of total inquiries by region
+                </p>
+              </div>
+              <button
+                class="flex items-center gap-1 px-3 py-1 text-xs font-bold text-[#E60002] border border-[#E60002] rounded-lg hover:bg-red-50 transition-colors"
+              >
+                Weekly
+                <svg
+                  class="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <!-- Map Placeholder -->
+              <div
+                class="bg-blue-50/50 rounded-[20px] h-64 flex items-center justify-center relative overflow-hidden"
+              >
+                <!-- Simplified World Map Dots Visualization -->
+                <div class="absolute inset-0 opacity-20">
+                  <div
+                    class="absolute top-[30%] left-[20%] w-16 h-12 bg-blue-400 rounded-full blur-xl"
+                  ></div>
+                  <div
+                    class="absolute top-[40%] right-[30%] w-20 h-16 bg-blue-400 rounded-full blur-xl"
+                  ></div>
+                  <div
+                    class="absolute bottom-[30%] right-[20%] w-12 h-12 bg-blue-400 rounded-full blur-xl"
+                  ></div>
+                </div>
+                <p class="text-blue-300 font-bold text-lg relative z-10">
+                  World Map Visualization
+                </p>
+                <!-- Dots with Flags -->
+                <!-- US -->
+                <div
+                  class="absolute top-[35%] left-[25%] w-6 h-6 rounded-full border-2 border-white shadow-md overflow-hidden map-dot"
+                  style="transition-delay: 100ms"
+                >
+                  <img
+                    src="assets/images/flag/us.svg"
+                    alt="USA"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <!-- Germany -->
+                <div
+                  class="absolute top-[38%] right-[45%] w-6 h-6 rounded-full border-2 border-white shadow-md overflow-hidden map-dot"
+                  style="transition-delay: 200ms"
+                >
+                  <img
+                    src="assets/images/flag/germany.svg"
+                    alt="Germany"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <!-- Qatar -->
+                <div
+                  class="absolute top-[45%] right-[35%] w-6 h-6 rounded-full border-2 border-white shadow-md overflow-hidden map-dot"
+                  style="transition-delay: 300ms"
+                >
+                  <img
+                    src="assets/images/flag/qatar.svg"
+                    alt="Qatar"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <!-- Japan -->
+                <div
+                  class="absolute top-[32%] right-[25%] w-6 h-6 rounded-full border-2 border-white shadow-md overflow-hidden map-dot"
+                  style="transition-delay: 400ms"
+                >
+                  <img
+                    src="assets/images/flag/japan.svg"
+                    alt="Japan"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <!-- List -->
+              <div class="space-y-6">
+                <!-- US -->
+                <div class="flex items-center gap-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="assets/images/flag/us.svg"
+                      alt="flag"
+                      class="w-10 h-10 rounded-full shadow-md object-cover"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-sm font-semibold text-gray-900"
+                        >United States</span
+                      >
+                      <span class="text-sm font-bold text-gray-900">95</span>
+                    </div>
+                    <div
+                      class="h-1.5 w-full bg-blue-50 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-[#E60002] rounded-full progress-bar-fill"
+                        style="width: 0"
+                        data-width="95%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Japan -->
+                <div class="flex items-center gap-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="assets/images/flag/japan.svg"
+                      alt="flag"
+                      class="w-10 h-10 rounded-full shadow-md object-cover"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-sm font-semibold text-gray-900"
+                        >Japan</span
+                      >
+                      <span class="text-sm font-bold text-gray-900">75</span>
+                    </div>
+                    <div
+                      class="h-1.5 w-full bg-blue-50 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-[#F87171] rounded-full progress-bar-fill"
+                        style="width: 0"
+                        data-width="75%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Qatar -->
+                <div class="flex items-center gap-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="assets/images/flag/qatar.svg"
+                      alt="flag"
+                      class="w-10 h-10 rounded-full shadow-md object-cover"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-sm font-semibold text-gray-900"
+                        >Qatar</span
+                      >
+                      <span class="text-sm font-bold text-gray-900">65</span>
+                    </div>
+                    <div
+                      class="h-1.5 w-full bg-blue-50 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-[#FCA5A5] rounded-full progress-bar-fill"
+                        style="width: 0"
+                        data-width="65%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Germany -->
+                <div class="flex items-center gap-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="assets/images/flag/germany.svg"
+                      alt="flag"
+                      class="w-10 h-10 rounded-full shadow-md object-cover"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-sm font-semibold text-gray-900"
+                        >Germany</span
+                      >
+                      <span class="text-sm font-bold text-gray-900">50</span>
+                    </div>
+                    <div
+                      class="h-1.5 w-full bg-blue-50 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-[#FECACA] rounded-full progress-bar-fill"
+                        style="width: 0"
+                        data-width="50%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Others -->
+                <div class="flex items-center gap-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="assets/images/flag/others.svg"
+                      alt="flag"
+                      class="w-10 h-10 rounded-full shadow-md object-cover"
+                    />
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-sm font-semibold text-gray-900"
+                        >Others</span
+                      >
+                      <span class="text-sm font-bold text-gray-900">35</span>
+                    </div>
+                    <div
+                      class="h-1.5 w-full bg-blue-50 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-[#FEE2E2] rounded-full progress-bar-fill"
+                        style="width: 0"
+                        data-width="35%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Configure Tailwind to use Inter font
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#FF0000",
+            },
+          },
+        },
+      };
+    </script>
+  </body>
+</html>

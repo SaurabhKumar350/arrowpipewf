@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Pipes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <!-- Header -->
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-3 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300 flex flex-col gap-4 overflow-x-hidden"
+      >
+        <!-- Top Bar: Search & Actions -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <!-- Search -->
+          <div class="relative w-full md:w-80">
+            <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg"></i>
+            <input 
+              type="text" 
+              placeholder="Search Enquiry" 
+              class="w-full pl-10 pr-4 py-2.5 bg-[#F9FAFB] border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-500"
+            >
+          </div>
+          <!-- Actions -->
+          <div class="flex items-center gap-3 self-end md:self-auto">
+            <!-- Edit -->
+            <button class="flex items-center gap-1 p-2.5 text-gray-600 bg-[#F9FAFB] border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
+              <i class="ph ph-pencil-simple text-lg"></i>
+              <i class="ph ph-caret-down text-xs"></i>
+            </button>
+            <!-- Download -->
+            <button class="flex items-center gap-1 p-2.5 text-gray-600 bg-[#F9FAFB] border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
+              <i class="ph ph-download-simple text-lg"></i>
+              <i class="ph ph-caret-down text-xs"></i>
+            </button>
+            <!-- Filter -->
+            <button class="flex items-center gap-2 px-4 py-2.5 text-gray-600 bg-[#F9FAFB] border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
+              <i class="ph ph-funnel text-lg"></i>
+              <span class="text-sm font-medium">Filter by</span>
+              <i class="ph ph-caret-down text-xs ml-1"></i>
+            </button>
+            <!-- Save -->
+            <button class="px-6 py-2.5 bg-[#EF3826] text-white rounded-lg text-sm font-medium hover:bg-[#D92D20] transition-colors shadow-sm">
+              Save
+            </button>
+          </div>
+        </div>
+
+        <!-- Table Container -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 flex-1 flex flex-col overflow-hidden">
+          <div class="flex-1 overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[1200px]">
+              <thead class="bg-[#CBCBCB] sticky top-0 z-20">
+                <tr class="border-b border-gray-200">
+                  <th class="border border-[#EAECF0] px-4 py-4 w-12 text-center whitespace-nowrap">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">
+                    <div class="flex items-center gap-2">
+                      ENQUIRY ID
+                      <i class="ph ph-caret-up-down text-gray-400"></i>
+                    </div>
+                  </th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">SOURCE</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">
+                    <div class="flex items-center gap-2">
+                      ENQUIRY ON
+                      <i class="ph ph-caret-up-down text-gray-400"></i>
+                    </div>
+                  </th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">
+                    <div class="flex items-center gap-2">
+                      CUSTOMER NAME
+                      <i class="ph ph-caret-up-down text-gray-400"></i>
+                    </div>
+                  </th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">
+                    <div class="flex items-center gap-2">
+                      ASSIGNED TO
+                      <i class="ph ph-caret-up text-gray-400"></i>
+                    </div>
+                  </th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider text-center whitespace-nowrap">ENQUIRY STATUS</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">
+                    <div class="flex items-center gap-2">
+                      ENQUIRY PROGRESS
+                      <i class="ph ph-caret-up-down text-gray-400"></i>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <!-- Item 1 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer">
+                    <a href="enquiry-details.html">#56784567</a>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">info@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">15/12/2024, 15:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Robert Mac</span>
+                      <span class="text-[10px] text-gray-400">Arrowline Pipes Pvt. Ltd.</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#BA29FF] text-[#BA29FF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">New</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span class="text-[#E2B000]">Assigned to</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#BA29FF] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New" selected>New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review">In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected"> Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-check-circle text-[#E60004] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">AI Generated Suit</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E60004] w-full"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Feb 18, 04:45 PM, Generated</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 2 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer"><a href="#">#56784566</a></td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">sales@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">15/12/2024, 14:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Jane Cooper</span>
+                      <span class="text-[10px] text-gray-400">Metroline Pipe Traders</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#6226EF] text-[#6226EF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">Repeated</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Jane Cooper</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#6226EF] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated" selected>Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review">In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-warning-circle text-[#E2B000] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">WIP</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E2B000] w-2/3"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Assigned to Amit on Feb 18, 04:50 PM</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 3 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer"><a href="#">#56784565</a></td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">info@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">15/12/2024, 13:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Cameron Williamson</span>
+                      <span class="text-[10px] text-gray-400">Williamsons Pipes</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#6226EF] text-[#6226EF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">Repeated</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Wade Warren</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#E2B000] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review" selected>In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-warning-circle text-[#E2B000] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">WIP</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E2B000] w-2/3"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Assigned to Ankit Pal on Feb 25, 04:30 PM</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 4 (Selected/Active) -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" checked class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#E60004]">#56784564</td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">sales@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">14/12/2024, 12:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Jenny Wilson</span>
+                      <span class="text-[10px] text-gray-400">Eastern Pipe Mart</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#BA29FF] text-[#BA29FF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">New</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Ravi Kukreja</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#979797] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review">In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected" selected>Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-x-circle text-gray-500 text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">Rejected</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-gray-400 w-0"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Closed on Feb 20, 03:10 PM</div>
+                    </div>
+                  </td>
+                </tr>
+
+
+                <!-- Item 5 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer">#56784563</td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Tender</span>
+                      <span class="text-[10px] text-gray-400">sales@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">12/12/2024, 15:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Shivam Dixit</span>
+                      <span class="text-[10px] text-gray-400">PrimeFlow Tubes & Fittings</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#BA29FF] text-[#BA29FF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">New</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span class="text-[#E2B000]">Assigned to</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#E2B000] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review" selected>In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-check-circle text-[#E60004] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">Awarded</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E60004] w-full"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">AI Generated Suit on Feb 15, 04:49 PM</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 6 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer">#56784562</td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">info@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">11/12/2024, 18:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Cameron Williamson</span>
+                      <span class="text-[10px] text-gray-400">cameron Pvt. Ltd.</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#6226EF] text-[#6226EF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">Repeated</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Manisha Verma</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-gray-500 text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review">In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed" selected>Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-check-circle text-green-600 text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">Allocated</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-green-500 w-3/4"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Unassigned from Jane on Feb 16, 04:10 PM</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 7 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer">#56784561</td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">info@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">06/12/2024, 15:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Esther Howard</span>
+                      <span class="text-[10px] text-gray-400">Universal Industrial Distributors</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#BA29FF] text-[#BA29FF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">New</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Rahul Taneja</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-orange-500 text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review">In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret" selected>Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-warning-circle text-[#E2B000] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">Budgetary</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E2B000] w-1/3"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Awaiting AI Suit</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 8 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer">#56784560</td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Tender</span>
+                      <span class="text-[10px] text-gray-400">sales@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">05/11/2024, 12:05 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Jacob Jones</span>
+                      <span class="text-[10px] text-gray-400">jacob & jones son's</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#BA29FF] text-[#BA29FF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">New</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Shagun Namdeo</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#E2B000] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review" selected>In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-check-circle text-[#E60004] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">AI Generated Suit</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E60004] w-full"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Feb 13, 05:44 PM, Generated</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 9 -->
+                <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer">#56784559</td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">info@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">27/10/2024, 11:45 AM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Bessie Cooper</span>
+                      <span class="text-[10px] text-gray-400">rbessie cooper traders</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#BA29FF] text-[#BA29FF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">New</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Piyush Thakur</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#E2B000] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New">New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review" selected>In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-warning-circle text-[#E2B000] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">WIP</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E2B000] w-2/3"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Assigned to Ankit on Feb 12, 03:20 PM</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Item 10 -->
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <input type="checkbox" class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs font-semibold text-[#2F4EFF] hover:underline cursor-pointer">#56784558</td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Email</span>
+                      <span class="text-[10px] text-gray-400">info@arrowpipes</span>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-xs text-gray-600">25/10/2024, 15:45 PM</td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex items-center justify-between gap-2 w-full">
+                    <div class="flex flex-col">
+                      <span class="text-xs font-bold text-gray-900">Ralph Edwards</span>
+                      <span class="text-[10px] text-gray-400">ralph edwards traders</span>
+                    </div>
+                    <button class="w-20 py-1 rounded border border-[#BA29FF] text-[#BA29FF] text-[10px] font-bold uppercase hover:bg-opacity-5 transition-colors">New</button>
+                  </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="relative inline-block assigned-dropdown">
+                      <button class="assigned-btn border-b flex items-center gap-2 text-xs text-gray-900 w-32 justify-between">
+                        <span>Akshat Bansal</span>
+                        <i class="ph ph-caret-down text-[10px]"></i>
+                      </button>
+                      <div class="assigned-menu hidden absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-10 p-2">
+                        <div class="relative mb-2">
+                          <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                          <input type="text" placeholder="Search team members..." class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+                        </div>
+                        <div class="space-y-1 max-h-60 overflow-y-auto custom-scrollbar">
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Sarah Johnson">
+                            <span class="font-medium text-xs text-gray-700">Sarah Johnson</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">30</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Michael Chen">
+                            <span class="font-medium text-xs text-gray-700">Michael Chen</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">28</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="Emily Parker">
+                            <span class="font-medium text-xs text-gray-700">Emily Parker</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">27</span>
+                            </div>
+                          </button>
+                          <button class="assigned-option w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded group pl-2" data-name="David Martinez">
+                            <span class="font-medium text-xs text-gray-700">David Martinez</span>
+                            <div class="flex items-center gap-2">
+                              <span class="px-1.5 py-0.5 rounded border border-red-200 text-[10px] text-red-500 bg-white font-medium">Active</span>
+                              <span class="text-xs text-gray-500 font-bold">26</span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4 text-center">
+                    <select onchange="window.updateStatusColor(this)" class="inline-block pl-3 pr-8 py-1 text-[10px] font-bold rounded uppercase w-full text-center cursor-pointer focus:outline-none appearance-none bg-[#BA29FF] text-white border-transparent" style="text-align-last: left; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27white%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27/%3e%3c/svg%3e'); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em;">
+                      <option class="bg-white text-gray-900" value="New" selected>New</option>
+                      <option class="bg-white text-gray-900" value="Repeated">Repeated</option>
+                      <option class="bg-white text-gray-900" value="In Review">In Review</option>
+                      <option class="bg-white text-gray-900" value="Rejected">Rejected</option>
+                      <option class="bg-white text-gray-900" value="Closed">Closed</option>
+                      <option class="bg-white text-gray-900" value="Regret">Regret</option>
+                      <option class="bg-white text-gray-900" value="High">High</option>
+                    </select>
+                  </td>
+                  <td class="border border-[#EAECF0] px-4 py-4">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center gap-2">
+                        <i class="ph ph-warning-circle text-[#E2B000] text-base"></i>
+                        <span class="text-xs font-semibold text-gray-900">Budgetary</span>
+                      </div>
+                      <div class="w-full h-1.5 rounded-full bg-gray-200">
+                        <div class="h-1.5 rounded-full bg-[#E2B000] w-1/3"></div>
+                      </div>
+                      <div class="text-[10px] text-gray-500">Queued for AI Suit</div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination Footer -->
+          <div class="px-6 py-4 bg-white border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-6 text-[13px] text-gray-500 font-medium">
+              <div class="flex items-center gap-2">
+                <span>Rows per page:</span>
+                <div class="relative">
+                  <select class="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 pr-8 focus:outline-none focus:ring-1 focus:ring-red-500 cursor-pointer text-gray-900 font-bold text-xs">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                  </select>
+                  <i class="ph ph-caret-down absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[10px]"></i>
+                </div>
+              </div>
+              <span>1-10 of 276</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200">1</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">2</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">3</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">4</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-right font-bold"></i>
+              </button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-double-right font-bold"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Configure Tailwind to use Inter font
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#FF0000",
+            },
+          },
+        },
+      };
+    </script>
+  </body>
+</html>
