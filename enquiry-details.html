@@ -2082,15 +2082,394 @@
 
           <div id="ai-sub-content-offers" role="tabpanel" aria-labelledby="ai-sub-tab-offers" class="hidden flex-1 flex flex-col">
             <div class="bg-white rounded-xl shadow-sm border border-gray-200">
-              <div class="p-6 border-b border-gray-200 flex items-center justify-between">
-                <h3 class="text-base font-bold text-gray-900">Generated Offers</h3>
-                <div class="flex items-center gap-2 text-[11px] text-gray-500">
-                  <i class="ph ph-clock-clockwise text-gray-400"></i>
-                  <span>Updated just now</span>
+              <div class="text-sm text-gray-600">
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left border-collapse min-w-[1280px]">
+                    <thead class="bg-[#CBCBCB] sticky top-0 z-20">
+                      <tr class="border-b border-gray-200">
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">
+                          <div class="flex items-center gap-1 cursor-pointer hover:text-gray-900">
+                            SR.
+                            <i class="ph ph-caret-up-down text-gray-500"></i>
+                          </div>
+                        </th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">PRODUCT TYPE</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">BASE COST</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MANUFACTURING</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">FREIGHT</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">TAX</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">TOTAL COST</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MARGIN %</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">FINAL PRICE</th>
+                        <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-sm">
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">1</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">Carbon Steel Pipe</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$5,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$2,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">15%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$69,431</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">2</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">SS-A312-4SCH80</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$28,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$3,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$1,800</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$4,995</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$38,295</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">18%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,188</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">1</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">CS-A106-6SCH40</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$5,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$2,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">15%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$69,431</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">2</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">SS-A312-4SCH80</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$28,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$3,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$1,800</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$4,995</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$38,295</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">18%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,188</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">1</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">CS-A106-6SCH40</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$5,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$2,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">15%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$69,431</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">2</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">SS-A312-4SCH80</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$28,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$3,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$1,800</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$4,995</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$38,295</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">18%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,188</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">1</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">CS-A106-6SCH40</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$5,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$2,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$60,375</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">15%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$69,431</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">2</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">SS-A312-4SCH80</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$28,000</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$3,500</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$1,800</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$4,995</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$38,295</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">18%</span>
+                        </td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,188</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">
+                          <a href="#" class="text-gray-600 hover:text-gray-900">...</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- Pagination -->
+                <div class="flex items-center justify-between p-4">
+                  <div class="flex items-center gap-x-2 text-sm text-gray-600">
+                    <span>Rows per page:</span>
+                    <select class="form-select text-sm rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                      <option>12</option>
+                      <option>25</option>
+                      <option>50</option>
+                    </select>
+                  </div>
+                  <div class="flex items-center gap-x-2 text-sm text-gray-600">
+                    <span>1-10 of 276</span>
+                    <div class="flex items-center gap-x-1">
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                        <i class="ph ph-caret-double-left font-bold"></i>
+                      </button>
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                        <i class="ph ph-caret-left font-bold"></i>
+                      </button>
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-red-600 text-white font-bold">1</button>
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">2</button>
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">3</button>
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">4</button>
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                        <i class="ph ph-caret-right font-bold"></i>
+                      </button>
+                      <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                        <i class="ph ph-caret-double-right font-bold"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="p-6 text-sm text-gray-600">
-                <p>No offers generated yet.</p>
+            </div>
+
+            <!-- Final Commercial Document Generated Section -->
+            <div class="mt-8">
+              <h3 class="text-lg font-bold text-gray-900">Final Commercial Document Generated</h3>
+              <p class="text-sm text-gray-500 mt-1 mb-6">Auto-generated documents based on finalized pricing and SKU selection</p>
+
+              <div class="grid grid-cols-12 gap-6 bg-[#ffffff] p-6 rounded-xl">
+                <!-- Generated Documents Column (Left) -->
+                <div class="col-span-8">
+                  <h4 class="text-sm font-bold text-gray-900 mb-4">Generated Documents</h4>
+                  <div class="grid grid-cols-3 gap-4">
+                    <!-- Card 1: Quotation -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-pdf text-red-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">2.4 MB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Quotation</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">PDF Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 2: Proforma Invoice -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-pdf text-red-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">1.8 MB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Proforma Invoice</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">PDF Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 3: Commercial Invoice -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-pdf text-red-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">2.1 MB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Commercial Invoice</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">PDF Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 4: Tax Invoice -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-xls text-green-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">886 KB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Tax Invoice</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">Excel Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 5: Sales Order -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-doc text-blue-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">1.2 MB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Sales Order</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">Word Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 6: Delivery Challan -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-doc text-blue-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">945 KB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Delivery Challan</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">Word Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 7: Packing List -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-xls text-green-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">672 KB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Packing List</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">Excel Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 8: Payment Receipt -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-doc text-blue-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">534 KB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Payment Receipt</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">Word Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+
+                    <!-- Card 9: Spec Validation Sheet -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col h-full">
+                      <div class="flex justify-between items-start mb-3">
+                        <i class="ph ph-file-xls text-green-500 text-2xl"></i>
+                        <span class="text-[10px] text-gray-400">1.1 MB</span>
+                      </div>
+                      <h5 class="text-xs font-bold text-gray-900 mb-1">Spec Validation Sheet</h5>
+                      <p class="text-[10px] text-gray-500 mb-4">Excel Document</p>
+                      <button class="mt-auto w-full py-2 flex items-center justify-center gap-2 bg-blue-50 text-blue-600 rounded-lg text-[10px] font-bold hover:bg-blue-100 transition-colors">
+                        <i class="ph ph-download-simple"></i>
+                        Download
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Upload Document Column (Right) -->
+                <div class="col-span-4">
+                  <h4 class="text-sm font-bold text-gray-900 mb-4 flex justify-between items-center">
+                    Upload Document
+                    <i class="ph ph-dots-three text-gray-400 cursor-pointer"></i>
+                  </h4>
+                  <div class="bg-white rounded-xl border border-gray-200 p-6">
+                    <!-- Drag & Drop Area -->
+                    <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center mb-6 hover:border-gray-400 transition-colors cursor-pointer">
+                      <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="ph ph-upload-simple text-gray-500 text-xl"></i>
+                      </div>
+                      <p class="text-[10px] text-gray-500 text-center">Drag & drop files here<br>or</p>
+                      <button class="mt-3 px-4 py-1.5 bg-gray-600 text-white text-[10px] rounded-lg hover:bg-gray-700 transition-colors">Browse Files</button>
+                    </div>
+
+                    <!-- Document Type -->
+                    <div class="mb-6">
+                      <label class="block text-[10px] text-gray-500 mb-1.5">Document Type (Optional)</label>
+                      <select class="w-full text-[10px] border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500">
+                        <option>Select document type</option>
+                      </select>
+                    </div>
+
+                    <!-- Share Control -->
+                    <div class="mb-6">
+                      <h5 class="text-xs font-bold text-gray-900 mb-3">Share Control</h5>
+                      <div class="space-y-3">
+                        <label class="flex items-start gap-2 cursor-pointer">
+                          <input type="radio" name="share_control" class="mt-0.5 text-red-600 focus:ring-red-500 border-gray-300">
+                          <div>
+                            <p class="text-[10px] font-bold text-gray-900">Share All SKU-Level Documents</p>
+                            <p class="text-[8px] text-gray-500 leading-tight">All individual SKU documents generated from each row will be shared</p>
+                          </div>
+                        </label>
+                        <label class="flex items-start gap-2 cursor-pointer">
+                          <input type="radio" name="share_control" class="mt-0.5 text-red-600 focus:ring-red-500 border-gray-300" checked>
+                          <div>
+                            <p class="text-[10px] font-bold text-gray-900">Share Only Final Consolidated Documents</p>
+                            <p class="text-[8px] text-gray-500 leading-tight">Only the final merged quotation/invoice documents will be shared to customer</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Share Button -->
+                    <button class="w-full py-2.5 bg-[#FF3B30] text-white rounded-lg text-xs font-bold hover:bg-red-700 transition-colors flex items-center justify-center gap-2 mb-4">
+                      <i class="ph ph-share-network"></i>
+                      Share to Customer
+                    </button>
+
+                    <!-- Auto-update Notice -->
+                    <div class="bg-red-50 rounded-lg p-3 flex items-start gap-2">
+                      <i class="ph ph-info text-red-500 mt-0.5 text-[10px]"></i>
+                      <div>
+                        <p class="text-[10px] font-bold text-gray-900">Auto-Update Notice</p>
+                        <p class="text-[8px] text-gray-500 leading-tight">Documents will auto-refresh if pricing or SKU changes are made above.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
