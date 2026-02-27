@@ -306,6 +306,46 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   
   animatedElements.forEach(el => observer.observe(el));
+
+  // Generic Dropdown Logic (data-dropdown-toggle)
+  document.addEventListener('click', function(event) {
+    const toggle = event.target.closest('[data-dropdown-toggle]');
+    const dropdown = event.target.closest('.dropdown-menu');
+
+    // If clicked on a toggle
+    if (toggle) {
+      const targetId = toggle.getAttribute('data-dropdown-toggle');
+      const targetDropdown = document.getElementById(targetId);
+
+      // Close all other dropdowns
+      document.querySelectorAll('[data-dropdown-toggle]').forEach(t => {
+        const id = t.getAttribute('data-dropdown-toggle');
+        if (id !== targetId) {
+          const d = document.getElementById(id);
+          if (d) d.classList.add('hidden');
+        }
+      });
+
+      // Toggle the clicked one
+      if (targetDropdown) {
+        targetDropdown.classList.toggle('hidden');
+      }
+      
+      return;
+    }
+
+    // If clicked inside a dropdown, do nothing
+    if (dropdown) {
+        return;
+    }
+
+    // Click outside - close all
+    document.querySelectorAll('[data-dropdown-toggle]').forEach(t => {
+        const id = t.getAttribute('data-dropdown-toggle');
+        const d = document.getElementById(id);
+        if (d) d.classList.add('hidden');
+    });
+  });
 });
 
 // Global function for Status Select (Table)
