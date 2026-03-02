@@ -346,6 +346,21 @@ document.addEventListener("DOMContentLoaded", () => {
         if (d) d.classList.add('hidden');
     });
   });
+
+  const topBar = document.getElementById("top-bar");
+  if (topBar) {
+    const onScroll = () => {
+      if (window.scrollY > 4) {
+        topBar.classList.remove("bg-[#F2F2F2]");
+        topBar.classList.add("bg-white", "border-b", "border-gray-200", "shadow-sm");
+      } else {
+        topBar.classList.add("bg-[#F2F2F2]");
+        topBar.classList.remove("bg-white", "border-b", "border-gray-200", "shadow-sm");
+      }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 });
 
 // Global function for Status Select (Table)
