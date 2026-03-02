@@ -73,6 +73,27 @@ document.addEventListener("includes-loaded", () => {
       }
     });
   }
+
+  // Active Link Highlighting
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const sidebarLinks = document.querySelectorAll("#sidebar a[href]");
+  
+  sidebarLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    // Check if the href matches the current path
+    // We handle the case where href might be just the filename or a relative path
+    if (href === currentPath || (currentPath === "" && href === "index.html")) {
+      // Add active classes
+      link.classList.add("text-[#E60002]", "bg-red-50");
+      link.classList.remove("text-gray-400");
+    } else {
+      // Ensure inactive classes (if we were toggling, but here we are setting initial state)
+      // Since the HTML will have the inactive state by default, we just need to ensure we don't accidentally leave active classes
+      // But since this runs once on load, we just need to target the active one.
+      // However, if we navigate via client-side routing (not the case here), we'd need to reset others.
+      // For now, just setting the active one is enough if the HTML is clean.
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
