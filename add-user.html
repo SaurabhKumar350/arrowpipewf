@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add User - Arrow Pipes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <!-- Header -->
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300 p-6">
+          <h2 class="text-lg font-bold text-gray-900 mb-6">Add Users</h2>
+          
+          <form>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <!-- Name -->
+              <div class="flex flex-col gap-1.5">
+                <label for="name" class="text-sm font-medium text-gray-700">Name <span class="text-red-500">*</span></label>
+                <input type="text" id="name" placeholder="Name" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]" required>
+              </div>
+
+              <!-- Mobile No -->
+              <div class="flex flex-col gap-1.5">
+                <label for="mobile" class="text-sm font-medium text-gray-700">Mobile No</label>
+                <input type="tel" id="mobile" placeholder="Mobile No" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]">
+              </div>
+
+              <!-- Role Type -->
+              <div class="flex flex-col gap-1.5">
+                <label for="role" class="text-sm font-medium text-gray-700">Role Type <span class="text-red-500">*</span></label>
+                <div class="relative">
+                  <select id="role" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500" required>
+                    <option value="" disabled selected>Role Type</option>
+                    <option value="admin">Admin</option>
+                    <option value="manager">Manager</option>
+                    <option value="user">User</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                    <i class="ph-bold ph-caret-down"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email ID -->
+              <div class="flex flex-col gap-1.5">
+                <label for="email" class="text-sm font-medium text-gray-700">Email ID <span class="text-red-500">*</span></label>
+                <input type="email" id="email" placeholder="Email ID" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]" required>
+              </div>
+
+              <!-- Password -->
+              <div class="flex flex-col gap-1.5">
+                <label for="password" class="text-sm font-medium text-gray-700">Password <span class="text-red-500">*</span></label>
+                <input type="password" id="password" placeholder="Password" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]" required>
+              </div>
+
+              <!-- Reporting Manager -->
+              <div class="flex flex-col gap-1.5">
+                <label for="manager" class="text-sm font-medium text-gray-700">Reporting Manager</label>
+                <div class="relative">
+                  <select id="manager" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500">
+                    <option value="" disabled selected>Reporting Manager</option>
+                    <option value="manager1">Manager 1</option>
+                    <option value="manager2">Manager 2</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                    <i class="ph-bold ph-caret-down"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-3 mt-8">
+              <button type="submit" class="px-6 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors">
+                Add
+              </button>
+              <button type="button" class="px-6 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors">
+                Add and New
+              </button>
+              <a href="user-management.html" class="px-6 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm font-medium rounded-md transition-colors text-center">
+                Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

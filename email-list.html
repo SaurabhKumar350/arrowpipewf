@@ -36,19 +36,19 @@
       <!-- Main Content -->
       <main
         id="main-content"
-        class="flex-1 lg:ml-72 p-4 md:p-8 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
       >
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300">
           <!-- Header Section -->
           <div
-            class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6"
+            class="p-4 border-b border-gray-300 flex flex-col sm:flex-row justify-between items-center gap-4"
           >
             <h2 class="text-xl font-bold text-gray-800">
               Email Configurations
             </h2>
             <a
               href="email-configuration.html"
-              class="relative group flex items-center justify-center w-10 h-10 bg-[#E60002] hover:bg-[#cc0002] text-white rounded-full transition-colors shadow-sm"
+              class="relative group flex items-center justify-center w-10 h-10 bg-[#E60002] hover:bg-[#E60002]/90 text-white rounded-full transition-colors shadow-sm"
             >
               <i class="ph ph-plus text-xl"></i>
               <!-- Custom Tooltip -->
@@ -64,72 +64,86 @@
           </div>
 
           <!-- Table Container -->
-          <div class="overflow-x-auto rounded-lg border border-gray-200">
+          <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
               <thead>
-                <tr class="bg-gray-50 border-b border-gray-200">
-                  <th
-                    class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider"
-                  >
-                    Name
+                <tr class="text-left text-gray-400 border-b border-gray-300">
+                  <th class="py-4 px-4 text-base font-normal opacity-60">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                        Name
+                        <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                            <i class="ph-fill ph-caret-up"></i>
+                            <i class="ph-fill ph-caret-down"></i>
+                        </div>
+                    </div>
                   </th>
-                  <th
-                    class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider"
-                  >
-                    Email Address
+                  <th class="py-4 px-4 text-base font-normal opacity-60">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                        Email Address
+                        <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                            <i class="ph-fill ph-caret-up"></i>
+                            <i class="ph-fill ph-caret-down"></i>
+                        </div>
+                    </div>
                   </th>
-                  <th
-                    class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider"
-                  >
-                    Account Type
+                  <th class="py-4 px-4 text-base font-normal opacity-60">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                        Account Type
+                        <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                            <i class="ph-fill ph-caret-up"></i>
+                            <i class="ph-fill ph-caret-down"></i>
+                        </div>
+                    </div>
                   </th>
-                  <th
-                    class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider"
-                  >
-                    Server Details
+                  <th class="py-4 px-4 text-base font-normal opacity-60">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                        Server Details
+                        <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                            <i class="ph-fill ph-caret-up"></i>
+                            <i class="ph-fill ph-caret-down"></i>
+                        </div>
+                    </div>
                   </th>
-                  <th
-                    class="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right"
-                  >
+                  <th class="py-4 px-4 text-base font-normal opacity-60 text-right">
                     Actions
                   </th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-gray-200 bg-white">
+              <tbody class="divide-y divide-gray-100">
                 <!-- Row 1 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="text-sm font-medium text-gray-900"
+                  <td class="py-3 px-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-900"
                       >cylsys</span
                     >
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <span class="text-sm text-gray-600">admin@cylsys.com</span>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <span
                       class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100"
                     >
                       <i class="ph ph-microsoft-outlook"></i> Exchange
                     </span>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <div class="flex flex-col">
                       <span class="text-xs text-gray-900">mail.cylsys.com</span>
                       <span class="text-xs text-gray-500">Port: 587</span>
                     </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-right">
+                  <td class="py-3 px-4 whitespace-nowrap text-right">
                     <div class="flex items-center justify-end gap-2">
                       <a
                         href="email-configuration.html"
-                        class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
                         title="Edit"
                       >
                         <i class="ph ph-pencil-simple text-lg"></i>
                       </a>
                       <button
-                        class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
                         title="Delete"
                       >
                         <i class="ph ph-trash text-lg"></i>
@@ -140,40 +154,40 @@
 
                 <!-- Row 2 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="text-sm font-medium text-gray-900"
+                  <td class="py-3 px-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-900"
                       >Support Team</span
                     >
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <span class="text-sm text-gray-600"
                       >support@arrowpipes.com</span
                     >
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <span
                       class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-50 text-red-700 border border-red-100"
                     >
                       <i class="ph ph-google-logo"></i> Gmail
                     </span>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <div class="flex flex-col">
                       <span class="text-xs text-gray-900">smtp.gmail.com</span>
                       <span class="text-xs text-gray-500">Port: 465</span>
                     </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-right">
+                  <td class="py-3 px-4 whitespace-nowrap text-right">
                     <div class="flex items-center justify-end gap-2">
                       <a
                         href="email-configuration.html"
-                        class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
                         title="Edit"
                       >
                         <i class="ph ph-pencil-simple text-lg"></i>
                       </a>
                       <button
-                        class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
                         title="Delete"
                       >
                         <i class="ph ph-trash text-lg"></i>
@@ -184,24 +198,24 @@
 
                 <!-- Row 3 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="text-sm font-medium text-gray-900"
+                  <td class="py-3 px-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-900"
                       >Sales Dept</span
                     >
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <span class="text-sm text-gray-600"
                       >sales@arrowpipes.com</span
                     >
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <span
                       class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100"
                     >
                       <i class="ph ph-envelope"></i> Other
                     </span>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap">
+                  <td class="py-3 px-4 whitespace-nowrap">
                     <div class="flex flex-col">
                       <span class="text-xs text-gray-900"
                         >mail.private-server.com</span
@@ -209,17 +223,17 @@
                       <span class="text-xs text-gray-500">Port: 993</span>
                     </div>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-right">
+                  <td class="py-3 px-4 whitespace-nowrap text-right">
                     <div class="flex items-center justify-end gap-2">
                       <a
                         href="email-configuration.html"
-                        class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
                         title="Edit"
                       >
                         <i class="ph ph-pencil-simple text-lg"></i>
                       </a>
                       <button
-                        class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
                         title="Delete"
                       >
                         <i class="ph ph-trash text-lg"></i>
@@ -231,69 +245,32 @@
             </table>
           </div>
 
-          <!-- Pagination -->
-          <div
-            class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-4"
-          >
-            <div class="flex flex-1 justify-between sm:hidden">
-              <a
-                href="#"
-                class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                >Previous</a
-              >
-              <a
-                href="#"
-                class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
-                >Next</a
-              >
+          <!-- Pagination Footer -->
+          <div class="px-6 py-4 bg-white border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-6 text-[13px] text-gray-500 font-medium">
+              <div class="flex items-center gap-2">
+                <span>Rows per page:</span>
+                <div class="relative">
+                  <select class="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 pr-8 focus:outline-none focus:ring-1 focus:ring-red-500 cursor-pointer text-gray-900 font-bold text-xs">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                  </select>
+                  <i class="ph ph-caret-down absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[10px]"></i>
+                </div>
+              </div>
+              <span>1-10 of 12</span>
             </div>
-            <div
-              class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between"
-            >
-              <div>
-                <p class="text-sm text-gray-700">
-                  Showing <span class="font-medium">1</span> to
-                  <span class="font-medium">3</span> of
-                  <span class="font-medium">12</span> results
-                </p>
-              </div>
-              <div>
-                <nav
-                  class="isolate inline-flex -space-x-px rounded-md shadow-sm"
-                  aria-label="Pagination"
-                >
-                  <a
-                    href="#"
-                    class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                  >
-                    <span class="sr-only">Previous</span>
-                    <i class="ph ph-caret-left text-sm"></i>
-                  </a>
-                  <a
-                    href="#"
-                    aria-current="page"
-                    class="relative z-10 inline-flex items-center bg-blue-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                    >1</a
-                  >
-                  <a
-                    href="#"
-                    class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                    >2</a
-                  >
-                  <a
-                    href="#"
-                    class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                    >3</a
-                  >
-                  <a
-                    href="#"
-                    class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
-                  >
-                    <span class="sr-only">Next</span>
-                    <i class="ph ph-caret-right text-sm"></i>
-                  </a>
-                </nav>
-              </div>
+            <div class="flex items-center gap-1.5">
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200">1</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">2</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">3</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-right font-bold"></i>
+              </button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-double-right font-bold"></i>
+              </button>
             </div>
           </div>
         </div>
