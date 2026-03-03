@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop Down Master - Arrow Pipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300">
+          <div
+            class="p-4 border-b border-gray-300 flex flex-col lg:flex-row lg:items-center justify-between gap-4"
+          >
+            <div class="w-full lg:w-auto">
+              <div class="relative w-full sm:w-56">
+                <select
+                  class="w-full appearance-none bg-white border border-gray-300 rounded-lg px-3 py-2 pr-9 text-sm text-gray-700 focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                >
+                  <option selected>Category</option>
+                  <option>Lead Action</option>
+                  <option>Lead Stage</option>
+                  <option>Mail Action</option>
+                </select>
+                <i
+                  class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-sm"
+                ></i>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 w-full lg:w-auto">
+              <div class="relative w-full sm:w-64">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  class="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                />
+                <button
+                  class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  <i class="ph ph-magnifying-glass text-lg"></i>
+                </button>
+              </div>
+
+              <a
+                href="add-dropdown-item.html"
+                class="relative group bg-[#E60002] hover:bg-[#E60002]/90 text-white p-2 rounded-full transition-colors flex items-center justify-center shrink-0"
+              >
+                <i class="ph ph-plus"></i>
+                <span
+                  class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-xs font-medium text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm z-10"
+                >
+                  Add Item
+                  <span
+                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-gray-900"
+                  ></span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[980px]">
+              <thead>
+                <tr
+                  class="text-left text-gray-900 font-semibold border-b border-gray-300 bg-gray-50"
+                >
+                  <th class="py-4 px-4 w-[52px]">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </th>
+                  <th class="py-4 px-4">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                      Category
+                      <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                        <i class="ph-fill ph-caret-up"></i>
+                        <i class="ph-fill ph-caret-down"></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="py-4 px-4">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                      Action Name
+                      <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                        <i class="ph-fill ph-caret-up"></i>
+                        <i class="ph-fill ph-caret-down"></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="py-4 px-4 w-[140px]">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                      Is Default
+                      <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                        <i class="ph-fill ph-caret-up"></i>
+                        <i class="ph-fill ph-caret-down"></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="py-4 px-4 w-[120px]">
+                    <div class="flex items-center gap-1 cursor-pointer hover:text-gray-700">
+                      Is Active
+                      <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                        <i class="ph-fill ph-caret-up"></i>
+                        <i class="ph-fill ph-caret-down"></i>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="py-4 px-4 w-[140px] text-right">
+                    <div class="flex items-center justify-end gap-1 cursor-pointer hover:text-gray-700">
+                      Action
+                      <div class="flex flex-col text-[10px] leading-none text-gray-400">
+                        <i class="ph-fill ph-caret-up"></i>
+                        <i class="ph-fill ph-caret-down"></i>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Action</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Not Interested</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-1"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-1"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Action</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Interested</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-2"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-2"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Action</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Appointment</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-3"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-3"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Stage</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">New</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-4"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-4"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Stage</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Prospect</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-5"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-5"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Stage</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Proposals</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-6"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-6"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Stage</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Negotiations</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-7"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-7"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Lead Stage</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Awarded Leads</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-8"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-8"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Mail Action</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">Company Profile sent</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-9"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-9"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </td>
+                  <td class="py-3 px-4">
+                    <a href="#" class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
+                      >Mail Action</a
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-600">No Response after Follow-ups</td>
+                  <td class="py-3 px-4 text-gray-600">False</td>
+                  <td class="py-3 px-4 text-gray-600">True</td>
+                  <td class="py-3 px-4">
+                    <div class="flex justify-end">
+                      <div class="relative">
+                        <button
+                          data-dropdown-toggle="ddm-action-10"
+                          type="button"
+                          class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                        >
+                          Action
+                          <i class="ph ph-caret-down text-xs"></i>
+                        </button>
+                        <div
+                          id="ddm-action-10"
+                          class="dropdown-menu absolute right-0 z-10 mt-2 w-40 rounded-md border border-gray-200 bg-white shadow-lg hidden"
+                        >
+                          <ul class="py-1 text-xs text-gray-700">
+                            <li>
+                              <a href="#" class="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-50">
+                                <i class="ph ph-pencil-simple text-sm"></i>
+                                <span>Edit</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="flex items-center gap-2 px-3 py-1.5 hover:bg-red-50 text-red-600 hover:text-red-700"
+                              >
+                                <i class="ph ph-trash text-sm"></i>
+                                <span>Delete</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="px-6 py-4 bg-white border-t border-gray-300 flex flex-col sm:flex-row items-center justify-between gap-4"
+          >
+            <div class="flex items-center gap-6 text-[13px] text-gray-500 font-medium">
+              <div class="flex items-center gap-2">
+                <span>Rows per page:</span>
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 pr-8 focus:outline-none focus:ring-1 focus:ring-red-500 cursor-pointer text-gray-900 font-bold text-xs"
+                  >
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                  </select>
+                  <i
+                    class="ph ph-caret-down absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[10px]"
+                  ></i>
+                </div>
+              </div>
+              <span>1-10 of 101</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200"
+              >
+                1
+              </button>
+              <button
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors"
+              >
+                2
+              </button>
+              <button
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors"
+              >
+                3
+              </button>
+              <button
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors"
+              >
+                <i class="ph ph-caret-right font-bold"></i>
+              </button>
+              <button
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors"
+              >
+                <i class="ph ph-caret-double-right font-bold"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
