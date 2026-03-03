@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lead Configuration - Arrow Pipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <div class="flex items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <a
+              href="settings.html"
+              class="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+              aria-label="Back to Settings"
+              title="Back to Settings"
+            >
+              <i class="ph ph-arrow-left text-xl"></i>
+            </a>
+            <div>
+              <h1 class="text-xl md:text-2xl font-semibold text-gray-900">Lead Configuration</h1>
+              <p class="text-sm text-gray-500">Build and save your Lead form layout</p>
+            </div>
+          </div>
+          <!-- <div class="hidden md:flex items-center gap-2">
+            <button
+              id="lead-config-clear-top"
+              type="button"
+              class="px-3 py-2 text-sm font-medium rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+            >
+              Clear
+            </button>
+            <button
+              id="lead-config-save-top"
+              type="button"
+              class="px-3 py-2 text-sm font-medium rounded-lg bg-[#E60002] hover:bg-[#E60002]/90 text-white transition-colors"
+            >
+              Save
+            </button>
+          </div> -->
+        </div>
+
+        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300">
+          <div class="p-4 border-b border-gray-300 flex flex-col md:flex-row md:items-center gap-3">
+            <div class="w-full md:w-[420px]">
+              <label class="block text-sm font-medium text-gray-700 mb-1">Form Name</label>
+              <input
+                id="form-name"
+                type="text"
+                class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                placeholder="Lead"
+              />
+            </div>
+            <div class="flex-1"></div>
+            <div class="flex items-center gap-2 md:hidden">
+              <button
+                id="lead-config-clear"
+                type="button"
+                class="flex-1 px-3 py-2 text-sm font-medium rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+              >
+                Clear
+              </button>
+              <button
+                id="lead-config-save"
+                type="button"
+                class="flex-1 px-3 py-2 text-sm font-medium rounded-lg bg-[#E60002] hover:bg-[#E60002]/90 text-white transition-colors"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <div class="grid grid-cols-1 xl:grid-cols-[1fr_320px] gap-4">
+              <section class="min-w-0">
+                <div class="rounded-xl border border-dashed border-gray-300 bg-gray-50/50 p-4">
+                  <div class="flex items-center justify-between gap-3 mb-3">
+                    <div class="text-sm font-semibold text-gray-900">Configure Form</div>
+                    <div class="text-xs text-gray-500">Drag from the right panel to add fields</div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div>
+                      <div class="flex items-center justify-between gap-2 mb-2">
+                        <div class="text-sm font-semibold text-gray-900">Mandatory Fields</div>
+                        <button
+                          type="button"
+                          data-add-to="mandatory"
+                          class="text-sm font-medium text-[#E60002] hover:text-[#E60002]/80 transition-colors"
+                        >
+                          Add Field
+                        </button>
+                      </div>
+                      <div
+                        id="zone-mandatory"
+                        data-zone="mandatory"
+                        tabindex="0"
+                        class="zone rounded-xl border border-dashed border-gray-300 bg-white p-3 min-h-[168px] focus:outline-none focus:ring-2 focus:ring-[#E60002]/30"
+                      >
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" data-zone-grid="mandatory"></div>
+                        <div class="empty-hint mt-2 text-xs text-gray-500 hidden" data-empty="mandatory">
+                          Drop fields here
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex items-center justify-between gap-2 mb-2">
+                        <div class="text-sm font-semibold text-gray-900">Other Fields</div>
+                        <button
+                          type="button"
+                          data-add-to="other"
+                          class="text-sm font-medium text-[#E60002] hover:text-[#E60002]/80 transition-colors"
+                        >
+                          Add Field
+                        </button>
+                      </div>
+                      <div
+                        id="zone-other"
+                        data-zone="other"
+                        tabindex="0"
+                        class="zone rounded-xl border border-dashed border-gray-300 bg-white p-3 min-h-[168px] focus:outline-none focus:ring-2 focus:ring-[#E60002]/30"
+                      >
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" data-zone-grid="other"></div>
+                        <div class="empty-hint mt-2 text-xs text-gray-500 hidden" data-empty="other">
+                          Drop fields here
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <aside class="xl:sticky xl:top-[88px] self-start">
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                  <div class="p-3 border-b border-gray-200 flex items-center justify-between gap-2">
+                    <div class="text-sm font-semibold text-gray-900">Field Types</div>
+                    <div class="flex items-center gap-2">
+                      <button
+                        id="lead-config-clear-side"
+                        type="button"
+                        class="px-2.5 py-1.5 text-xs font-semibold rounded-md bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+                      >
+                        Clear
+                      </button>
+                      <button
+                        id="lead-config-save-side"
+                        type="button"
+                        class="px-2.5 py-1.5 text-xs font-semibold rounded-md bg-[#E60002] hover:bg-[#E60002]/90 text-white transition-colors"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-3">
+                    <div class="relative mb-3">
+                      <input
+                        id="palette-search"
+                        type="text"
+                        placeholder="Search field types..."
+                        class="w-full pl-3 pr-9 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                      />
+                      <i
+                        class="ph ph-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                      ></i>
+                    </div>
+
+                    <div id="palette" class="space-y-2 max-h-[520px] overflow-auto pr-1"></div>
+                    <div class="mt-3 text-xs text-gray-500">
+                      Tip: Drag a field into Mandatory/Other sections. Click a field to add quickly.
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  id="toast"
+                  class="hidden mt-3 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      (function () {
+        const STORAGE_KEY = "lead_configuration_v1";
+        const zones = ["mandatory", "other"];
+
+        const paletteTemplates = [
+          { type: "text", label: "Text Field", icon: "ph-textbox" },
+          { type: "textarea", label: "Text Area", icon: "ph-text-align-left" },
+          { type: "dropdown", label: "Dropdown", icon: "ph-caret-circle-down" },
+          { type: "radio", label: "Radio Button", icon: "ph-radio-button" },
+          { type: "checkbox", label: "Checkbox", icon: "ph-check-square" },
+          { type: "date", label: "Date Field", icon: "ph-calendar" },
+          { type: "time", label: "Time", icon: "ph-clock" },
+          { type: "number", label: "Number", icon: "ph-hash" },
+          { type: "currency", label: "Currency", icon: "ph-currency-inr" },
+          { type: "autocomplete", label: "Autocomplete", icon: "ph-magic-wand" },
+          { type: "header", label: "Header", icon: "ph-text-h" },
+          { type: "paragraph", label: "Paragraph", icon: "ph-paragraph" },
+          { type: "lead_source", label: "Lead Source", icon: "ph-list-checks" },
+          { type: "vertical", label: "Vertical", icon: "ph-list-dashes" },
+          { type: "country", label: "Country", icon: "ph-globe" },
+          { type: "state", label: "State", icon: "ph-map-trifold" },
+          { type: "city", label: "City", icon: "ph-buildings" },
+          { type: "user_list", label: "User List", icon: "ph-users" }
+        ];
+
+        const defaultConfig = {
+          formName: "Lead",
+          mandatory: [
+            { id: cryptoId(), type: "text", label: "Lead Name", required: true },
+            { id: cryptoId(), type: "text", label: "Lead Mobile", required: false },
+            { id: cryptoId(), type: "text", label: "Lead Email", required: false },
+            { id: cryptoId(), type: "vertical", label: "Lead Vertical", required: true },
+            { id: cryptoId(), type: "lead_source", label: "Lead Source", required: true }
+          ],
+          other: [
+            { id: cryptoId(), type: "text", label: "Linked In Profile", required: false },
+            { id: cryptoId(), type: "text", label: "Company Name", required: false },
+            { id: cryptoId(), type: "dropdown", label: "Company Sector", required: true },
+            { id: cryptoId(), type: "text", label: "Company Head Office Location", required: true },
+            { id: cryptoId(), type: "dropdown", label: "Company Employees Size", required: true },
+            { id: cryptoId(), type: "text", label: "Company Revenue", required: true },
+            { id: cryptoId(), type: "text", label: "Company Website URL", required: true },
+            { id: cryptoId(), type: "textarea", label: "Company works in", required: true },
+            { id: cryptoId(), type: "text", label: "Designation", required: false },
+            { id: cryptoId(), type: "country", label: "Country", required: false },
+            { id: cryptoId(), type: "state", label: "State", required: false },
+            { id: cryptoId(), type: "city", label: "City", required: false },
+            { id: cryptoId(), type: "date", label: "Date of Birth of client", required: false },
+            { id: cryptoId(), type: "text", label: "whats app Number", required: false },
+            { id: cryptoId(), type: "dropdown", label: "Messenger", required: false },
+            { id: cryptoId(), type: "text", label: "Messenger ID", required: false },
+            { id: cryptoId(), type: "textarea", label: "Comments/Remark", required: true },
+            { id: cryptoId(), type: "header", label: "To be filled only when reference is given", required: false },
+            { id: cryptoId(), type: "text", label: "Name", required: false },
+            { id: cryptoId(), type: "text", label: "R_Mobile No", required: false },
+            { id: cryptoId(), type: "text", label: "R_Email ID", required: false },
+            { id: cryptoId(), type: "text", label: "R_Designation", required: false },
+            { id: cryptoId(), type: "text", label: "R_Location", required: false },
+            { id: cryptoId(), type: "header", label: "Appointments", required: false },
+            { id: cryptoId(), type: "date", label: "Date", required: false },
+            { id: cryptoId(), type: "time", label: "Time", required: false }
+          ]
+        };
+
+        const elements = {
+          formName: document.getElementById("form-name"),
+          palette: document.getElementById("palette"),
+          paletteSearch: document.getElementById("palette-search"),
+          toast: document.getElementById("toast"),
+          grids: {
+            mandatory: document.querySelector('[data-zone-grid="mandatory"]'),
+            other: document.querySelector('[data-zone-grid="other"]')
+          },
+          empty: {
+            mandatory: document.querySelector('[data-empty="mandatory"]'),
+            other: document.querySelector('[data-empty="other"]')
+          }
+        };
+
+        let state = loadState();
+        let activeZone = "other";
+        let dragging = null;
+
+        renderAll();
+        wireUi();
+
+        function wireUi() {
+          zones.forEach((zone) => {
+            const zoneEl = document.querySelector(`[data-zone="${zone}"]`);
+            zoneEl.addEventListener("click", () => setActiveZone(zone));
+            zoneEl.addEventListener("focus", () => setActiveZone(zone));
+            zoneEl.addEventListener("dragover", (e) => {
+              e.preventDefault();
+              zoneEl.classList.add("ring-2", "ring-[#E60002]/20");
+            });
+            zoneEl.addEventListener("dragleave", () => {
+              zoneEl.classList.remove("ring-2", "ring-[#E60002]/20");
+            });
+            zoneEl.addEventListener("drop", (e) => {
+              e.preventDefault();
+              zoneEl.classList.remove("ring-2", "ring-[#E60002]/20");
+              const payload = safeJson(e.dataTransfer.getData("application/json"));
+              if (!payload) return;
+              if (payload.kind === "template") {
+                addField(zone, payload.type);
+                return;
+              }
+              if (payload.kind === "field") {
+                moveField(payload.id, payload.fromZone, zone, payload.toIndex);
+              }
+            });
+          });
+
+          document.querySelectorAll("[data-add-to]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const zone = btn.getAttribute("data-add-to") || "other";
+              addField(zone, "text");
+            });
+          });
+
+          const saveButtons = [
+            "lead-config-save",
+            "lead-config-save-top",
+            "lead-config-save-side"
+          ]
+            .map((id) => document.getElementById(id))
+            .filter(Boolean);
+
+          const clearButtons = [
+            "lead-config-clear",
+            "lead-config-clear-top",
+            "lead-config-clear-side"
+          ]
+            .map((id) => document.getElementById(id))
+            .filter(Boolean);
+
+          saveButtons.forEach((btn) =>
+            btn.addEventListener("click", () => {
+              state.formName = (elements.formName.value || "").trim() || "Lead";
+              persistState();
+              showToast("Saved");
+            })
+          );
+
+          clearButtons.forEach((btn) =>
+            btn.addEventListener("click", () => {
+              state = structuredCloneSafe(defaultConfig);
+              elements.formName.value = state.formName;
+              persistState();
+              renderAll();
+              showToast("Cleared");
+            })
+          );
+
+          elements.formName.value = state.formName || "Lead";
+          elements.formName.addEventListener("input", () => {
+            state.formName = (elements.formName.value || "").trim();
+          });
+
+          elements.paletteSearch.addEventListener("input", () => renderPalette());
+        }
+
+        function setActiveZone(zone) {
+          activeZone = zone;
+          zones.forEach((z) => {
+            const el = document.querySelector(`[data-zone="${z}"]`);
+            if (!el) return;
+            if (z === zone) {
+              el.classList.add("border-[#E60002]/50");
+            } else {
+              el.classList.remove("border-[#E60002]/50");
+            }
+          });
+        }
+
+        function renderAll() {
+          renderPalette();
+          zones.forEach((zone) => renderZone(zone));
+          setActiveZone(activeZone);
+        }
+
+        function renderPalette() {
+          const q = (elements.paletteSearch.value || "").trim().toLowerCase();
+          const items = paletteTemplates.filter((t) => t.label.toLowerCase().includes(q));
+          elements.palette.innerHTML = items
+            .map((t) => {
+              return `
+                <button
+                  type="button"
+                  class="w-full group flex items-center justify-between gap-3 rounded-lg border border-gray-200 bg-white px-3 py-2 hover:bg-gray-50 transition-colors"
+                  data-template="${escapeAttr(t.type)}"
+                  draggable="true"
+                >
+                  <div class="flex items-center gap-2 min-w-0">
+                    <i class="ph ${escapeAttr(t.icon)} text-lg text-gray-500"></i>
+                    <span class="text-sm font-medium text-gray-800 truncate">${escapeHtml(t.label)}</span>
+                  </div>
+                  <i class="ph ph-dots-six-vertical text-gray-400"></i>
+                </button>
+              `;
+            })
+            .join("");
+
+          elements.palette.querySelectorAll("[data-template]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const type = btn.getAttribute("data-template");
+              addField(activeZone, type);
+            });
+            btn.addEventListener("dragstart", (e) => {
+              const type = btn.getAttribute("data-template");
+              e.dataTransfer.setData(
+                "application/json",
+                JSON.stringify({ kind: "template", type })
+              );
+              e.dataTransfer.effectAllowed = "copy";
+            });
+          });
+        }
+
+        function renderZone(zone) {
+          const fields = state[zone] || [];
+          const grid = elements.grids[zone];
+          const emptyHint = elements.empty[zone];
+          if (!grid || !emptyHint) return;
+
+          grid.innerHTML = fields
+            .map((f, index) => renderFieldCard(zone, f, index))
+            .join("");
+
+          emptyHint.classList.toggle("hidden", fields.length > 0);
+
+          grid.querySelectorAll("[data-field-id]").forEach((card) => {
+            const id = card.getAttribute("data-field-id");
+            const fromZone = card.getAttribute("data-zone");
+            const idx = Number(card.getAttribute("data-index") || "0");
+
+            card.addEventListener("dragstart", (e) => {
+              dragging = { id, fromZone };
+              e.dataTransfer.setData(
+                "application/json",
+                JSON.stringify({ kind: "field", id, fromZone, toIndex: idx })
+              );
+              e.dataTransfer.effectAllowed = "move";
+              requestAnimationFrame(() => card.classList.add("opacity-60"));
+            });
+
+            card.addEventListener("dragend", () => {
+              dragging = null;
+              card.classList.remove("opacity-60");
+            });
+
+            card.addEventListener("dragover", (e) => {
+              e.preventDefault();
+              e.dataTransfer.dropEffect = "move";
+              card.classList.add("ring-2", "ring-[#E60002]/20");
+            });
+
+            card.addEventListener("dragleave", () => {
+              card.classList.remove("ring-2", "ring-[#E60002]/20");
+            });
+
+            card.addEventListener("drop", (e) => {
+              e.preventDefault();
+              card.classList.remove("ring-2", "ring-[#E60002]/20");
+              const payload = safeJson(e.dataTransfer.getData("application/json"));
+              if (!payload) return;
+              if (payload.kind === "template") {
+                addField(fromZone, payload.type, idx);
+                return;
+              }
+              if (payload.kind === "field") {
+                moveField(payload.id, payload.fromZone, fromZone, idx);
+              }
+            });
+
+            const del = card.querySelector("[data-action='delete']");
+            if (del) {
+              del.addEventListener("click", () => {
+                deleteField(fromZone, id);
+              });
+            }
+
+            const req = card.querySelector("[data-action='required']");
+            if (req) {
+              req.addEventListener("click", () => {
+                toggleRequired(fromZone, id);
+              });
+            }
+
+            const edit = card.querySelector("[data-action='edit']");
+            if (edit) {
+              edit.addEventListener("click", () => {
+                const current = findField(fromZone, id);
+                if (!current) return;
+                const next = window.prompt("Field label", current.label || "");
+                if (next === null) return;
+                updateLabel(fromZone, id, next);
+              });
+            }
+          });
+        }
+
+        function renderFieldCard(zone, field, index) {
+          const canRequire = !["header", "paragraph"].includes(field.type);
+          const requiredMark = field.required ? " <span class='text-[#E60002]'>*</span>" : "";
+          const label = escapeHtml(field.label || "Untitled");
+          const actions = `
+            <div class="flex items-center gap-1">
+              ${
+                canRequire
+                  ? `<button type="button" data-action="required" class="h-8 w-8 inline-flex items-center justify-center rounded-md hover:bg-gray-50 transition-colors" title="Toggle required" aria-label="Toggle required">
+                      <i class="ph ph-asterisk text-base ${
+                        field.required ? "text-[#E60002]" : "text-gray-400"
+                      }"></i>
+                    </button>`
+                  : `<span class="h-8 w-8 inline-flex items-center justify-center text-gray-300">
+                      <i class="ph ph-minus text-base"></i>
+                    </span>`
+              }
+              <button type="button" data-action="edit" class="h-8 w-8 inline-flex items-center justify-center rounded-md hover:bg-gray-50 transition-colors" title="Edit label" aria-label="Edit label">
+                <i class="ph ph-pencil-simple text-base text-gray-500"></i>
+              </button>
+              <button type="button" data-action="delete" class="h-8 w-8 inline-flex items-center justify-center rounded-md hover:bg-gray-50 transition-colors" title="Remove field" aria-label="Remove field">
+                <i class="ph ph-trash text-base text-gray-500"></i>
+              </button>
+              <span class="h-8 w-8 inline-flex items-center justify-center text-gray-400" title="Drag to reorder">
+                <i class="ph ph-dots-six-vertical text-base"></i>
+              </span>
+            </div>
+          `;
+
+          return `
+            <div
+              class="rounded-xl border border-gray-200 bg-white p-3 shadow-sm cursor-move"
+              draggable="true"
+              data-field-id="${escapeAttr(field.id)}"
+              data-zone="${escapeAttr(zone)}"
+              data-index="${escapeAttr(String(index))}"
+            >
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <div class="min-w-0">
+                  <div class="text-sm font-medium text-gray-900 truncate">${label}${requiredMark}</div>
+                  <div class="text-xs text-gray-500">${escapeHtml(typeLabel(field.type))}</div>
+                </div>
+                ${actions}
+              </div>
+              <div class="pt-1">
+                ${renderFieldPreview(field)}
+              </div>
+            </div>
+          `;
+        }
+
+        function renderFieldPreview(field) {
+          const base =
+            "w-full px-3 py-2 border border-gray-200 rounded-lg text-sm bg-white focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]";
+
+          if (field.type === "header") {
+            return `<div class="text-xl font-semibold text-gray-900">${escapeHtml(
+              field.label || ""
+            )}</div>`;
+          }
+          if (field.type === "paragraph") {
+            return `<div class="text-sm text-gray-600">${escapeHtml(field.label || "")}</div>`;
+          }
+          if (field.type === "textarea") {
+            return `<textarea rows="2" class="${base}" placeholder=""></textarea>`;
+          }
+          if (field.type === "dropdown" || isListType(field.type)) {
+            return `
+              <div class="relative">
+                <select class="${base} appearance-none pr-9">
+                  <option selected>${escapeHtml(placeholderFor(field.type))}</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                </select>
+                <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+              </div>
+            `;
+          }
+          if (field.type === "radio") {
+            return `
+              <div class="flex items-center gap-4 text-sm text-gray-700">
+                <label class="inline-flex items-center gap-2">
+                  <input type="radio" name="r_${escapeAttr(field.id)}" class="h-4 w-4 accent-[#E60002]" />
+                  <span>Option 1</span>
+                </label>
+                <label class="inline-flex items-center gap-2">
+                  <input type="radio" name="r_${escapeAttr(field.id)}" class="h-4 w-4 accent-[#E60002]" />
+                  <span>Option 2</span>
+                </label>
+              </div>
+            `;
+          }
+          if (field.type === "checkbox") {
+            return `
+              <label class="inline-flex items-center gap-2 text-sm text-gray-700">
+                <input type="checkbox" class="h-4 w-4 rounded border-gray-300 accent-[#E60002]" />
+                <span>Checked</span>
+              </label>
+            `;
+          }
+          if (field.type === "date") {
+            return `<input type="date" class="${base}" />`;
+          }
+          if (field.type === "time") {
+            return `<input type="time" class="${base}" />`;
+          }
+          if (field.type === "number") {
+            return `<input type="number" class="${base}" placeholder="" />`;
+          }
+          if (field.type === "currency") {
+            return `
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">₹</span>
+                <input type="number" class="${base} pl-8" placeholder="" />
+              </div>
+            `;
+          }
+          if (field.type === "autocomplete") {
+            return `
+              <input list="dl_${escapeAttr(field.id)}" class="${base}" />
+              <datalist id="dl_${escapeAttr(field.id)}">
+                <option value="Option 1"></option>
+                <option value="Option 2"></option>
+              </datalist>
+            `;
+          }
+          return `<input type="text" class="${base}" placeholder="" />`;
+        }
+
+        function addField(zone, type, index = null) {
+          const template = paletteTemplates.find((t) => t.type === type);
+          const label = template ? template.label : "Field";
+          const f = {
+            id: cryptoId(),
+            type,
+            label: nextLabelForZone(zone, label),
+            required: ["header", "paragraph"].includes(type) ? false : false
+          };
+          const list = state[zone] || [];
+          const next = list.slice();
+          const toIndex =
+            typeof index === "number" && index >= 0 && index <= next.length ? index : next.length;
+          next.splice(toIndex, 0, f);
+          state[zone] = next;
+          renderZone(zone);
+          persistState();
+          showToast("Added field");
+        }
+
+        function deleteField(zone, id) {
+          const list = state[zone] || [];
+          state[zone] = list.filter((f) => f.id !== id);
+          renderZone(zone);
+          persistState();
+          showToast("Removed field");
+        }
+
+        function toggleRequired(zone, id) {
+          const list = state[zone] || [];
+          state[zone] = list.map((f) => {
+            if (f.id !== id) return f;
+            if (["header", "paragraph"].includes(f.type)) return f;
+            return { ...f, required: !f.required };
+          });
+          renderZone(zone);
+          persistState();
+        }
+
+        function updateLabel(zone, id, label) {
+          const next = (label || "").trim() || "Untitled";
+          const list = state[zone] || [];
+          state[zone] = list.map((f) => (f.id === id ? { ...f, label: next } : f));
+          renderZone(zone);
+          persistState();
+        }
+
+        function moveField(id, fromZone, toZone, toIndex) {
+          if (!fromZone || !toZone) return;
+          const fromList = state[fromZone] || [];
+          const idx = fromList.findIndex((f) => f.id === id);
+          if (idx < 0) return;
+          const field = fromList[idx];
+          const nextFrom = fromList.slice();
+          nextFrom.splice(idx, 1);
+          state[fromZone] = nextFrom;
+
+          const target = (state[toZone] || []).slice();
+          const normalizedIndex =
+            typeof toIndex === "number" && toIndex >= 0 && toIndex <= target.length
+              ? toIndex
+              : target.length;
+          target.splice(normalizedIndex, 0, field);
+          state[toZone] = target;
+
+          zones.forEach((z) => renderZone(z));
+          persistState();
+        }
+
+        function findField(zone, id) {
+          return (state[zone] || []).find((f) => f.id === id) || null;
+        }
+
+        function persistState() {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          } catch (_) {}
+        }
+
+        function loadState() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return structuredCloneSafe(defaultConfig);
+            const parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== "object") return structuredCloneSafe(defaultConfig);
+            const next = structuredCloneSafe(defaultConfig);
+            next.formName = typeof parsed.formName === "string" ? parsed.formName : next.formName;
+            zones.forEach((z) => {
+              const arr = Array.isArray(parsed[z]) ? parsed[z] : next[z];
+              next[z] = arr
+                .filter((f) => f && typeof f === "object" && typeof f.type === "string")
+                .map((f) => ({
+                  id: typeof f.id === "string" ? f.id : cryptoId(),
+                  type: f.type,
+                  label: typeof f.label === "string" ? f.label : typeLabel(f.type),
+                  required: Boolean(f.required)
+                }));
+            });
+            return next;
+          } catch (_) {
+            return structuredCloneSafe(defaultConfig);
+          }
+        }
+
+        function showToast(message) {
+          elements.toast.textContent = message;
+          elements.toast.classList.remove("hidden");
+          clearTimeout(showToast._t);
+          showToast._t = setTimeout(() => elements.toast.classList.add("hidden"), 1400);
+        }
+
+        function nextLabelForZone(zone, baseLabel) {
+          const existing = new Set((state[zone] || []).map((f) => (f.label || "").trim()));
+          if (!existing.has(baseLabel)) return baseLabel;
+          let i = 2;
+          while (existing.has(`${baseLabel} ${i}`)) i++;
+          return `${baseLabel} ${i}`;
+        }
+
+        function typeLabel(type) {
+          const t = paletteTemplates.find((p) => p.type === type);
+          return t ? t.label : type;
+        }
+
+        function isListType(type) {
+          return ["lead_source", "vertical", "country", "state", "city", "user_list"].includes(type);
+        }
+
+        function placeholderFor(type) {
+          if (type === "country") return "Country List";
+          if (type === "state") return "State List";
+          if (type === "city") return "City List";
+          if (type === "user_list") return "Select User";
+          if (type === "vertical") return "Select Vertical";
+          if (type === "lead_source") return "Select Lead Source";
+          return "Select";
+        }
+
+        function escapeHtml(str) {
+          return String(str)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#39;");
+        }
+
+        function escapeAttr(str) {
+          return escapeHtml(str).replaceAll("`", "&#96;");
+        }
+
+        function safeJson(raw) {
+          try {
+            if (!raw) return null;
+            return JSON.parse(raw);
+          } catch (_) {
+            return null;
+          }
+        }
+
+        function structuredCloneSafe(obj) {
+          try {
+            return structuredClone(obj);
+          } catch (_) {
+            return JSON.parse(JSON.stringify(obj));
+          }
+        }
+
+        function cryptoId() {
+          if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+          return `id_${Math.random().toString(16).slice(2)}_${Date.now().toString(16)}`;
+        }
+      })();
+    </script>
+  </body>
+</html>
