@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mail Workflow - Arrow Pipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800 overflow-x-hidden">
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300 overflow-x-hidden"
+      >
+        <!-- Toolbar (outside grid box) -->
+        <div class="flex items-center justify-between mb-3 px-1 md:px-0">
+          <div class="flex items-center gap-3">
+            <!-- <img src="assets/images/enquiry.svg" alt="mail" class="w-6 h-6" /> -->
+            <h1 class="text-lg font-bold text-gray-900">Mail Workflow</h1>
+          </div>
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div class="relative w-full sm:w-72">
+              <input
+                type="text"
+                placeholder="Search..."
+                class="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+              />
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <i class="ph ph-magnifying-glass text-lg"></i>
+              </button>
+            </div>
+            <a
+              href="#"
+              class="relative group bg-[#E60002] hover:bg-[#E60002]/90 text-white p-2 rounded-full transition-colors flex items-center justify-center"
+              aria-label="Add Rule"
+              title="Add Rule"
+            >
+              <i class="ph ph-plus"></i>
+              <span
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-xs font-medium text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm z-10"
+              >
+                Add Rule
+                <span
+                  class="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-gray-900"
+                ></span>
+              </span>
+            </a>
+            <a
+              href="#"
+              class="relative group bg-[#F9FAFB] border border-gray-200 text-gray-600 p-2 rounded-full transition-colors flex items-center justify-center hover:bg-gray-100"
+              aria-label="Export"
+              title="Export"
+            >
+              <i class="ph ph-download-simple"></i>
+              <span
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-xs font-medium text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm z-10"
+              >
+                Export
+                <span
+                  class="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-gray-900"
+                ></span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 flex-1 flex flex-col overflow-hidden">
+          <div class="flex-1 overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[1500px] whitespace-nowrap">
+              <thead class="bg-[#CBCBCB] sticky top-0 z-20">
+                <tr class="border-b border-gray-200">
+                  <th class="border border-[#EAECF0] px-4 py-4 w-[90px] text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">RULE ID</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">COMPANY NAME</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">CATEGORY NAME</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">SUBCATEGORY NAME</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">VERTICAL NAME</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">TEMPLATE</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">EMAIL SUBJECT</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">CURRENT MAIL ACTION</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">NEW MAIL ACTION</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">CLIENT REPLY MAIL ACTION</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MAIL INTERVALS</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MAIL SENDING TIME</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MAILBOX (TO)</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MAILBOX CC</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MAILBOX BCC</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">CREATED ON</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Sample rows -->
+                <!-- Row 1 -->
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4 text-sm text-gray-700">1</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">cylsys</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Lead Stage</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">New</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">mobile application</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">As per discussion on Linkedin</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Not Sent Yet</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">00:00:00</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">7/15/2025 7:19:34 PM</td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4 text-sm text-gray-700">2</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">cylsys</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Lead Stage</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">New</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">mutual fund</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">As per discussion on Linkedin</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Not Sent Yet</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">00:00:00</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">7/15/2025 7:19:34 PM</td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4 text-sm text-gray-700">3</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">cylsys</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Lead Stage</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">New</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Software Development</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">As per discussion on Linkedin</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Not Sent Yet</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">00:00:00</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">7/15/2025 7:19:34 PM</td>
+                </tr>
+                <!-- Additional sample rows -->
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4 text-sm text-gray-700">4</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">cylsys</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Lead Stage</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">New</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">IT Staffing</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">As per discussion on Linkedin</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Not Sent Yet</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">00:00:00</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">7/15/2025 7:19:34 PM</td>
+                </tr>
+                <tr class="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4 text-sm text-gray-700">5</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">cylsys</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Lead Stage</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">New</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Digital Marketing</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">As per discussion on Linkedin</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Not Sent Yet</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">Company Profile sent</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">00:00:00</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">sales@cylsys.com</td>
+                  <td class="py-3 px-4 text-sm text-gray-700">7/15/2025 7:19:34 PM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="px-6 py-4 bg-white border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-6 text-[13px] text-gray-500 font-medium">
+              <div class="flex items-center gap-2">
+                <span>Rows per page:</span>
+                <div class="relative">
+                  <select class="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 pr-8 focus:outline-none focus:ring-1 focus:ring-red-500 cursor-pointer text-gray-900 font-bold text-xs">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                  </select>
+                  <i class="ph ph-caret-down absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[10px]"></i>
+                </div>
+              </div>
+              <span>1-10 of 42</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-double-left"></i>
+              </button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-left"></i>
+              </button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200">1</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">2</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">3</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">4</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-right font-bold"></i>
+              </button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-double-right font-bold"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

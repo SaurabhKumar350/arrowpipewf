@@ -11,7 +11,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="bg-[#EDF1F2] text-gray-800">
+  <body class="bg-[#EDF1F2] text-gray-800 overflow-x-hidden">
     <!-- Header -->
     <header
       id="header-container"
@@ -36,122 +36,61 @@
       <!-- Main Content -->
       <main
         id="main-content"
-        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300 overflow-x-hidden"
       >
-        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300">
-          <!-- Header Controls -->
-          <div
-            class="p-4 border-b border-gray-300 flex flex-col sm:flex-row justify-end items-center gap-4"
-          >
-            <div class="flex items-center gap-4 w-full sm:w-auto">
-              <div class="relative w-full sm:w-64">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  class="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
-                />
-                <button
-                  class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  <i class="ph ph-magnifying-glass text-lg"></i>
-                </button>
-              </div>
-              <a
-                href="add-user.html"
-                class="relative group bg-[#E60002] hover:bg-[#E60002]/90 text-white p-2 rounded-full transition-colors flex items-center justify-center"
-              >
-                <i class="ph ph-plus"></i>
-                <!-- Custom Tooltip -->
-                <span
-                  class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-xs font-medium text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm z-10"
-                >
-                  Add User
-                  <span
-                    class="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-gray-900"
-                  ></span>
-                </span>
-              </a>
-            </div>
+        <!-- Toolbar (outside grid box) -->
+        <div class="flex items-center justify-between mb-3 px-1 md:px-0">
+          <div class="flex items-center gap-3">
+            <h1 class="text-lg font-bold text-gray-900">User Management</h1>
           </div>
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div class="relative w-full sm:w-72">
+              <input
+                type="text"
+                placeholder="Search..."
+                class="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+              />
+              <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <i class="ph ph-magnifying-glass text-lg"></i>
+              </button>
+            </div>
+            <a
+              href="add-user.html"
+              class="relative group bg-[#E60002] hover:bg-[#E60002]/90 text-white p-2 rounded-full transition-colors flex items-center justify-center"
+            >
+              <i class="ph ph-plus"></i>
+              <span
+                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-xs font-medium text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm z-10"
+              >
+                Add User
+                <span
+                  class="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-gray-900"
+                ></span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 flex-1 flex flex-col overflow-hidden">
 
           <!-- Table -->
-          <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
-              <thead>
-                <tr class="text-left text-gray-400 border-b border-gray-300">
-                  <th
-                    class="py-4 px-4 text-base font-normal opacity-60 w-[120px]"
-                  >
-                    <div
-                      class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
-                    >
-                      Action
-                      <div
-                        class="flex flex-col text-[10px] leading-none text-gray-400"
-                      >
-                        <i class="ph-fill ph-caret-up"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                      </div>
-                    </div>
+          <div class="flex-1 overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[1200px]">
+              <thead class="bg-[#CBCBCB] sticky top-0 z-20">
+                <tr class="border-b border-gray-200">
+                  <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">
+                    ACTION
                   </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
-                    <div
-                      class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
-                    >
-                      Name
-                      <div
-                        class="flex flex-col text-[10px] leading-none text-gray-400"
-                      >
-                        <i class="ph-fill ph-caret-up"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                      </div>
-                    </div>
-                  </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
-                    <div
-                      class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
-                    >
-                      Mobile No
-                      <div
-                        class="flex flex-col text-[10px] leading-none text-gray-400"
-                      >
-                        <i class="ph-fill ph-caret-up"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                      </div>
-                    </div>
-                  </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
-                    <div
-                      class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
-                    >
-                      Role Type
-                      <div
-                        class="flex flex-col text-[10px] leading-none text-gray-400"
-                      >
-                        <i class="ph-fill ph-caret-up"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                      </div>
-                    </div>
-                  </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
-                    <div
-                      class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
-                    >
-                      Email ID
-                      <div
-                        class="flex flex-col text-[10px] leading-none text-gray-400"
-                      >
-                        <i class="ph-fill ph-caret-up"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                      </div>
-                    </div>
-                  </th>
+                  <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">NAME</th>
+                  <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">MOBILE NO</th>
+                  <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">ROLE TYPE</th>
+                  <th class="border border-[#EAECF0] px-3 py-4 text-[11px] font-bold text-[#667085] uppercase tracking-wider whitespace-nowrap">EMAIL ID</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-100">
                 <!-- Row 1 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -168,23 +107,23 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Ashish anande</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">7387812151</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">Sr.BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">7387812151</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">Sr.BDM</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     ashish.anande@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 2 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -206,23 +145,23 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Rohit mehra</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9179254597</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">9179254597</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">BDM</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     rohit.mehra@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 3 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -244,23 +183,23 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >vivek verma</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8085209706</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">8085209706</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">BDM</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     vivek.verma@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 4 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -277,25 +216,25 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Aarti pawar</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8982961814</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">8982961814</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     Contact Discovery Team
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     aarti.pawar@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 5 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -312,25 +251,25 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Deepa pawar</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9584590544</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">9584590544</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     Contact Discovery Team
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     deepa.pawar@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 6 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -352,25 +291,25 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Geeta soni</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9329991081</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">9329991081</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     Contact Discovery Team
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     geeta.soni@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 7 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -387,25 +326,25 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Kajal kurmi</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9285048913</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">9285048913</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     Contact Discovery Team
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     kajal.kurmi@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 8 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -427,25 +366,25 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >preeti shrivas</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8305601608</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">8305601608</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     Contact Discovery Team
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     preeti.shrivas@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 9 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -462,25 +401,25 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Mona soni</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8878170096</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">8878170096</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     Contact Discovery Team
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     mona.soni@cylsys.com
                   </td>
                 </tr>
 
                 <!-- Row 10 -->
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <div class="flex items-center gap-3">
                       <button
                         class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
@@ -497,16 +436,16 @@
                       </label>
                     </div>
                   </td>
-                  <td class="py-3 px-4">
+                  <td class="py-3 px-3">
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
                       >Rakesh Gupta</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600"></td>
-                  <td class="py-3 px-4 text-sm text-gray-600">Sr.BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
+                  <td class="py-3 px-3 text-sm text-gray-600"></td>
+                  <td class="py-3 px-3 text-sm text-gray-600">Sr.BDM</td>
+                  <td class="py-3 px-3 text-sm text-gray-600">
                     Rakesh.Gupta@cylsys.com
                   </td>
                 </tr>
