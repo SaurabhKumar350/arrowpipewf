@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Initialization - Arrow Pipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300">
+          <div class="p-6 md:p-8 border-b border-gray-300">
+            <form action="#" method="POST" class="max-w-5xl">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Application Name <span class="text-[#E60002]">*</span></label>
+                  <div class="relative">
+                    <select required class="w-full appearance-none bg-white border border-gray-300 rounded-lg px-3 py-2.5 pr-9 text-sm text-gray-700 focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]">
+                      <option value="" disabled selected>Select Application</option>
+                      <option>MailBlitz</option>
+                      <option>SalesTracker</option>
+                      <option>ArrowCRM</option>
+                    </select>
+                    <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-sm"></i>
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">From Date <span class="text-[#E60002]">*</span></label>
+                  <div class="relative">
+                    <input type="date" required class="w-full appearance-none bg-white border border-gray-300 rounded-lg px-3 py-2.5 pr-9 text-sm text-gray-700 focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]" />
+                    <i class="ph ph-calendar-blank absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-sm"></i>
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">To Date <span class="text-[#E60002]">*</span></label>
+                  <div class="relative">
+                    <input type="date" required class="w-full appearance-none bg-white border border-gray-300 rounded-lg px-3 py-2.5 pr-9 text-sm text-gray-700 focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]" />
+                    <i class="ph ph-calendar-blank absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-sm"></i>
+                  </div>
+                </div>
+                <div class="flex items-end">
+                  <label class="inline-flex items-center gap-2 text-sm text-gray-700">
+                    <input type="checkbox" class="h-4 w-4 rounded border-gray-300 accent-[#E60002]" />
+                    <span>Is Active</span>
+                  </label>
+                </div>
+              </div>
+              <div class="mt-6">
+                <button type="submit" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors">
+                  <i class="ph ph-shield-check"></i>
+                  <span>Generate Token</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[980px]">
+              <thead>
+                <tr class="text-left text-gray-900 font-semibold border-b border-gray-300 bg-gray-50">
+                  <th class="py-4 px-4 w-[72px]">Sr. No</th>
+                  <th class="py-4 px-4">Application Name</th>
+                  <th class="py-4 px-4 w-[160px]">From Date</th>
+                  <th class="py-4 px-4 w-[160px]">To Date</th>
+                  <th class="py-4 px-4 w-[120px]">Is Active</th>
+                  <th class="py-4 px-4">Token</th>
+                  <th class="py-4 px-4 w-[220px]">Created Date</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr class="hover:bg-gray-50 transition-colors">
+                  <td class="py-3 px-4">1</td>
+                  <td class="py-3 px-4">MailBlitz</td>
+                  <td class="py-3 px-4 text-gray-600">01-08-2025</td>
+                  <td class="py-3 px-4 text-gray-600">31-12-2025</td>
+                  <td class="py-3 px-4 text-gray-600">Yes</td>
+                  <td class="py-3 px-4 text-gray-900">E2F6D011-FEB0-4E58-9601-53543B76ECD6</td>
+                  <td class="py-3 px-4 text-gray-600">8/1/2025 12:46:00 PM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="px-6 py-4 bg-white border-t border-gray-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-6 text-[13px] text-gray-500 font-medium">
+              <div class="flex items-center gap-2">
+                <span>Rows per page:</span>
+                <div class="relative">
+                  <select class="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 pr-8 focus:outline-none focus:ring-1 focus:ring-red-500 cursor-pointer text-gray-900 font-bold text-xs">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                  </select>
+                  <i class="ph ph-caret-down absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[10px]"></i>
+                </div>
+              </div>
+              <span>1-10 of 1</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200">1</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-right font-bold"></i>
+              </button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-double-right font-bold"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
