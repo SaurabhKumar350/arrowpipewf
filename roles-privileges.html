@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Management - Arrow Pipes</title>
+    <title>Roles & Privileges - Arrow Pipes</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Phosphor Icons -->
@@ -44,6 +44,7 @@
             class="p-4 border-b border-gray-300 flex flex-col sm:flex-row justify-end items-center gap-4"
           >
             <div class="flex items-center gap-4 w-full sm:w-auto">
+              <!-- Search -->
               <div class="relative w-full sm:w-64">
                 <input
                   type="text"
@@ -56,16 +57,18 @@
                   <i class="ph ph-magnifying-glass text-lg"></i>
                 </button>
               </div>
-              <a
-                href="add-user.html"
-                class="relative group bg-[#E60002] hover:bg-[#E60002]/90 text-white p-2 rounded-full transition-colors flex items-center justify-center"
-              >
+
+              <!-- Add Role Button -->
+                <a
+                    href="add-role.html"
+                    class="relative group bg-[#E60002] hover:bg-[#E60002]/90 text-white p-2 rounded-full transition-colors flex items-center justify-center"
+                >
                 <i class="ph ph-plus"></i>
                 <!-- Custom Tooltip -->
                 <span
                   class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-xs font-medium text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm z-10"
                 >
-                  Add User
+                  Add Role
                   <span
                     class="absolute top-full left-1/2 -translate-x-1/2 -mt-0.5 border-4 border-transparent border-t-gray-900"
                   ></span>
@@ -78,10 +81,10 @@
           <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
               <thead>
-                <tr class="text-left text-gray-400 border-b border-gray-300">
-                  <th
-                    class="py-4 px-4 text-base font-normal opacity-60 w-[120px]"
-                  >
+                <tr
+                  class="text-left text-gray-900 font-semibold border-b border-gray-300 bg-gray-50"
+                >
+                  <th class="py-4 px-4 w-[120px]">
                     <div
                       class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
                     >
@@ -94,11 +97,11 @@
                       </div>
                     </div>
                   </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
+                  <th class="py-4 px-4">
                     <div
                       class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
                     >
-                      Name
+                      Role Name
                       <div
                         class="flex flex-col text-[10px] leading-none text-gray-400"
                       >
@@ -107,37 +110,11 @@
                       </div>
                     </div>
                   </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
+                  <th class="py-4 px-4">
                     <div
                       class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
                     >
-                      Mobile No
-                      <div
-                        class="flex flex-col text-[10px] leading-none text-gray-400"
-                      >
-                        <i class="ph-fill ph-caret-up"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                      </div>
-                    </div>
-                  </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
-                    <div
-                      class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
-                    >
-                      Role Type
-                      <div
-                        class="flex flex-col text-[10px] leading-none text-gray-400"
-                      >
-                        <i class="ph-fill ph-caret-up"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                      </div>
-                    </div>
-                  </th>
-                  <th class="py-4 px-4 text-base font-normal opacity-60">
-                    <div
-                      class="flex items-center gap-1 cursor-pointer hover:text-gray-700"
-                    >
-                      Email ID
+                      Role Description
                       <div
                         class="flex flex-col text-[10px] leading-none text-gray-400"
                       >
@@ -161,7 +138,12 @@
                       <label
                         class="relative inline-flex items-center cursor-pointer"
                       >
-                        <input type="checkbox" value="" class="sr-only peer" />
+                        <input
+                          type="checkbox"
+                          value=""
+                          class="sr-only peer"
+                          checked
+                        />
                         <div
                           class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
                         ></div>
@@ -172,13 +154,11 @@
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Ashish anande</a
+                      >Contact Discovery Team</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">7387812151</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">Sr.BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    ashish.anande@cylsys.com
+                  <td class="py-3 px-4 text-gray-600">
+                    Discover the contacts for projects
                   </td>
                 </tr>
 
@@ -210,13 +190,11 @@
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Rohit mehra</a
+                      >BDM</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9179254597</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    rohit.mehra@cylsys.com
+                  <td class="py-3 px-4 text-gray-600">
+                    Manage the Contacts and Understand the contact quality
                   </td>
                 </tr>
 
@@ -248,13 +226,12 @@
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >vivek verma</a
+                      >Sr.BDM</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8085209706</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    vivek.verma@cylsys.com
+                  <td class="py-3 px-4 text-gray-600">
+                    Manage the Lead Contact and responsible for all the
+                    Transactions.
                   </td>
                 </tr>
 
@@ -270,7 +247,12 @@
                       <label
                         class="relative inline-flex items-center cursor-pointer"
                       >
-                        <input type="checkbox" value="" class="sr-only peer" />
+                        <input
+                          type="checkbox"
+                          value=""
+                          class="sr-only peer"
+                          checked
+                        />
                         <div
                           class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
                         ></div>
@@ -281,16 +263,10 @@
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Aarti pawar</a
+                      >Admin</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8982961814</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    Contact Discovery Team
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    aarti.pawar@cylsys.com
-                  </td>
+                  <td class="py-3 px-4 text-gray-600">Admin</td>
                 </tr>
 
                 <!-- Row 5 -->
@@ -305,41 +281,6 @@
                       <label
                         class="relative inline-flex items-center cursor-pointer"
                       >
-                        <input type="checkbox" value="" class="sr-only peer" />
-                        <div
-                          class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
-                        ></div>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4">
-                    <a
-                      href="#"
-                      class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Deepa pawar</a
-                    >
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9584590544</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    Contact Discovery Team
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    deepa.pawar@cylsys.com
-                  </td>
-                </tr>
-
-                <!-- Row 6 -->
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-3">
-                      <button
-                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
-                      >
-                        <i class="ph ph-pencil-simple"></i>
-                      </button>
-                      <label
-                        class="relative inline-flex items-center cursor-pointer"
-                      >
                         <input
                           type="checkbox"
                           value=""
@@ -356,159 +297,10 @@
                     <a
                       href="#"
                       class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Geeta soni</a
+                      >Admin</a
                     >
                   </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9329991081</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    Contact Discovery Team
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    geeta.soni@cylsys.com
-                  </td>
-                </tr>
-
-                <!-- Row 7 -->
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-3">
-                      <button
-                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
-                      >
-                        <i class="ph ph-pencil-simple"></i>
-                      </button>
-                      <label
-                        class="relative inline-flex items-center cursor-pointer"
-                      >
-                        <input type="checkbox" value="" class="sr-only peer" />
-                        <div
-                          class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
-                        ></div>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4">
-                    <a
-                      href="#"
-                      class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Kajal kurmi</a
-                    >
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">9285048913</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    Contact Discovery Team
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    kajal.kurmi@cylsys.com
-                  </td>
-                </tr>
-
-                <!-- Row 8 -->
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-3">
-                      <button
-                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
-                      >
-                        <i class="ph ph-pencil-simple"></i>
-                      </button>
-                      <label
-                        class="relative inline-flex items-center cursor-pointer"
-                      >
-                        <input
-                          type="checkbox"
-                          value=""
-                          class="sr-only peer"
-                          checked
-                        />
-                        <div
-                          class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
-                        ></div>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4">
-                    <a
-                      href="#"
-                      class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >preeti shrivas</a
-                    >
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8305601608</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    Contact Discovery Team
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    preeti.shrivas@cylsys.com
-                  </td>
-                </tr>
-
-                <!-- Row 9 -->
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-3">
-                      <button
-                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
-                      >
-                        <i class="ph ph-pencil-simple"></i>
-                      </button>
-                      <label
-                        class="relative inline-flex items-center cursor-pointer"
-                      >
-                        <input type="checkbox" value="" class="sr-only peer" />
-                        <div
-                          class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
-                        ></div>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4">
-                    <a
-                      href="#"
-                      class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Mona soni</a
-                    >
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">8878170096</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    Contact Discovery Team
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    mona.soni@cylsys.com
-                  </td>
-                </tr>
-
-                <!-- Row 10 -->
-                <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="py-3 px-4">
-                    <div class="flex items-center gap-3">
-                      <button
-                        class="text-[#E60002] hover:text-[#E60002]/80 p-1 border border-red-200 rounded hover:bg-red-50"
-                      >
-                        <i class="ph ph-pencil-simple"></i>
-                      </button>
-                      <label
-                        class="relative inline-flex items-center cursor-pointer"
-                      >
-                        <input type="checkbox" value="" class="sr-only peer" />
-                        <div
-                          class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
-                        ></div>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="py-3 px-4">
-                    <a
-                      href="#"
-                      class="font-medium text-gray-900 hover:text-[#E60002] transition-colors"
-                      >Rakesh Gupta</a
-                    >
-                  </td>
-                  <td class="py-3 px-4 text-sm text-gray-600"></td>
-                  <td class="py-3 px-4 text-sm text-gray-600">Sr.BDM</td>
-                  <td class="py-3 px-4 text-sm text-gray-600">
-                    Rakesh.Gupta@cylsys.com
-                  </td>
+                  <td class="py-3 px-4 text-gray-600">Admin</td>
                 </tr>
               </tbody>
             </table>
@@ -537,23 +329,13 @@
                   ></i>
                 </div>
               </div>
-              <span>1-10 of 22</span>
+              <span>1-5 of 5</span>
             </div>
             <div class="flex items-center gap-1.5">
               <button
                 class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200"
               >
                 1
-              </button>
-              <button
-                class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors"
-              >
-                2
-              </button>
-              <button
-                class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors"
-              >
-                3
               </button>
               <button
                 class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors"

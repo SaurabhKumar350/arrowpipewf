@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Role - Arrow Pipes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* Custom Checkbox Style */
+      .custom-checkbox {
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 1px solid #d1d5db;
+        border-radius: 0.25em;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+      }
+
+      .custom-checkbox::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em white;
+        background-color: white;
+        transform-origin: center;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+      .custom-checkbox:checked {
+        background-color: #007bff; /* Blue as per screenshot reference, or use theme red? */
+        border-color: #007bff;
+      }
+      
+      /* Matching the theme red for consistency if preferred, but screenshot shows blue checks. 
+         I will use the theme red #E60002 for consistency with the rest of the app request, 
+         unless user strictly wants to match the screenshot's blue checks. 
+         The user said "make sure it match the theme". So I will use Red.
+      */
+      .custom-checkbox:checked {
+        background-color: #E60002;
+        border-color: #E60002;
+      }
+
+      .custom-checkbox:checked::before {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <!-- Header -->
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300 p-6">
+          <h2 class="text-xl font-bold text-gray-900 mb-6">Enter Roles Privileges Information</h2>
+          
+          <form>
+            <!-- Create System Role Section -->
+            <div class="mb-8">
+              <h3 class="text-sm font-bold text-gray-900 mb-4 uppercase">Create System Role</h3>
+              <div class="space-y-4">
+                <!-- Role Name -->
+                <div class="flex flex-col gap-1.5">
+                  <label for="roleName" class="text-xs font-bold text-gray-700">Role Name <span class="text-red-500">*</span></label>
+                  <input type="text" id="roleName" placeholder="Role Name" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]" required>
+                </div>
+
+                <!-- Role Description -->
+                <div class="flex flex-col gap-1.5">
+                  <label for="roleDescription" class="text-xs font-bold text-gray-700">Role Description</label>
+                  <textarea id="roleDescription" rows="3" placeholder="Role Description" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] resize-y"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Assign Rights Section -->
+            <div class="mb-8">
+              <h3 class="text-sm font-bold text-gray-900 mb-4 uppercase">Assign Rights</h3>
+              
+              <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <!-- Group 1: Full Access / Assigned Records -->
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="bg-gray-50 border-b border-gray-200">
+                      <th class="py-3 px-4 w-1/3"></th>
+                      <th class="py-3 px-4 text-xs font-bold text-gray-700 text-center w-1/3">Full Access</th>
+                      <th class="py-3 px-4 text-xs font-bold text-gray-700 text-center w-1/3">Assigned Records</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <!-- Rows -->
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Client</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">ClientPOC</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Lead</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Deal</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">User Management</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Group 2: Allowed / Not Allowed -->
+                <table class="w-full text-left border-collapse border-t border-gray-200">
+                  <thead>
+                    <tr class="bg-gray-50 border-b border-gray-200">
+                      <th class="py-3 px-4 w-1/3"></th>
+                      <th class="py-3 px-4 text-xs font-bold text-gray-700 text-center w-1/3">Allowed</th>
+                      <th class="py-3 px-4 text-xs font-bold text-gray-700 text-center w-1/3">Not Allowed</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    <!-- Rows -->
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Email Configuration</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Roles</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Templates</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Lead Configuration</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Deal Configuration</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Client Configuration</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Client POC Configuration</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Drop Down Master</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Company Information</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Partners</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Contact</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Meetings</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Approval</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Mail workflow</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Token Integration</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Target Incentive</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                      <td class="py-3 px-4 text-xs font-bold text-gray-900">Partners Configuration</td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto"></td>
+                      <td class="py-3 px-4 text-center"><input type="checkbox" class="custom-checkbox mx-auto" checked></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-3 mt-8">
+              <button type="button" class="px-6 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors shadow-sm">
+                Save
+              </button>
+              <button type="button" class="px-6 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors shadow-sm">
+                Save and New
+              </button>
+               <a href="roles-privileges.html" class="px-6 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm font-medium rounded-md transition-colors text-center">
+                Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Simple logic to toggle checkboxes like radio buttons in each row if needed
+      // For now, leaving them as independent checkboxes as per image appearance
+      // If "Allowed" vs "Not Allowed" is mutually exclusive, we can add JS logic.
+      
+      const rows = document.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const checkboxes = row.querySelectorAll('input[type="checkbox"]');
+        if (checkboxes.length === 2) {
+          checkboxes.forEach((cb, index) => {
+            cb.addEventListener('change', () => {
+              if (cb.checked) {
+                // If this one is checked, uncheck the other one
+                checkboxes[index === 0 ? 1 : 0].checked = false;
+              } else {
+                 // If this one is unchecked, check the other one (enforce one selection)
+                 checkboxes[index === 0 ? 1 : 0].checked = true;
+              }
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
