@@ -1,20 +1,13 @@
 <nav class="flex-1 px-2 py-4 space-y-1">
-  <!-- Enquiry Module (Active) -->
-  <div>
-    <a
-      href="#"
-      class="submenu-toggle group flex items-center justify-between px-3 py-2.5 text-[16px] font-medium bg-[#E60002] text-white rounded-md shadow-sm transition-all"
-    >
+  <!-- Enquiry Module (Accordion) -->
+  <details class="group sidebar-accordion" open>
+    <summary class="flex items-center justify-between px-3 py-2.5 text-[16px] font-medium text-gray-500 rounded-md cursor-pointer transition-all group-open:bg-[#E60002] group-open:text-white">
       <div class="flex items-center gap-3">
-        <!-- <i class="ph ph-clipboard-text text-xl text-white/90"></i> -->
         <img src="assets/images/enquiry.svg" alt="logo" class="w-6 h-6">
         <span>Enquiry Module</span>
       </div>
-      <i
-        class="chevron-icon ph ph-caret-up text-white/90 transition-transform duration-200 border border-white border-[2px] rounded-md ph-bold p-1"
-      ></i>
-    </a>
-    <!-- Submenu -->
+      <i class="ph ph-caret-down transition-transform duration-200 border border-white border-[2px] rounded-md ph-bold p-1 group-open:rotate-180 group-open:text-white"></i>
+    </summary>
     <div class="mt-1 pl-3.5 ml-3 border-l-2 border-gray-100 space-y-0.5">
       <a
         href="enquiries.html"
@@ -34,14 +27,8 @@
       >
         Reports
       </a>
-      <!-- <a
-        href="#"
-        class="block px-3 py-2 text-[16px] font-medium text-gray-400 hover:text-[#E60002] hover:bg-red-50 rounded-r-md transition-colors relative before:absolute before:-left-[19px] before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-px before:bg-gray-100"
-      >
-        Document Repository 
-      </a> -->
     </div>
-  </div>
+  </details>
   <!-- Global Inventory Setup -->
   <a
     href="#"
@@ -127,21 +114,16 @@
     ></i>
   </a>
 
-  <!-- Report Module -->
-  <div>
-    <a
-      href="#"
-      class="submenu-toggle group flex items-center justify-between px-3 py-2.5 text-[16px] font-medium text-gray-500 rounded-md transition-all"
-    >
+  <!-- Report Module (Accordion) -->
+  <details class="group sidebar-accordion">
+    <summary class="flex items-center justify-between px-3 py-2.5 text-[16px] font-medium text-gray-500 rounded-md transition-all group-open:bg-[#E60002] group-open:text-white cursor-pointer">
       <div class="flex items-center gap-3">
         <img src="assets/images/doc.svg" alt="logo" class="w-6 h-6">
         <span>Report Module</span>
       </div>
-      <i
-        class="chevron-icon ph ph-caret-down text-gray-400 group-hover:text-gray-500 transition-transform duration-200 border border-white border-[2px] rounded-md ph-bold p-1"
-      ></i>
-    </a>
-    <div class="mt-1 pl-3.5 ml-3 border-l-2 border-gray-100 space-y-0.5 hidden">
+      <i class="ph ph-caret-down text-gray-400 transition-transform duration-200 border border-white border-[2px] rounded-md ph-bold p-1 group-open:rotate-180 group-open:text-white"></i>
+    </summary>
+    <div class="mt-1 pl-3.5 ml-3 border-l-2 border-gray-100 space-y-0.5">
       <a
         href="#"
         class="block px-3 py-2 text-[16px] font-medium text-gray-400 hover:text-[#E60002] hover:bg-red-50 rounded-r-md transition-colors relative before:absolute before:-left-[19px] before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-px before:bg-gray-100"
@@ -179,5 +161,5 @@
         Conversion Rate Analytics
       </a>
     </div>
-  </div>
+  </details>
 </nav>

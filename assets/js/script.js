@@ -71,6 +71,20 @@ document.addEventListener("includes-loaded", () => {
     });
   });
 
+  // Details-based Accordion (Tailwind)
+  const detailsAccordions = document.querySelectorAll("details.sidebar-accordion");
+  if (detailsAccordions.length > 0) {
+    detailsAccordions.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (item.open) {
+          detailsAccordions.forEach((other) => {
+            if (other !== item) other.open = false;
+          });
+        }
+      });
+    });
+  }
+
   // User Profile Dropdown Toggle
   const userMenuButton = document.getElementById("user-menu-button");
   const userMenuDropdown = document.getElementById("user-menu-dropdown");
