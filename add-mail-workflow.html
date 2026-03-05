@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Mail Workflow - Arrow Pipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800 overflow-x-hidden">
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300 overflow-x-hidden"
+      >
+        <div class="flex items-center gap-3 mb-4 px-1 md:px-0">
+          <a
+            href="mail-workflow.html"
+            class="w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors"
+            aria-label="Back to Mail Workflow"
+            title="Back"
+          >
+            <i class="ph ph-arrow-left"></i>
+          </a>
+          <h1 class="text-lg font-bold text-gray-900">Work Flow</h1>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5 md:p-6">
+          <form>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-10">
+              <div class="space-y-4">
+                <div class="flex flex-col gap-1.5">
+                  <label for="workflow-name" class="text-sm font-medium text-gray-700">Work Flow Name</label>
+                  <input
+                    type="text"
+                    id="workflow-name"
+                    placeholder="Work Flow Name"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="vertical" class="text-sm font-medium text-gray-700">Vertical</label>
+                  <div class="relative">
+                    <select
+                      id="vertical"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500"
+                    >
+                      <option value="" disabled selected>Select Vertical</option>
+                      <option>Mobile Application</option>
+                      <option>Software Development</option>
+                      <option>Digital Marketing</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                      <i class="ph-bold ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="email-subject" class="text-sm font-medium text-gray-700">Email Subject</label>
+                  <input
+                    type="text"
+                    id="email-subject"
+                    placeholder="e.g email subject"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="mailbox" class="text-sm font-medium text-gray-700">Mail Box</label>
+                  <div class="relative">
+                    <select
+                      id="mailbox"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500"
+                    >
+                      <option value="" disabled selected>select Mail Box</option>
+                      <option>sales@cylsys.com</option>
+                      <option>support@cylsys.com</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                      <i class="ph-bold ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="mailbox-bcc" class="text-sm font-medium text-gray-700">Mail Box BCC</label>
+                  <input
+                    type="text"
+                    id="mailbox-bcc"
+                    placeholder="Mail Box BCC"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+
+                <div class="flex items-center justify-between gap-4 pt-2">
+                  <label class="flex items-center gap-2 text-sm font-medium text-gray-700" for="customer-not-replied">
+                    Customer Not Replied To The Mail
+                    <input
+                      type="checkbox"
+                      id="customer-not-replied"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </label>
+                  <div class="w-56 relative">
+                    <select
+                      id="new-mail-status-not-replied"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500"
+                    >
+                      <option value="" disabled selected>New Mail Status</option>
+                      <option>Not Sent Yet</option>
+                      <option>Follow-up Pending</option>
+                      <option>Closed</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                      <i class="ph-bold ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-10 pt-8">
+                  <div class="flex items-center gap-3">
+                    <span class="text-sm font-medium text-gray-700">Work Flow Action</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" class="sr-only peer" checked />
+                      <div
+                        class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
+                      ></div>
+                    </label>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-sm font-medium text-gray-700">Track Email</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" class="sr-only peer" />
+                      <div
+                        class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#E60002]"
+                      ></div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 pt-6">
+                  <button
+                    type="submit"
+                    class="px-6 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                  >
+                    Add
+                  </button>
+                  <button
+                    type="button"
+                    class="px-6 py-2 bg-[#E60002] hover:bg-[#E60002]/90 text-white text-sm font-medium rounded-md transition-colors"
+                  >
+                    Save and New
+                  </button>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="flex flex-col gap-1.5">
+                  <label for="lead-stage" class="text-sm font-medium text-gray-700">Lead Stage</label>
+                  <div class="relative">
+                    <select
+                      id="lead-stage"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500"
+                    >
+                      <option value="" disabled selected>Select Lead Stage</option>
+                      <option>New</option>
+                      <option>Qualified</option>
+                      <option>Proposal</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                      <i class="ph-bold ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="template" class="text-sm font-medium text-gray-700">Template</label>
+                  <div class="relative">
+                    <select
+                      id="template"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500"
+                    >
+                      <option value="" disabled selected>select Template</option>
+                      <option>Company Profile</option>
+                      <option>Brochure</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                      <i class="ph-bold ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="mail-action" class="text-sm font-medium text-gray-700">Mail Action</label>
+                  <div class="relative">
+                    <select
+                      id="mail-action"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500"
+                    >
+                      <option value="" disabled selected>Select Mail Action</option>
+                      <option>Company Profile sent</option>
+                      <option>Follow-up sent</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                      <i class="ph-bold ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                  <label for="mailbox-cc" class="text-sm font-medium text-gray-700">Mail Box CC</label>
+                  <input
+                    type="text"
+                    id="mailbox-cc"
+                    placeholder="Mail Box CC"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+
+                <div class="flex items-center justify-between gap-4 pt-2">
+                  <label class="flex items-center gap-2 text-sm font-medium text-gray-700" for="customer-replied">
+                    Customer Replied To The Mail
+                    <input
+                      type="checkbox"
+                      id="customer-replied"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </label>
+                  <div class="w-56 relative">
+                    <select
+                      id="new-mail-status-replied"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002] appearance-none bg-white text-gray-500"
+                    >
+                      <option value="" disabled selected>Select New Mail Status</option>
+                      <option>Company Profile sent</option>
+                      <option>Reply Received</option>
+                      <option>Closed</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                      <i class="ph-bold ph-caret-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                  <div class="flex flex-col gap-1.5">
+                    <label for="interval-days" class="text-sm font-medium text-gray-700">Interval in days</label>
+                    <input
+                      type="number"
+                      id="interval-days"
+                      placeholder="Interval in days"
+                      class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                    />
+                  </div>
+
+                  <div class="flex items-center gap-2 pt-7">
+                    <label for="shoot-when-info-entered" class="text-xs font-medium text-gray-700 leading-tight">
+                      Mail Shoot When Customer Information Enter
+                    </label>
+                    <input
+                      type="checkbox"
+                      id="shoot-when-info-entered"
+                      class="h-4 w-4 rounded border-gray-300 accent-[#E60002]"
+                    />
+                  </div>
+
+                  <div class="flex flex-col gap-1.5">
+                    <label for="custom-time" class="text-sm font-medium text-gray-700">Custom</label>
+                    <div class="relative">
+                      <input
+                        type="time"
+                        id="custom-time"
+                        class="w-full px-3 py-2 pr-10 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                      />
+                      <i class="ph ph-clock absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
