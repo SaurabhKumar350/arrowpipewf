@@ -42,15 +42,30 @@ document.addEventListener("includes-loaded", () => {
 
       const submenu = toggle.nextElementSibling;
       const chevron = toggle.querySelector(".chevron-icon");
-
-      // Toggle active state styling on the parent item
-      toggle.classList.toggle("bg-red-50");
-      toggle.classList.toggle("text-red-600");
+      const willOpen = submenu && submenu.classList.contains("hidden");
 
       if (submenu) {
         submenu.classList.toggle("hidden");
         if (chevron) {
           chevron.classList.toggle("rotate-180");
+        }
+      }
+
+      // Apply consistent active colors (match Enquiry style) only for non-initially-active toggles
+      const isInitiallyActive = toggle.classList.contains("bg-[#E60002]") && toggle.classList.contains("text-white");
+      if (!isInitiallyActive) {
+        if (willOpen) {
+          toggle.classList.add("bg-[#E60002]", "text-white");
+          if (chevron) {
+            chevron.classList.add("text-white", "border-white");
+            chevron.classList.remove("text-gray-400", "group-hover:text-gray-500");
+          }
+        } else {
+          toggle.classList.remove("bg-[#E60002]", "text-white");
+          if (chevron) {
+            chevron.classList.remove("text-white");
+            chevron.classList.add("text-gray-400", "group-hover:text-gray-500");
+          }
         }
       }
     });
