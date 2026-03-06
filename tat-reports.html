@@ -154,22 +154,32 @@
               </tr>
             </tbody>
           </table>
-          <div class="flex items-center justify-between px-6 py-4 border-t border-gray-200 bg-white">
-            <div class="flex items-center gap-4 text-sm text-gray-700">
+          <div class="px-6 py-4 bg-white border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-6 text-[13px] text-gray-500 font-medium">
               <div class="flex items-center gap-2">
                 <span>Rows per page:</span>
-                <select class="border-gray-200 rounded text-sm focus:ring-red-500 focus:border-red-500 bg-transparent py-1 pl-2 pr-8 cursor-pointer hover:bg-gray-50">
-                  <option>10</option>
-                  <option>25</option>
-                  <option>50</option>
-                </select>
+                <div class="relative">
+                  <select class="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-3 py-1 pr-8 focus:outline-none focus:ring-1 focus:ring-red-500 cursor-pointer text-gray-900 font-bold text-xs">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                  </select>
+                  <i class="ph ph-caret-down absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-[10px]"></i>
+                </div>
               </div>
               <span>1-10 of 28</span>
             </div>
-            <div class="flex items-center gap-1">
-              <button class="w-8 h-8 flex items-center justify-center rounded bg-gray-400 text-white cursor-not-allowed text-xs font-bold">1</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-medium">2</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-medium">3</button>
+            <div class="flex items-center gap-1.5">
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E60004] text-white font-bold text-xs shadow-sm shadow-red-200">1</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">2</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">3</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-semibold transition-colors">4</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-right font-bold"></i>
+              </button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
+                <i class="ph ph-caret-double-right font-bold"></i>
+              </button>
             </div>
           </div>
         </div>

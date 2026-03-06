@@ -9,6 +9,10 @@ body {
     font-family: 'Archivo', 'Inter', sans-serif;
 }
 
+select.appearance-none {
+    background-image: none !important;
+}
+
 /* Custom scrollbar for sidebar */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
