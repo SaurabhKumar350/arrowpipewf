@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Pipes - Summary Reports</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-3 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300 flex flex-col gap-4 overflow-x-hidden"
+      >
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg md:text-xl font-bold text-gray-800">Summary Reports</h1>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="relative">
+              <i class="ph ph-calendar-blank absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+              <input type="date" class="w-36 pl-9 pr-3 py-2 bg-[#F9FAFB] border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-red-500" />
+            </div>
+            <span class="text-gray-500 text-sm">to</span>
+            <div class="relative">
+              <i class="ph ph-calendar-blank absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+              <input type="date" class="w-36 pl-9 pr-3 py-2 bg-[#F9FAFB] border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-red-500" />
+            </div>
+            <select class="w-40 py-2 bg-[#F9FAFB] border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-red-500">
+              <option value="overall">Overall</option>
+              <option value="sales">Sales</option>
+              <option value="enquiries">Enquiries</option>
+            </select>
+            <div class="relative">
+              <button
+                data-dropdown-toggle="report-download-dropdown"
+                class="flex items-center gap-2 px-3 h-10 text-gray-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <i class="ph ph-download-simple text-lg"></i>
+                <span class="text-sm">Export</span>
+                <i class="ph ph-caret-down text-xs"></i>
+              </button>
+              <div
+                id="report-download-dropdown"
+                class="dropdown-menu absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-1 hidden z-30"
+              >
+                <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+                  <i class="ph ph-file-pdf text-lg text-red-500"></i>
+                  PDF
+                </a>
+                <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+                  <i class="ph ph-file-csv text-lg text-green-600"></i>
+                  CSV
+                </a>
+                <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+                  <i class="ph ph-microsoft-excel-logo text-lg text-green-600"></i>
+                  Excel
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Total Revenue</span>
+              <i class="ph ph-currency-inr text-gray-400"></i>
+            </div>
+            <div class="text-2xl font-bold text-gray-900">₹ 12.4M</div>
+            <div class="text-xs text-green-600 font-medium">+3.8%</div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Orders</span>
+              <i class="ph ph-shopping-cart text-gray-400"></i>
+            </div>
+            <div class="text-2xl font-bold text-gray-900">1,142</div>
+            <div class="text-xs text-green-600 font-medium">+2.1%</div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Enquiries</span>
+              <i class="ph ph-list-magnifying-glass text-gray-400"></i>
+            </div>
+            <div class="text-2xl font-bold text-gray-900">2,476</div>
+            <div class="text-xs text-green-600 font-medium">+5.1%</div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Conversion</span>
+              <i class="ph ph-trend-up text-gray-400"></i>
+            </div>
+            <div class="text-2xl font-bold text-gray-900">28.4%</div>
+            <div class="text-xs text-green-600 font-medium">+0.5%</div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+            <div class="text-sm font-semibold text-gray-800">Overview</div>
+            <div class="flex items-center gap-2">
+              <div class="relative w-64">
+                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+                <input type="text" placeholder="Search KPIs" class="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-red-500 placeholder-gray-400">
+              </div>
+              <select class="py-2 bg-white border border-gray-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-red-500">
+                <option>All</option>
+                <option>Sales</option>
+                <option>Ops</option>
+              </select>
+            </div>
+          </div>
+          <table class="min-w-full bg-white">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500">Metric</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500">Value</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500">Change</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500">Note</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 text-sm text-gray-900">Avg Order Value</td>
+                <td class="px-6 py-4 text-sm text-gray-700">₹ 28,600</td>
+                <td class="px-6 py-4 text-sm text-green-700 font-medium">+2.4%</td>
+                <td class="px-6 py-4 text-sm text-gray-700">Steady growth</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-sm text-gray-900">Repeat Rate</td>
+                <td class="px-6 py-4 text-sm text-gray-700">47%</td>
+                <td class="px-6 py-4 text-sm text-green-700 font-medium">+1.1%</td>
+                <td class="px-6 py-4 text-sm text-gray-700">Improving retention</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="flex items-center justify-between px-6 py-4 border-t border-gray-200 bg-white">
+            <div class="flex items-center gap-4 text-sm text-gray-700">
+              <div class="flex items-center gap-2">
+                <span>Rows per page:</span>
+                <select class="border-gray-200 rounded text-sm focus:ring-red-500 focus:border-red-500 bg-transparent py-1 pl-2 pr-8 cursor-pointer hover:bg-gray-50">
+                  <option>10</option>
+                  <option>25</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <span>1-10 of 64</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <button class="w-8 h-8 flex items-center justify-center rounded bg-gray-400 text-white cursor-not-allowed text-xs font-bold">1</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-medium">2</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-medium">3</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
