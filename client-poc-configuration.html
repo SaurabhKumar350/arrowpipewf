@@ -129,7 +129,7 @@
                         tabindex="0"
                         class="zone rounded-xl border border-dashed border-gray-300 bg-white p-3 min-h-[168px] focus:outline-none focus:ring-2 focus:ring-[#E60002]/30"
                       >
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" data-zone-grid="other"></div>
+                        <div class="grid grid-cols-1 gap-3" data-zone-grid="other"></div>
                         <div class="empty-hint mt-2 text-xs text-gray-500 hidden" data-empty="other">
                           Drop fields here
                         </div>
@@ -198,7 +198,7 @@
     <script src="assets/js/script.js"></script>
     <script>
       (function () {
-        const STORAGE_KEY = "client_poc_configuration_v1";
+        const STORAGE_KEY = "client_poc_configuration_v2";
         const zones = ["mandatory", "other"];
 
         const paletteTemplates = [
@@ -225,39 +225,15 @@
         const defaultConfig = {
           formName: "Client POC",
           mandatory: [
-            { id: cryptoId(), type: "text", label: "Lead Name", required: true },
-            { id: cryptoId(), type: "text", label: "Lead Mobile", required: false },
-            { id: cryptoId(), type: "text", label: "Lead Email", required: false },
-            { id: cryptoId(), type: "vertical", label: "Lead Vertical", required: true },
-            { id: cryptoId(), type: "lead_source", label: "Lead Source", required: true }
+            { id: cryptoId(), type: "text", label: "Client Name", required: true },
+            { id: cryptoId(), type: "text", label: "POC Name", required: true },
+            { id: cryptoId(), type: "text", label: "Email", required: true },
+            { id: cryptoId(), type: "text", label: "Contact Number", required: true }
           ],
           other: [
-            { id: cryptoId(), type: "text", label: "Linked In Profile", required: false },
-            { id: cryptoId(), type: "text", label: "Company Name", required: false },
-            { id: cryptoId(), type: "dropdown", label: "Company Sector", required: true },
-            { id: cryptoId(), type: "text", label: "Company Head Office Location", required: true },
-            { id: cryptoId(), type: "dropdown", label: "Company Employees Size", required: true },
-            { id: cryptoId(), type: "text", label: "Company Revenue", required: true },
-            { id: cryptoId(), type: "text", label: "Company Website URL", required: true },
-            { id: cryptoId(), type: "textarea", label: "Company works in", required: true },
+            { id: cryptoId(), type: "text", label: "Department", required: false },
             { id: cryptoId(), type: "text", label: "Designation", required: false },
-            { id: cryptoId(), type: "country", label: "Country", required: false },
-            { id: cryptoId(), type: "state", label: "State", required: false },
-            { id: cryptoId(), type: "city", label: "City", required: false },
-            { id: cryptoId(), type: "date", label: "Date of Birth of client", required: false },
-            { id: cryptoId(), type: "text", label: "whats app Number", required: false },
-            { id: cryptoId(), type: "dropdown", label: "Messenger", required: false },
-            { id: cryptoId(), type: "text", label: "Messenger ID", required: false },
-            { id: cryptoId(), type: "textarea", label: "Comments/Remark", required: true },
-            { id: cryptoId(), type: "header", label: "To be filled only when reference is given", required: false },
-            { id: cryptoId(), type: "text", label: "Name", required: false },
-            { id: cryptoId(), type: "text", label: "R_Mobile No", required: false },
-            { id: cryptoId(), type: "text", label: "R_Email ID", required: false },
-            { id: cryptoId(), type: "text", label: "R_Designation", required: false },
-            { id: cryptoId(), type: "text", label: "R_Location", required: false },
-            { id: cryptoId(), type: "header", label: "Appointments", required: false },
-            { id: cryptoId(), type: "date", label: "Date", required: false },
-            { id: cryptoId(), type: "time", label: "Time", required: false }
+            { id: cryptoId(), type: "date", label: "Client Birthday", required: false }
           ]
         };
 

@@ -145,7 +145,7 @@
                         tabindex="0"
                         class="zone rounded-xl border border-dashed border-gray-300 bg-white p-3 min-h-[168px] focus:outline-none focus:ring-2 focus:ring-[#E60002]/30"
                       >
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" data-zone-grid="other"></div>
+                        <div class="grid grid-cols-1 gap-3" data-zone-grid="other"></div>
                         <div class="empty-hint mt-2 text-xs text-gray-500 hidden" data-empty="other">
                           Drop fields here
                         </div>
@@ -214,7 +214,7 @@
     <script src="assets/js/script.js"></script>
     <script>
       (function () {
-        const STORAGE_KEY = "lead_configuration_v1";
+        const STORAGE_KEY = "lead_configuration_v2";
         const zones = ["mandatory", "other"];
 
         const paletteTemplates = [
@@ -248,7 +248,8 @@
             { id: cryptoId(), type: "lead_source", label: "Lead Source", required: true }
           ],
           other: [
-            { id: cryptoId(), type: "text", label: "Linked In Profile", required: false },
+            { id: cryptoId(), type: "text", label: "Lead Email 2", required: false },
+            { id: cryptoId(), type: "dropdown", label: "Linked In Profile", required: false },
             { id: cryptoId(), type: "text", label: "Company Name", required: false },
             { id: cryptoId(), type: "dropdown", label: "Company Sector", required: true },
             { id: cryptoId(), type: "text", label: "Company Head Office Location", required: true },
@@ -582,12 +583,16 @@
             return `<textarea rows="2" class="${base}" placeholder=""></textarea>`;
           }
           if (field.type === "dropdown" || isListType(field.type)) {
+            const options = selectOptionsFor(field);
             return `
               <div class="relative">
                 <select class="${base} appearance-none pr-9">
-                  <option selected>${escapeHtml(placeholderFor(field.type))}</option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
+                  ${options
+                    .map(
+                      (option, index) =>
+                        `<option ${index === 0 ? "selected" : ""}>${escapeHtml(option)}</option>`
+                    )
+                    .join("")}
                 </select>
                 <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
               </div>
@@ -780,6 +785,18 @@
           if (type === "vertical") return "Select Vertical";
           if (type === "lead_source") return "Select Lead Source";
           return "Select";
+        }
+
+        function selectOptionsFor(field) {
+          const label = String(field.label || "").trim().toLowerCase();
+          if (label === "linked in profile") return ["Ashish", "Rohit", "Neha"];
+          if (label === "company sector") return ["Banks", "IT", "Manufacturing"];
+          if (label === "company employees size") return ["1-10", "11-50", "51-200"];
+          if (label === "messenger") return ["Skype", "WhatsApp", "Telegram"];
+          if (field.type === "country") return ["Country List", "India", "USA"];
+          if (field.type === "state") return ["State List", "Maharashtra", "Delhi"];
+          if (field.type === "city") return ["City List", "Mumbai", "Pune"];
+          return [placeholderFor(field.type), "Option 1", "Option 2"];
         }
 
         function escapeHtml(str) {
