@@ -88,10 +88,13 @@ document.addEventListener("includes-loaded", () => {
   // User Profile Dropdown Toggle
   const userMenuButton = document.getElementById("user-menu-button");
   const userMenuDropdown = document.getElementById("user-menu-dropdown");
+  const notificationButton = document.getElementById("notification-button");
+  const notificationDropdown = document.getElementById("notification-dropdown");
 
   if (userMenuButton && userMenuDropdown) {
     userMenuButton.addEventListener("click", (e) => {
       e.stopPropagation();
+      if (notificationDropdown) notificationDropdown.classList.add("hidden");
       userMenuDropdown.classList.toggle("hidden");
     });
 
@@ -99,6 +102,20 @@ document.addEventListener("includes-loaded", () => {
     document.addEventListener("click", (e) => {
       if (!userMenuButton.contains(e.target) && !userMenuDropdown.contains(e.target)) {
         userMenuDropdown.classList.add("hidden");
+      }
+    });
+  }
+
+  if (notificationButton && notificationDropdown) {
+    notificationButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (userMenuDropdown) userMenuDropdown.classList.add("hidden");
+      notificationDropdown.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!notificationButton.contains(e.target) && !notificationDropdown.contains(e.target)) {
+        notificationDropdown.classList.add("hidden");
       }
     });
   }
