@@ -158,6 +158,13 @@
               Enquiry Information
             </button>
             <button
+              id="tab-new-enquiry"
+              onclick="switchTab('new-enquiry')"
+              class="pb-3 text-sm font-bold text-gray-500 hover:text-gray-700 whitespace-nowrap"
+            >
+              New Enquiry Details
+            </button>
+            <button
               id="tab-ai-suit"
               onclick="switchTab('ai-suit')"
               class="pb-3 text-sm font-bold text-gray-500 hover:text-gray-700 whitespace-nowrap"
@@ -538,6 +545,164 @@
           </div>
         </div>
 
+        <div
+          id="tab-content-new-enquiry"
+          class="hidden flex flex-col gap-4 p-4 md:p-4"
+        >
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex items-center gap-2 mb-6">
+              <img src="assets/images/avatar-blue.svg" alt="Customer Avatar" class="w-5 h-5">
+              <h2 class="text-sm font-bold text-gray-900">Customer Information</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Customer Name *</label>
+                <input type="text" placeholder="Enter customer name" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors" value="Haifae Ben Khadra">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Company Name *</label>
+                <input type="text" placeholder="Enter company name" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors" value="SLB">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Email Address *</label>
+                <input type="email" placeholder="Enter email" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors" value="HKhadra@slb.com">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Phone Number *</label>
+                <input type="tel" placeholder="Enter phone" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">GST Number</label>
+                <input type="text" placeholder="Enter GST number" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Customer Type</label>
+                <select class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs text-gray-700 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+                  <option>New Customer</option>
+                  <option>Existing Customer</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">Billing Address</label>
+              <textarea rows="3" placeholder="Enter billing address" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors resize-none"></textarea>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2">
+                <img src="assets/images/product-requirment.svg" alt="Product Avatar" class="w-5 h-5">
+                <h2 class="text-sm font-bold text-gray-900">Product Requirements</h2>
+              </div>
+              <button class="flex items-center gap-1 bg-[#EF3826] text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-[#D92D20] transition-colors">
+                <i class="ph ph-plus"></i>
+                Add Row
+              </button>
+            </div>
+
+            <div class="overflow-x-auto custom-scrollbar">
+              <table class="w-full min-w-[800px]">
+                <thead>
+                  <tr class="border-b border-gray-100">
+                    <th class="text-left text-[10px] uppercase font-medium text-gray-500 pb-3 w-[20%]">SKU / Product</th>
+                    <th class="text-left text-[10px] uppercase font-medium text-gray-500 pb-3 w-[12%]">Grade</th>
+                    <th class="text-left text-[10px] uppercase font-medium text-gray-500 pb-3 w-[12%]">Size</th>
+                    <th class="text-left text-[10px] uppercase font-medium text-gray-500 pb-3 w-[12%]">Thickness</th>
+                    <th class="text-left text-[10px] uppercase font-medium text-gray-500 pb-3 w-[12%]">Quantity</th>
+                    <th class="text-left text-[10px] uppercase font-medium text-gray-500 pb-3 w-[8%]">Unit</th>
+                    <th class="text-left text-[10px] uppercase font-medium text-gray-500 pb-3 w-[16%]">Delivery Date</th>
+                    <th class="text-center text-[10px] uppercase font-medium text-gray-500 pb-3 w-[8%]">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                  <tr class="group">
+                    <td class="py-3 pr-2">
+                      <input type="text" placeholder="Enter SKU" class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:border-red-500 transition-colors">
+                    </td>
+                    <td class="py-3 pr-2">
+                      <select class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs text-gray-700 focus:outline-none focus:border-red-500">
+                        <option>Select...</option>
+                        <option>Grade A</option>
+                        <option>Grade B</option>
+                      </select>
+                    </td>
+                    <td class="py-3 pr-2">
+                      <input type="text" placeholder="Size" class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:border-red-500 transition-colors">
+                    </td>
+                    <td class="py-3 pr-2">
+                      <input type="text" placeholder="Thickness" class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:border-red-500 transition-colors">
+                    </td>
+                    <td class="py-3 pr-2">
+                      <input type="number" placeholder="Qty" class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:border-red-500 transition-colors">
+                    </td>
+                    <td class="py-3 pr-2">
+                      <select class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs text-gray-700 focus:outline-none focus:border-red-500">
+                        <option>T...</option>
+                        <option>Kg</option>
+                        <option>M</option>
+                      </select>
+                    </td>
+                    <td class="py-3 pr-2">
+                      <div class="relative">
+                        <input type="text" placeholder="mm/dd/yyyy" class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:border-red-500 transition-colors pr-8">
+                        <i class="ph ph-calendar-blank absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                      </div>
+                    </td>
+                    <td class="py-3 text-center">
+                      <button class="text-red-500 hover:text-red-700 transition-colors p-1 rounded hover:bg-red-50">
+                        <i class="ph-fill ph-trash text-base"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div class="flex items-center gap-2 mb-6">
+              <img src="assets/images/enquiry-details.svg" alt="Enquiry Avatar" class="w-5 h-5">
+              <h2 class="text-sm font-bold text-gray-900">Enquiry Details</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Enquiry Title *</label>
+                <input type="text" placeholder="Enter enquiry title" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Project Name</label>
+                <input type="text" placeholder="Enter project name" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Expected Order Value</label>
+                <input type="text" placeholder="Enter amount" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Expected Closing Date</label>
+                <div class="relative">
+                  <input type="text" placeholder="mm/dd/yyyy" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors pr-8">
+                  <i class="ph ph-calendar-blank absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">Enquiry Description</label>
+              <textarea rows="4" placeholder="Enter detailed enquiry description" class="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-xs placeholder-gray-400 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors resize-none"></textarea>
+            </div>
+          </div>
+        </div>
+
         <!-- Tab Content: AI Generated Suit -->
         <div
           id="tab-content-ai-suit"
@@ -769,60 +934,65 @@
                     </td>
                     <td class="border border-[#EAECF0] px-3 py-4 align-center">
                       <div class="flex items-start justify-between gap-3">
-                        <div class="grid grid-cols-2 gap-2">
-                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
-                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
-                              <i class="ph ph-file-pdf text-[12px]"></i>
-                            </span>
-                            <div class="min-w-0">
-                              <div class="truncate text-[10px] font-semibold text-gray-500">Material Test Certificate</div>
-                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                        <div class="relative">
+                          <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                              <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                                <i class="ph ph-file-pdf text-[12px]"></i>
+                              </span>
+                              <div class="min-w-0">
+                                <div class="truncate text-[10px] font-semibold text-gray-500">Material Test Certificate</div>
+                                <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                              </div>
+                            </div>
+                            <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                              <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                                <i class="ph ph-check-circle text-[12px]"></i>
+                              </span>
+                              <div class="min-w-0">
+                                <div class="truncate text-[10px] font-semibold text-gray-500">AML / AVL Check</div>
+                                <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
+                              </div>
+                            </div>
+                            <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                              <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                                <i class="ph ph-file-text text-[12px]"></i>
+                              </span>
+                              <div class="min-w-0">
+                                <div class="truncate text-[10px] font-semibold text-gray-500">Deviation Sheet</div>
+                                <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                              </div>
+                            </div>
+                            <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                              <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                                <i class="ph ph-file-text text-[12px]"></i>
+                              </span>
+                              <div class="min-w-0">
+                                <div class="truncate text-[10px] font-semibold text-gray-500">Spec Validation Sheet</div>
+                                <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
+                              </div>
+                            </div>
+                            <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                              <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                                <i class="ph ph-file-doc text-[12px]"></i>
+                              </span>
+                              <div class="min-w-0">
+                                <div class="truncate text-[10px] font-semibold text-gray-500">Terms &amp; Conditions</div>
+                                <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                              </div>
+                            </div>
+                            <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
+                              <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
+                                <i class="ph ph-file-doc text-[12px]"></i>
+                              </span>
+                              <div class="min-w-0">
+                                <div class="truncate text-[10px] font-semibold text-gray-500">Origin / CoO</div>
+                                <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
+                              </div>
                             </div>
                           </div>
-                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
-                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
-                              <i class="ph ph-check-circle text-[12px]"></i>
-                            </span>
-                            <div class="min-w-0">
-                              <div class="truncate text-[10px] font-semibold text-gray-500">AML / AVL Check</div>
-                              <div class="text-[9px] text-gray-400">2.4 MB - PDF</div>
-                            </div>
-                          </div>
-                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
-                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
-                              <i class="ph ph-file-text text-[12px]"></i>
-                            </span>
-                            <div class="min-w-0">
-                              <div class="truncate text-[10px] font-semibold text-gray-500">Deviation Sheet</div>
-                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
-                            </div>
-                          </div>
-                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
-                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
-                              <i class="ph ph-file-text text-[12px]"></i>
-                            </span>
-                            <div class="min-w-0">
-                              <div class="truncate text-[10px] font-semibold text-gray-500">Spec Validation Sheet</div>
-                              <div class="text-[9px] text-gray-400">856 KB - XLSX</div>
-                            </div>
-                          </div>
-                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
-                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
-                              <i class="ph ph-file-doc text-[12px]"></i>
-                            </span>
-                            <div class="min-w-0">
-                              <div class="truncate text-[10px] font-semibold text-gray-500">Terms &amp; Conditions</div>
-                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
-                            </div>
-                          </div>
-                          <div class="flex items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 opacity-60">
-                            <span class="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-400">
-                              <i class="ph ph-file-doc text-[12px]"></i>
-                            </span>
-                            <div class="min-w-0">
-                              <div class="truncate text-[10px] font-semibold text-gray-500">Origin / CoO</div>
-                              <div class="text-[9px] text-gray-400">1.2 MB - DOCX</div>
-                            </div>
+                          <div class="pointer-events-none absolute inset-0 flex items-center justify-center text-[20px] font-semibold text-[#F97066]">
+                            Shortfall: 800 MTR
                           </div>
                         </div>
                         <div class="relative">
@@ -2143,7 +2313,7 @@
                         </td>
                       </tr>
                       <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
-                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">1</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">3</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">CS-A106-6SCH40</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,000</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$5,000</td>
@@ -2159,7 +2329,7 @@
                         </td>
                       </tr>
                       <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
-                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">2</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">4</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">SS-A312-4SCH80</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$28,000</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$3,500</td>
@@ -2175,7 +2345,7 @@
                         </td>
                       </tr>
                       <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
-                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">1</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">5</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">CS-A106-6SCH40</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,000</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$5,000</td>
@@ -2191,7 +2361,7 @@
                         </td>
                       </tr>
                       <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
-                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">2</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">6</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">SS-A312-4SCH80</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$28,000</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$3,500</td>
@@ -2207,7 +2377,7 @@
                         </td>
                       </tr>
                       <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
-                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">1</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">7</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">CS-A106-6SCH40</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$45,000</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$5,000</td>
@@ -2223,7 +2393,7 @@
                         </td>
                       </tr>
                       <tr class="hover:bg-gray-50 transition-colors border-b border-gray-100">
-                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">2</td>
+                        <td class="border border-[#EAECF0] px-3 py-4 font-medium text-gray-900">8</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">SS-A312-4SCH80</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$28,000</td>
                         <td class="border border-[#EAECF0] px-3 py-4 text-xs text-gray-600">$3,500</td>
@@ -2654,6 +2824,7 @@
         // Hide all tab contents
         const contents = [
           "enquiry-info",
+          "new-enquiry",
           "ai-suit",
           "doc-repo",
           "activity-log",
@@ -2664,7 +2835,7 @@
         });
 
         // Reset all tab buttons
-        const tabs = ["enquiry-info", "ai-suit", "doc-repo", "activity-log"];
+        const tabs = ["enquiry-info", "new-enquiry", "ai-suit", "doc-repo", "activity-log"];
         tabs.forEach((t) => {
           const btn = document.getElementById(`tab-${t}`);
           if (btn) {
