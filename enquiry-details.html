@@ -600,10 +600,10 @@
                 <img src="assets/images/product-requirment.svg" alt="Product Avatar" class="w-5 h-5">
                 <h2 class="text-sm font-bold text-gray-900">Product Requirements</h2>
               </div>
-              <button class="flex items-center gap-1 bg-[#EF3826] text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-[#D92D20] transition-colors">
+              <!-- <button class="flex items-center gap-1 bg-[#EF3826] text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-[#D92D20] transition-colors">
                 <i class="ph ph-plus"></i>
                 Add Row
-              </button>
+              </button> -->
             </div>
 
             <div class="overflow-x-auto custom-scrollbar">
@@ -621,6 +621,50 @@
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-50">
+                  <tr>
+                    <td class="py-3 pr-2 text-xs text-gray-700">CS-PIPE-001</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">ASTM A106 Gr.B</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">4"</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">SCH40</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">1200</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">MTR</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">04/15/2026</td>
+                    <td class="py-3 text-center">
+                      <button class="text-red-500 hover:text-red-700 transition-colors p-1 rounded hover:bg-red-50">
+                        <i class="ph-fill ph-trash text-base"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 pr-2 text-xs text-gray-700">SS-TUBE-014</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">ASTM A312 TP304</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">2"</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">SCH10</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">650</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">MTR</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">04/20/2026</td>
+                    <td class="py-3 text-center">
+                      <button class="text-red-500 hover:text-red-700 transition-colors p-1 rounded hover:bg-red-50">
+                        <i class="ph-fill ph-trash text-base"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 pr-2 text-xs text-gray-700">AL-PLATE-022</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">AA 6061-T6</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">1250 x 2500</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">8 mm</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">80</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">PCS</td>
+                    <td class="py-3 pr-2 text-xs text-gray-700">04/28/2026</td>
+                    <td class="py-3 text-center">
+                      <button class="text-red-500 hover:text-red-700 transition-colors p-1 rounded hover:bg-red-50">
+                        <i class="ph-fill ph-trash text-base"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot class="divide-y divide-gray-50">
                   <tr class="group">
                     <td class="py-3 pr-2">
                       <input type="text" placeholder="Enter SKU" class="w-full px-3 py-2 bg-white border border-gray-200 rounded text-xs focus:outline-none focus:border-red-500 transition-colors">
@@ -655,12 +699,12 @@
                       </div>
                     </td>
                     <td class="py-3 text-center">
-                      <button class="text-red-500 hover:text-red-700 transition-colors p-1 rounded hover:bg-red-50">
-                        <i class="ph-fill ph-trash text-base"></i>
+                      <button title="Add Row" aria-label="Add Row" class="text-white bg-red-500 hover:bg-red-600 transition-colors px-1 rounded">
+                        <i class="ph ph-plus text-base"></i>
                       </button>
                     </td>
                   </tr>
-                </tbody>
+                </tfoot>
               </table>
             </div>
           </div>

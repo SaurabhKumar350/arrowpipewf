@@ -109,11 +109,12 @@ document.addEventListener("includes-loaded", () => {
   
   sidebarLinks.forEach((link) => {
     const href = link.getAttribute("href");
+    link.classList.remove("border-l", "border-[red]");
     // Check if the href matches the current path
     // We handle the case where href might be just the filename or a relative path
     if (href === currentPath || (currentPath === "" && href === "index.html")) {
       // Add active classes
-      link.classList.add("text-[#E60002]", "bg-red-50");
+      link.classList.add("text-[#E60002]", "bg-red-50", "border-l", "border-[red]");
       link.classList.remove("text-gray-400");
     } else {
       // Ensure inactive classes (if we were toggling, but here we are setting initial state)
