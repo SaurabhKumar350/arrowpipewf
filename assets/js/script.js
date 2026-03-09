@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         span.textContent = status;
 
         // Reset classes (keep common ones)
-        btn.className = "status-btn inline-flex items-center justify-between w-full px-2 py-1.5 text-xs font-bold text-white rounded-md uppercase focus:outline-none transition-colors " + bgClass;
+        btn.className = "status-btn flex items-center gap-2 px-3 py-1 rounded text-[10px] font-bold border border-transparent focus:outline-none transition-colors " + bgClass;
 
         menu.classList.add("hidden");
         icon.classList.remove("rotate-180");
@@ -261,9 +261,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Action Dropdown Logic
+  const actionDropdowns = document.querySelectorAll(".action-dropdown");
+  actionDropdowns.forEach((dropdown) => {
+    const btn = dropdown.querySelector(".action-btn");
+    const menu = dropdown.querySelector(".action-menu");
+
+    if (btn && menu) {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeAllDropdowns(menu);
+        menu.classList.toggle("hidden");
+      });
+    }
+  });
+
   // Helper function to close all open dropdowns
   function closeAllDropdowns(exceptMenu = null) {
-    const allMenus = document.querySelectorAll(".priority-menu, .status-menu, .assigned-menu, #user-menu-dropdown");
+    const allMenus = document.querySelectorAll(".priority-menu, .status-menu, .assigned-menu, .action-menu, #user-menu-dropdown");
     const allIcons = document.querySelectorAll(".priority-btn i, .status-btn i, .assigned-btn i");
     
     allMenus.forEach(m => {
@@ -280,7 +295,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".priority-dropdown") && 
         !e.target.closest(".status-dropdown") && 
-        !e.target.closest(".assigned-dropdown")) {
+        !e.target.closest(".assigned-dropdown") && 
+        !e.target.closest(".action-dropdown")) {
       closeAllDropdowns();
     }
   });
@@ -290,7 +306,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check if scrolling inside the dropdown menu itself
     if (e.target.closest(".assigned-menu") || 
         e.target.closest(".priority-menu") || 
-        e.target.closest(".status-menu")) {
+        e.target.closest(".status-menu") || 
+        e.target.closest(".action-menu")) {
       return;
     }
     closeAllDropdowns();
