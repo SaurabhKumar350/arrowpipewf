@@ -276,6 +276,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const renumberUploadRows = () => {
+    const uploadTableBody = document.querySelector("[data-upload-table-body]");
+    if (!uploadTableBody) return;
+    const rows = uploadTableBody.querySelectorAll("tr");
+    rows.forEach((row, index) => {
+      const firstCell = row.querySelector("td");
+      if (firstCell) firstCell.textContent = String(index + 1);
+    });
+  };
+
+  document.addEventListener("click", (event) => {
+    const actionToggle = event.target.closest(".action-btn");
+    if (actionToggle) {
+      event.stopPropagation();
+      const actionDropdown = actionToggle.closest(".action-dropdown");
+      const actionMenu = actionDropdown ? actionDropdown.querySelector(".action-menu") : null;
+      if (!actionMenu) return;
+      closeAllDropdowns(actionMenu);
+      actionMenu.classList.toggle("hidden");
+      return;
+    }
+
+    const actionButton = event.target.closest("[data-row-action]");
+    if (!actionButton) return;
+
+    const action = actionButton.getAttribute("data-row-action");
+    const row = actionButton.closest("tr");
+    if (!row) return;
+
+    const actionMenu = actionButton.closest(".action-menu");
+    if (actionMenu) actionMenu.classList.add("hidden");
+
+    if (action === "delete") {
+      row.remove();
+      renumberUploadRows();
+      return;
+    }
+
+    if (action === "edit") {
+      const editableTarget = row.querySelector("[data-edit-target]");
+      if (!editableTarget) return;
+      const currentValue = editableTarget.textContent.trim();
+      const updatedValue = window.prompt("Edit value", currentValue);
+      if (updatedValue === null) return;
+      const trimmedValue = updatedValue.trim();
+      if (!trimmedValue) return;
+      editableTarget.textContent = trimmedValue;
+    }
+  });
+
   // Helper function to close all open dropdowns
   function closeAllDropdowns(exceptMenu = null) {
     const allMenus = document.querySelectorAll(".priority-menu, .status-menu, .assigned-menu, .action-menu, #user-menu-dropdown");
@@ -429,6 +479,169 @@ document.addEventListener("DOMContentLoaded", () => {
         const id = t.getAttribute('data-dropdown-toggle');
         const d = document.getElementById(id);
         if (d) d.classList.add('hidden');
+    });
+  });
+
+  const uploadDropzones = document.querySelectorAll("[data-upload-dropzone]");
+  uploadDropzones.forEach((dropzone) => {
+    const fileInput = dropzone.querySelector("[data-upload-input]");
+    const feedback = dropzone.querySelector("[data-upload-feedback]");
+    const card = dropzone.closest(".bg-white");
+    const tableBody =
+      (card && card.querySelector("[data-upload-table-body]")) ||
+      document.querySelector("[data-upload-table-body]");
+
+    if (!fileInput) return;
+
+    const formatTimestamp = () => {
+      const now = new Date();
+      const day = now.getDate();
+      const month = now.toLocaleString("en-US", { month: "long" });
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const meridiem = now.getHours() >= 12 ? "PM" : "AM";
+      const hours = now.getHours() % 12 || 12;
+      return `${day} ${month} ${hours}:${minutes} ${meridiem}`;
+    };
+
+    const iconClassByType = {
+      pdf: "ph-fill ph-file-pdf text-red-500",
+      docx: "ph-fill ph-file-doc text-blue-500",
+      xlsx: "ph-fill ph-file-xls text-green-500"
+    };
+
+    const appendRow = (file) => {
+      const extension = (file.name.split(".").pop() || "").toLowerCase();
+      const row = document.createElement("tr");
+      row.className = "bg-white border-b border-gray-100";
+
+      const srNoCell = document.createElement("td");
+      srNoCell.className = "py-3 pl-3 text-xs text-gray-700 border-r border-gray-100";
+      srNoCell.textContent = String(tableBody.querySelectorAll("tr").length + 1);
+
+      const nameCell = document.createElement("td");
+      nameCell.className = "py-3 pl-3 text-xs text-gray-800 border-r border-gray-100";
+      const nameWrap = document.createElement("div");
+      nameWrap.className = "flex items-center gap-2";
+      const icon = document.createElement("i");
+      icon.className = iconClassByType[extension] || "ph-fill ph-file text-gray-500";
+      const fileName = document.createElement("span");
+      fileName.className = "font-semibold";
+      fileName.setAttribute("data-edit-target", "");
+      fileName.textContent = file.name;
+      nameWrap.append(icon, fileName);
+      nameCell.appendChild(nameWrap);
+
+      const typeCell = document.createElement("td");
+      typeCell.className = "py-3 pl-3 text-xs text-gray-700 border-r border-gray-100";
+      typeCell.textContent = extension.toUpperCase();
+
+      const timeCell = document.createElement("td");
+      timeCell.className = "py-3 pl-3 text-xs text-gray-700 border-r border-gray-100";
+      timeCell.textContent = formatTimestamp();
+
+      const actionCell = document.createElement("td");
+      actionCell.className = "py-3 pl-3 text-xs text-gray-700";
+      const actionWrap = document.createElement("div");
+      actionWrap.className = "flex items-center gap-2";
+      const viewButton = document.createElement("button");
+      viewButton.className = "h-6 px-2 rounded border border-gray-200 text-[10px] font-medium text-gray-600 hover:bg-gray-50";
+      viewButton.textContent = "View";
+      viewButton.type = "button";
+      viewButton.addEventListener("click", () => {
+        const fileUrl = URL.createObjectURL(file);
+        window.open(fileUrl, "_blank");
+        setTimeout(() => URL.revokeObjectURL(fileUrl), 60000);
+      });
+      const actionDropdown = document.createElement("div");
+      actionDropdown.className = "relative action-dropdown";
+      const menuButton = document.createElement("button");
+      menuButton.className = "action-btn text-gray-400 hover:text-gray-600 text-2xl";
+      menuButton.type = "button";
+      const menuIcon = document.createElement("i");
+      menuIcon.className = "ph ph-dots-three-vertical";
+      menuButton.appendChild(menuIcon);
+      const actionMenu = document.createElement("div");
+      actionMenu.className = "action-menu hidden absolute right-0 bottom-full mb-1 w-24 bg-white border border-gray-200 rounded-md shadow-lg z-50";
+      const editButton = document.createElement("button");
+      editButton.type = "button";
+      editButton.setAttribute("data-row-action", "edit");
+      editButton.className = "w-full text-left px-3 py-1.5 text-xs text-gray-700 hover:bg-gray-50";
+      editButton.textContent = "Edit";
+      const deleteButton = document.createElement("button");
+      deleteButton.type = "button";
+      deleteButton.setAttribute("data-row-action", "delete");
+      deleteButton.className = "w-full text-left px-3 py-1.5 text-xs text-red-600 hover:bg-red-50";
+      deleteButton.textContent = "Delete";
+      actionMenu.append(editButton, deleteButton);
+      actionDropdown.append(menuButton, actionMenu);
+      actionWrap.append(viewButton, actionDropdown);
+      actionCell.appendChild(actionWrap);
+
+      if (!tableBody) return;
+      row.append(srNoCell, nameCell, typeCell, timeCell, actionCell);
+      tableBody.appendChild(row);
+    };
+
+    const handleFiles = (selectedFiles) => {
+      const allowedExtensions = new Set(["pdf", "docx", "xlsx"]);
+      const maxSize = 10 * 1024 * 1024;
+      const files = Array.from(selectedFiles || []);
+      const validFiles = [];
+      const rejectedFiles = [];
+
+      files.forEach((file) => {
+        const extension = (file.name.split(".").pop() || "").toLowerCase();
+        if (!allowedExtensions.has(extension) || file.size > maxSize) {
+          rejectedFiles.push(file.name);
+          return;
+        }
+        validFiles.push(file);
+      });
+
+      if (tableBody) {
+        validFiles.forEach((file) => appendRow(file));
+      }
+
+      if (feedback) {
+        if (rejectedFiles.length > 0) {
+          feedback.classList.remove("text-gray-400", "text-green-600");
+          feedback.classList.add("text-red-500");
+          feedback.textContent = `Skipped ${rejectedFiles.length} unsupported file(s)`;
+        } else if (validFiles.length > 0) {
+          feedback.classList.remove("text-gray-400", "text-red-500");
+          feedback.classList.add("text-green-600");
+          feedback.textContent = `${validFiles.length} file(s) added`;
+        }
+      }
+    };
+
+    dropzone.addEventListener("click", (event) => {
+      if (event.target.closest("button")) return;
+      if (typeof fileInput.showPicker === "function") {
+        fileInput.showPicker();
+        return;
+      }
+      fileInput.click();
+    });
+
+    fileInput.addEventListener("change", (event) => {
+      handleFiles(event.target.files);
+      fileInput.value = "";
+    });
+
+    dropzone.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      dropzone.classList.add("border-red-400", "bg-red-50");
+    });
+
+    dropzone.addEventListener("dragleave", () => {
+      dropzone.classList.remove("border-red-400", "bg-red-50");
+    });
+
+    dropzone.addEventListener("drop", (event) => {
+      event.preventDefault();
+      dropzone.classList.remove("border-red-400", "bg-red-50");
+      handleFiles(event.dataTransfer.files);
     });
   });
 
