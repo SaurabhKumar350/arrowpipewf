@@ -211,7 +211,7 @@
         <!-- Top Bar: Search & Actions -->
         <div class="toolbar-shell">
           <div class="toolbar-tabs">
-            <button class="toolbar-tab active">All Enquiry</button>
+            <button class="toolbar-tab active">All Lead</button>
             <button class="toolbar-tab">New</button>
             <button class="toolbar-tab">Duplicate</button>
             <button class="toolbar-tab">Repeated</button>
@@ -224,7 +224,7 @@
               ></i>
               <input
                 type="search"
-                placeholder="Search Enquiry"
+                placeholder="Search Lead"
                 class="w-[360px] h-[34px] pl-10 pr-3 rounded-xl border border-[#dbe1e6] bg-[#f5f8f8] text-sm text-[#344054] placeholder:text-[#c3c9d0] focus:outline-none focus:border-[#c7d0da] focus:bg-white transition-colors"
               />
             </div>
@@ -238,7 +238,7 @@
                     Source <i class="ph ph-caret-down"></i>
                   </button>
                   <button class="filter-cat-btn" data-target="submenu-type">
-                    Enquiry Type <i class="ph ph-caret-down"></i>
+                    Lead Type <i class="ph ph-caret-down"></i>
                   </button>
                   <button class="filter-cat-btn" data-target="submenu-assigned">
                     Assigned To <i class="ph ph-caret-down"></i>
@@ -268,11 +268,11 @@
                     </div>
                   </div>
 
-                  <!-- Enquiry Type Submenu -->
+                  <!-- Lead Type Submenu -->
                   <div id="submenu-type" class="filter-sub-menu">
                     <div class="filter-submenu-wrapper">
                       <div class="filter-sub-header">
-                        <span>Filter Enquiry Type</span>
+                        <span>Filter Lead Type</span>
                         <span class="filter-reset">Reset</span>
                       </div>
                       <label class="filter-option"><input type="checkbox" checked> New</label>
@@ -307,13 +307,13 @@
                         <span>Filter Column View</span>
                         <span class="filter-reset">Reset</span>
                       </div>
-                      <label class="filter-option"><input type="checkbox" checked> Enquiry ID</label>
+                      <label class="filter-option"><input type="checkbox" checked> Lead ID</label>
                       <label class="filter-option"><input type="checkbox" checked> Source</label>
                       <label class="filter-option"><input type="checkbox" checked> customer Name</label>
-                      <label class="filter-option"><input type="checkbox" checked> Enquiry on</label>
+                      <label class="filter-option"><input type="checkbox" checked> Lead on</label>
                       <label class="filter-option"><input type="checkbox" checked> Assigned To</label>
-                      <label class="filter-option"><input type="checkbox" checked> Enquiry status</label>
-                      <label class="filter-option"><input type="checkbox"> Enquiry Progress</label>
+                      <label class="filter-option"><input type="checkbox" checked> Lead status</label>
+                      <label class="filter-option"><input type="checkbox"> Lead Progress</label>
                     </div>
                   </div>
                 </div>
@@ -335,7 +335,7 @@
                   </th>
                   <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#4B5558] uppercase tracking-wider whitespace-nowrap">
                     <div class="flex items-center gap-2">
-                      ENQUIRY ID
+                      Lead ID
                       <i class="ph ph-caret-up-down text-gray-400"></i>
                     </div>
                   </th>
@@ -349,7 +349,7 @@
                   </th>
                   <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#4B5558] uppercase tracking-wider whitespace-nowrap">
                     <div class="flex items-center gap-2">
-                      ENQUIRY ON
+                      Lead ON
                       <i class="ph ph-caret-up-down text-gray-400"></i>
                     </div>
                   </th>
@@ -359,10 +359,10 @@
                       <i class="ph ph-caret-up text-gray-400"></i>
                     </div>
                   </th>
-                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#4B5558] uppercase tracking-wider text-center whitespace-nowrap">ENQUIRY STATUS</th>
+                  <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#4B5558] uppercase tracking-wider text-center whitespace-nowrap">Lead STATUS</th>
                   <th class="border border-[#EAECF0] px-4 py-4 text-[11px] font-bold text-[#4B5558] uppercase tracking-wider whitespace-nowrap">
                     <div class="flex items-center gap-2">
-                      ENQUIRY PROGRESS
+                      Lead PROGRESS
                       <i class="ph ph-caret-up-down text-gray-400"></i>
                     </div>
                   </th>
@@ -379,7 +379,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784567</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784567</a>
                       <span class="px-2 py-0.5 rounded-full bg-[#101828] text-white text-xs font-bold">New</span>
                     </div>
                   </td>
@@ -445,18 +445,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -515,7 +515,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784566</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784566</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -581,18 +581,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -651,7 +651,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784565</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784565</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -717,18 +717,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#B3B3B3] text-white text-xs border border-transparent">
-                            <span>Invalid Enquiry</span>
+                            <span>Invalid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -741,7 +741,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col">
-                        <span class="text-xs font-bold text-gray-900">Invalid Enquiry</span>
+                        <span class="text-xs font-bold text-gray-900">Invalid Lead</span>
                         <span class="text-xs text-gray-400"></span>
                      </div>
                   </td>
@@ -787,7 +787,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784564</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784564</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -858,13 +858,13 @@
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -923,7 +923,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784563</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784563</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -989,18 +989,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -1059,7 +1059,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784562</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784562</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -1125,18 +1125,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -1195,7 +1195,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784561</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784561</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -1261,18 +1261,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -1331,7 +1331,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784560</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784560</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -1397,18 +1397,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -1467,7 +1467,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784559</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784559</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -1533,18 +1533,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -1603,7 +1603,7 @@
                   </td>
                   <td class="border border-[#EAECF0] px-4 py-4">
                     <div class="flex flex-col items-start gap-1">
-                      <a href="enquiry-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784558</a>
+                      <a href="Lead-details.html" class="text-xs font-semibold text-[#2F4EFF] hover:underline">#56784558</a>
                       <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-bold">Repeated</span>
                     </div>
                   </td>
@@ -1669,18 +1669,18 @@
                   <td class="border border-[#EAECF0] px-4 py-4 text-center">
                     <div class="relative inline-block status-dropdown">
                         <button class="status-btn flex items-center gap-2 px-3 py-1 rounded bg-[#377E36] text-white text-xs border border-transparent">
-                            <span>Valid Enquiry</span>
+                            <span>Valid Lead</span>
                             <i class="ph ph-caret-down opacity-50"></i>
                         </button>
                         
                         <div class="status-menu hidden absolute left-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-20 py-1">
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Enquiry" data-bg="bg-[#377E36] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Valid Lead" data-bg="bg-[#377E36] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Valid Enquiry</span>
+                            <span class="font-medium">Valid Lead</span>
                           </button>
-                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Enquiry" data-bg="bg-[#B3B3B3] text-white border-transparent">
+                          <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="Invalid Lead" data-bg="bg-[#B3B3B3] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>
-                            <span class="font-medium">Invalid Enquiry</span>
+                            <span class="font-medium">Invalid Lead</span>
                           </button>
                           <button class="status-option w-full text-left px-3 py-2 text-xs hover:bg-gray-50 flex items-center gap-2 transition-colors" data-status="High Priority" data-bg="bg-[#D73739] text-white border-transparent">
                             <span class="w-2 h-2 rounded-full bg-white"></span>

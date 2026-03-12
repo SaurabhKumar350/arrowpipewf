@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roles & Privileges - Arrow Pipes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <!-- Header -->
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <!-- Mobile Overlay -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <!-- Main Content -->
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <section class="bg-white rounded-[20px] shadow-sm border border-gray-300">
+          <!-- Top Controls -->
+          <div class="p-4 md:p-6 border-b border-gray-200">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+              <div class="w-full">
+                <h2 class="text-[22px] font-semibold text-[#E60002]">Role</h2>
+              </div>
+
+              <div class="w-full flex flex-col gap-4">
+                <div class="w-full flex flex-col xl:flex-row xl:items-center gap-4">
+                  <!-- MultiSelect 1 -->
+                  <div class="w-full xl:max-w-[520px]">
+                    <div
+                      class="ap-multiselect"
+                      data-placeholder="Select Module"
+                      data-name="modules"
+                    >
+                      <button
+                        type="button"
+                        class="ap-ms-trigger w-full min-h-[46px] bg-white border border-gray-200 rounded-lg px-3 py-2 flex items-center gap-2 flex-wrap hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-200"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                      >
+                        <div class="ap-ms-chips flex items-center gap-2 flex-wrap flex-1 min-w-[120px]"></div>
+                        <span class="ap-ms-placeholder text-gray-500 text-sm flex-1 text-left"></span>
+                        <i class="ph ph-caret-down text-gray-500 text-sm"></i>
+                      </button>
+
+                      <div
+                        class="ap-ms-panel hidden absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50"
+                        role="listbox"
+                      >
+                        <div class="max-h-[260px] overflow-auto p-2">
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-selectall h-4 w-4 accent-[#4F46E5]" type="checkbox" />
+                            <span class="text-sm text-gray-700">Select All</span>
+                          </label>
+                          <div class="h-px bg-gray-100 my-2"></div>
+
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Vendor Management" checked />
+                            <span class="text-sm text-[#4F46E5]">Vendor Management</span>
+                          </label>
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Courier Service" checked />
+                            <span class="text-sm text-[#4F46E5]">Courier Service</span>
+                          </label>
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Inward Courier" checked />
+                            <span class="text-sm text-[#4F46E5]">Inward Courier</span>
+                          </label>
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Outward Courier" checked />
+                            <span class="text-sm text-[#4F46E5]">Outward Courier</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- MultiSelect 2 -->
+                  <div class="w-full xl:max-w-[520px]">
+                    <div
+                      class="ap-multiselect"
+                      data-placeholder="Select Pages"
+                      data-name="pages"
+                    >
+                      <button
+                        type="button"
+                        class="ap-ms-trigger w-full min-h-[46px] bg-white border border-gray-200 rounded-lg px-3 py-2 flex items-center gap-2 flex-wrap hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-200"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                      >
+                        <div class="ap-ms-chips flex items-center gap-2 flex-wrap flex-1 min-w-[120px]"></div>
+                        <span class="ap-ms-placeholder text-gray-500 text-sm flex-1 text-left"></span>
+                        <i class="ph ph-caret-down text-gray-500 text-sm"></i>
+                      </button>
+
+                      <div
+                        class="ap-ms-panel hidden absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50"
+                        role="listbox"
+                      >
+                        <div class="max-h-[260px] overflow-auto p-2">
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-selectall h-4 w-4 accent-[#4F46E5]" type="checkbox" />
+                            <span class="text-sm text-gray-700">Select All</span>
+                          </label>
+                          <div class="h-px bg-gray-100 my-2"></div>
+
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Vendor Management" checked />
+                            <span class="text-sm text-[#4F46E5]">Vendor Management</span>
+                          </label>
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Courier Service" />
+                            <span class="text-sm text-[#4F46E5]">Courier Service</span>
+                          </label>
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Travel Management" />
+                            <span class="text-sm text-[#4F46E5]">Travel Management</span>
+                          </label>
+                          <label class="flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-50 cursor-pointer">
+                            <input class="ap-ms-item h-4 w-4 accent-[#4F46E5]" type="checkbox" value="Admin Helpdesk" />
+                            <span class="text-sm text-[#4F46E5]">Admin Helpdesk</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full flex items-center justify-between gap-4">
+                  <p class="text-sm text-gray-700">
+                    if you want to add more Module / Pages
+                  </p>
+                  <button
+                    type="button"
+                    class="h-10 px-6 rounded bg-black text-white font-semibold hover:bg-black/90"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Permissions Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-[#E60002] text-white">
+                  <th class="text-left py-3 px-4 w-[140px] border-r border-white/20" rowspan="2">
+                    Roles
+                  </th>
+                  <th class="text-left py-3 px-4 w-[280px] border-r border-white/20" rowspan="2">
+                    Pages
+                  </th>
+                  <th class="text-center py-3 px-4 border-r border-white/20" colspan="4">
+                    Record Permissions
+                  </th>
+                  <th class="text-center py-3 px-4" colspan="2">
+                    Action Permission
+                  </th>
+                </tr>
+                <tr class="bg-[#E60002] text-white border-t border-white/20">
+                  <th class="text-center py-2 px-3 border-r border-white/20">View</th>
+                  <th class="text-center py-2 px-3 border-r border-white/20">Edit</th>
+                  <th class="text-center py-2 px-3 border-r border-white/20">Add</th>
+                  <th class="text-center py-2 px-3 border-r border-white/20">Delete</th>
+                  <th class="text-center py-2 px-3 border-r border-white/20">Import</th>
+                  <th class="text-center py-2 px-3">Export</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="bg-white">
+                  <td class="py-4 px-4 font-semibold text-gray-900">admin</td>
+                  <td class="py-4 px-4 text-gray-700">Vendor Management</td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="py-4 px-4 font-semibold text-gray-900">admin</td>
+                  <td class="py-4 px-4 text-gray-700">Courier Service</td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="py-4 px-4 font-semibold text-gray-900">admin</td>
+                  <td class="py-4 px-4 text-gray-700">Inward Courier</td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="py-4 px-4 font-semibold text-gray-900">admin</td>
+                  <td class="py-4 px-4 text-gray-700">Outward Courier</td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="py-4 px-4 font-semibold text-gray-900">admin</td>
+                  <td class="py-4 px-4 text-gray-700">Reverse Pickup</td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="py-4 px-4 font-semibold text-gray-900">admin</td>
+                  <td class="py-4 px-4 text-gray-700">Request Form</td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                  <td class="py-4 px-4 text-center"><input type="checkbox" class="h-4 w-4 accent-[#0B63F6]" checked /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      (function () {
+        function closest(el, selector) {
+          while (el && el.nodeType === 1) {
+            if (el.matches(selector)) return el;
+            el = el.parentElement;
+          }
+          return null;
+        }
+
+        function setPanelPosition(root) {
+          const panel = root.querySelector(".ap-ms-panel");
+          if (!panel) return;
+          root.style.position = "relative";
+          panel.style.left = "0px";
+          panel.style.right = "0px";
+        }
+
+        function renderChips(root) {
+          const chipsWrap = root.querySelector(".ap-ms-chips");
+          const placeholder = root.querySelector(".ap-ms-placeholder");
+          const items = Array.from(root.querySelectorAll(".ap-ms-item"));
+          const selected = items.filter((i) => i.checked).map((i) => i.value);
+
+          chipsWrap.innerHTML = "";
+          selected.forEach((val) => {
+            const chip = document.createElement("span");
+            chip.className =
+              "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-sm";
+            chip.innerHTML = `<span class="truncate max-w-[220px]">${val}</span>
+              <button type="button" class="ap-chip-remove text-gray-500 hover:text-gray-800" aria-label="Remove ${val}">
+                <i class="ph ph-x text-[14px]"></i>
+              </button>`;
+            chip.querySelector(".ap-chip-remove").addEventListener("click", (e) => {
+              e.preventDefault();
+              const item = items.find((i) => i.value === val);
+              if (item) item.checked = false;
+              syncSelectAll(root);
+              renderChips(root);
+            });
+            chipsWrap.appendChild(chip);
+          });
+
+          const ph = root.getAttribute("data-placeholder") || "Select";
+          placeholder.textContent = selected.length ? "" : ph;
+        }
+
+        function syncSelectAll(root) {
+          const selectAll = root.querySelector(".ap-ms-selectall");
+          if (!selectAll) return;
+          const items = Array.from(root.querySelectorAll(".ap-ms-item"));
+          const checkedCount = items.filter((i) => i.checked).length;
+          selectAll.indeterminate = checkedCount > 0 && checkedCount < items.length;
+          selectAll.checked = items.length > 0 && checkedCount === items.length;
+        }
+
+        function setOpen(root, isOpen) {
+          const trigger = root.querySelector(".ap-ms-trigger");
+          const panel = root.querySelector(".ap-ms-panel");
+          if (!trigger || !panel) return;
+          trigger.setAttribute("aria-expanded", String(isOpen));
+          panel.classList.toggle("hidden", !isOpen);
+        }
+
+        function initMultiSelect(root) {
+          const trigger = root.querySelector(".ap-ms-trigger");
+          const panel = root.querySelector(".ap-ms-panel");
+          if (!trigger || !panel) return;
+
+          setPanelPosition(root);
+          renderChips(root);
+          syncSelectAll(root);
+
+          trigger.addEventListener("click", (e) => {
+            e.preventDefault();
+            const isOpen = trigger.getAttribute("aria-expanded") === "true";
+            setOpen(root, !isOpen);
+          });
+
+          root.addEventListener("change", (e) => {
+            const t = e.target;
+            if (!(t instanceof HTMLInputElement)) return;
+            if (t.classList.contains("ap-ms-selectall")) {
+              const items = Array.from(root.querySelectorAll(".ap-ms-item"));
+              items.forEach((i) => (i.checked = t.checked));
+            }
+            syncSelectAll(root);
+            renderChips(root);
+          });
+        }
+
+        document.querySelectorAll(".ap-multiselect").forEach(initMultiSelect);
+
+        document.addEventListener("click", (e) => {
+          const openRoot = closest(e.target, ".ap-multiselect");
+          document.querySelectorAll(".ap-multiselect").forEach((root) => {
+            if (root !== openRoot) setOpen(root, false);
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            document.querySelectorAll(".ap-multiselect").forEach((root) =>
+              setOpen(root, false)
+            );
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
