@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer  Configuration - Arrow Pipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-[#EDF1F2] text-gray-800">
+    <header
+      id="header-container"
+      data-include="includes/header.html"
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16"
+    ></header>
+
+    <div class="flex h-screen pt-16">
+      <aside
+        id="sidebar"
+        class="fixed left-0 top-16 bottom-0 w-72 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 overflow-y-auto"
+        data-include="includes/sidebar.html"
+      ></aside>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden glass"
+      ></div>
+
+      <main
+        id="main-content"
+        class="flex-1 lg:ml-72 p-4 md:p-6 bg-[#F2F2F2] min-h-[calc(100vh-64px)] transition-all duration-300"
+      >
+        <div class="flex items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <a
+              href="settings.html"
+              class="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+              aria-label="Back to Settings"
+              title="Back to Settings"
+            >
+              <i class="ph ph-arrow-left text-xl"></i>
+            </a>
+            <div>
+              <h1 class="text-xl md:text-2xl font-semibold text-gray-900">Customer  Configuration</h1>
+              <p class="text-sm text-gray-500">Build and save your Customer  form layout</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-[20px] shadow-sm border border-gray-300">
+          <form class="p-4 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="Customer -name" class="block text-sm font-medium text-gray-700 mb-1"
+                  >Customer Name <span class="text-[#E60002]">*</span></label
+                >
+                <input
+                  id="Customer -name"
+                  name="Customer _name"
+                  type="text"
+                  required
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email <span class="text-[#E60002]">*</span></label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                />
+              </div>
+              <div>
+                <label for="contact-number" class="block text-sm font-medium text-gray-700 mb-1"
+                  >Contact Number <span class="text-[#E60002]">*</span></label
+                >
+                <input
+                  id="contact-number"
+                  name="contact_number"
+                  type="text"
+                  required
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                />
+              </div>
+              <div>
+                <label for="fax-number" class="block text-sm font-medium text-gray-700 mb-1"
+                  >Fax Number</label
+                >
+                <input
+                  id="fax-number"
+                  name="fax_number"
+                  type="text"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                />
+              </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-4">
+              <h2 class="text-sm font-semibold text-gray-900 mb-3">Other Fields</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="account-manager" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Account Manager</label
+                  >
+                  <input
+                    id="account-manager"
+                    name="account_manager"
+                    type="text"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+                <div>
+                  <label for="industry-type" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Industry Type <span class="text-[#E60002]">*</span></label
+                  >
+                  <select
+                    id="industry-type"
+                    name="industry_type"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  >
+                    <option value="">Select Industry</option>
+                    <option>Banking</option>
+                    <option>IT</option>
+                    <option>Manufacturing</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="tax-type" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Tax Type</label
+                  >
+                  <select
+                    id="tax-type"
+                    name="tax_type"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  >
+                    <option value="">Select Tax Type</option>
+                    <option>GST</option>
+                    <option>VAT</option>
+                    <option>Service Tax</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="tax-number" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Tax Number</label
+                  >
+                  <input
+                    id="tax-number"
+                    name="tax_number"
+                    type="text"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+                <div>
+                  <label for="social-account" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Social Account</label
+                  >
+                  <select
+                    id="social-account"
+                    name="social_account"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  >
+                    <option value="">Select Social Account</option>
+                    <option>Facebook</option>
+                    <option>LinkedIn</option>
+                    <option>Instagram</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="add-social-account" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Add Social Account</label
+                  >
+                  <input
+                    id="add-social-account"
+                    name="add_social_account"
+                    type="text"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+                <div>
+                  <label for="company-size" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Company Size</label
+                  >
+                  <select
+                    id="company-size"
+                    name="company_size"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  >
+                    <option value="">Select Company Size</option>
+                    <option>1-10</option>
+                    <option>11-50</option>
+                    <option>51-200</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="source" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Source</label
+                  >
+                  <select
+                    id="source"
+                    name="source"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  >
+                    <option value="">Select Source</option>
+                    <option>Website</option>
+                    <option>Facebook</option>
+                    <option>Referral</option>
+                  </select>
+                </div>
+                <div class="md:col-span-2">
+                  <label for="about" class="block text-sm font-medium text-gray-700 mb-1">About</label>
+                  <textarea
+                    id="about"
+                    name="about"
+                    rows="3"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  ></textarea>
+                </div>
+                <div>
+                  <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Website</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="url"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-4">
+              <h2 class="text-sm font-semibold text-gray-900 mb-3">Address Information</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="country" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Country <span class="text-[#E60002]">*</span></label
+                  >
+                  <input
+                    id="country"
+                    name="country"
+                    type="text"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+                <div>
+                  <label for="state" class="block text-sm font-medium text-gray-700 mb-1"
+                    >State <span class="text-[#E60002]">*</span></label
+                  >
+                  <input
+                    id="state"
+                    name="state"
+                    type="text"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+                <div>
+                  <label for="city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+                <div>
+                  <label for="zip-code" class="block text-sm font-medium text-gray-700 mb-1"
+                    >Zip Code</label
+                  >
+                  <input
+                    id="zip-code"
+                    name="zip_code"
+                    type="text"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#E60002] focus:ring-1 focus:ring-[#E60002]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-end gap-2">
+              <button
+                type="reset"
+                class="px-3 py-2 text-sm font-medium rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+              >
+                Clear
+              </button>
+              <button
+                type="submit"
+                class="px-3 py-2 text-sm font-medium rounded-lg bg-[#E60002] hover:bg-[#E60002]/90 text-white transition-colors"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/include.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
